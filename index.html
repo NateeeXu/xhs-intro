@@ -1283,8 +1283,12 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .opp-src{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;height:auto}
   .srcard,.srcard.is-back,.srcard.is-front{position:relative;left:auto;top:auto;width:auto;height:30rem;translate:none;rotate:none;scale:none;animation:none;cursor:default;box-shadow:var(--card)}
   .srcard.is-back *{pointer-events:auto}
-  .wx-head.phone-btn{font-size:1.3rem;padding:.9rem;grid-template-columns:2rem 1fr 2rem}
-  .wx-bub{font-size:1.15rem}
+  .srcard,.srcard.is-back,.srcard.is-front{height:auto;align-self:start}   /* 手机上两张来源截图都按原图比例完整显示 */
+  .xhs-view{height:auto}
+  .wx-win{display:block;height:auto;background:none}
+  .wx-head.phone-btn{display:block;padding:0;border:0;background:none}
+  .wx-head > :not(.src-full),.wx-feed{display:none}
+  .wx-head .src-full{display:block;width:100%;height:auto}   /* 微信群卡片改用原截图，不用网页里重排的聊天气泡 */
   .opp-arrow{display:none}
   .mps{position:relative;margin-top:4.4rem;height:auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem .8rem}
   .mp{height:auto;width:100%}
