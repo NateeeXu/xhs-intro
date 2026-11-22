@@ -2368,6 +2368,15 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     if (e.detail > 0 && !lb.classList.contains('open')) { const b = e.target.closest('button,[role=button]'); if (b) b.blur(); }
   });
 
+  // 小红书版（用户 11-21）：点屏幕空白处 = ↓ 下一步。点在按钮、截图、卡片这些本来就能点的东西上，照旧做它自己的事
+  const OWN_CLICK = 'a,button,[role=button],input,textarea,select,label,[data-anim],.facet,.curl-hit,.gs-card,.gw-cards li,.gz-back,.srcard,.role,#lightbox,.nav';
+  document.addEventListener('click', e => {
+    if (e.button !== 0 || e.defaultPrevented || lb.classList.contains('open')) return;
+    if (e.target.closest(OWN_CLICK)) return;
+    if (String(getSelection())) return;          // 在选字，不翻页
+    stepBy(e.shiftKey ? -1 : 1);                 // Shift + 点击：上一步
+  });
+
   document.addEventListener('keydown', e => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     const k = e.key;
