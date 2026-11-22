@@ -1257,6 +1257,206 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .receipt{clip-path:none;animation:none!important}
   .bar,.lane u,.duo-track,.walker{transition:none!important}
 }
+/* ========== 手机长页阅读版（用户 11-21）：不再一屏一屏翻，单列往下滑，分步出现的内容全部直接展开 ========== */
+@media (max-width: 640px){
+  html{font-size:calc(100vw / 40);scroll-snap-type:none}
+  .nav{height:5.2rem;padding:0 1.6rem;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(1.2rem);backdrop-filter:blur(1.2rem);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+  .nav.on-dark{background:rgba(16,22,35,.9)}
+  .nav ol{gap:1.6rem;margin:0 auto}
+  .nav a[data-to]{font-size:1.35rem}
+  .nav .key,.hud{display:none!important}
+  .sec{height:auto;min-height:0;display:block;padding:8.4rem 2rem 4.4rem;overflow:visible;scroll-snap-align:none}
+  .sec .obj,.sec .phone{opacity:1!important;animation:none!important}
+  .opp-title{font-size:3rem;white-space:normal}
+  .opp-title span{display:inline}
+  /* 首页 */
+  .hello{width:auto;max-width:none;grid-template-columns:1fr;gap:2.4rem;justify-items:start}
+  .hello-photo{width:17rem}
+  .hero h1{font-size:3.4rem}
+  .hello-roles{margin-top:2rem;column-gap:1.6rem;row-gap:.8rem}
+  .hello-roles dt{font-size:1.7rem}
+  .hello-roles dd{font-size:1.5rem}
+  .hello-text p{font-size:1.6rem}
+  /* 市场洞察：两张来源截图并排、三张界面示例并排、两类用户上下排 */
+  .opp{width:auto}
+  .opp-stage{display:block;height:auto;margin-top:1.6rem}
+  .opp-src{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;height:auto}
+  .srcard,.srcard.is-back,.srcard.is-front{position:relative;left:auto;top:auto;width:auto;height:30rem;translate:none;rotate:none;scale:none;animation:none;cursor:default;box-shadow:var(--card)}
+  .srcard.is-back *{pointer-events:auto}
+  .wx-head.phone-btn{font-size:1.3rem;padding:.9rem;grid-template-columns:2rem 1fr 2rem}
+  .wx-bub{font-size:1.15rem}
+  .opp-arrow{display:none}
+  .mps{position:relative;margin-top:4.4rem;height:auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem .8rem}
+  .mp{height:auto;width:100%}
+  .mp img{height:auto}
+  .mp .ring{display:none}
+  .opp-roles{grid-template-columns:1fr;gap:1.8rem;margin-top:2.4rem;padding-top:2rem}
+  .role-r{text-align:left}
+  .role-r .hang{margin-right:0}
+  .opp-roles .q{font-size:1.7rem}
+  .opp-roles .q br{display:none}
+  .opp-roles .nw{white-space:normal}
+  .opp-mid{order:3;place-items:start;text-align:left}
+  .opp-insight{opacity:1;translate:none}
+  .opp-insight p{font-size:2.2rem}
+  /* 竞品分析 */
+  .diff{width:auto}
+  .diff-body{display:block;height:auto;margin-top:1.6rem}
+  .dcols{width:auto}
+  .dcol.comp h4{font-size:2.6rem;white-space:normal}
+  .dcol.comp .pros li{font-size:1.45rem;padding:1rem .8rem}
+  .dcol.comp .gaps li{padding:1.2rem 1.4rem;grid-template-columns:3.8rem 1fr}
+  .dcol.comp .gaps li i{font-size:2.6rem}
+  .dcol.comp .gaps li b{font-size:1.8rem}
+  .dcol.comp .gaps li span em{white-space:normal}
+  #diff .dstage{display:grid;grid-template-columns:1fr 1fr;gap:2rem 1.4rem;height:auto;width:auto;zoom:1;margin-top:2.4rem}
+  .cshot{position:static;width:auto;opacity:1!important;translate:none!important}
+  /* 产品定位 */
+  .pos{width:auto;padding-top:0}
+  .pz{margin:2rem 0 0}
+  .pz-split{grid-template-columns:1fr;gap:3rem}
+  .pz-we{font-size:1.6rem}
+  .pz-is{font-size:3rem}
+  .pz-keys{margin-top:2.4rem;gap:1rem}
+  .pz-keys li{padding:1.6rem 1.6rem}
+  .pz-keys h3{font-size:2rem}
+  .pz-keys li > span{font-size:1.35rem}
+  .pz-home{width:24rem;justify-self:center}
+  /* 产品设计：每一点下面直接跟它的截图（脚本把截图挪进对应那一条） */
+  #feat .diff-body{margin-top:1.6rem}
+  #feat .dcol.cs{top:0}
+  .dcol.cs li,.dcol.cs li.cur{opacity:1;translate:none;background:#fff;color:var(--ink);grid-template-columns:auto 1fr auto;padding:1.6rem 1.6rem 2rem;cursor:default}
+  .dcol.cs li::after{display:none}
+  .dcol.cs li .how,.dcol.cs li.cur .how{max-height:none;opacity:1;margin-top:.8rem;color:var(--muted)}
+  .dcol.cs li .how b{color:var(--brand)}
+  .dcol.cs li i,.dcol.cs li em,.dcol.cs li.cur i,.dcol.cs li.cur em{color:#AEAEB2}
+  .dcol.cs li > .dv{grid-column:1 / -1;position:static;opacity:1;translate:none;pointer-events:auto;margin:1.8rem -.4rem 0;display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem 1rem;padding:0;zoom:1}
+  #feat .dstage{display:none}
+  .dcol.cs li > .dv figure{grid-template-rows:auto auto}
+  .dcol.cs li > .dv .ph img{height:24rem}
+  .dcol.cs li > .dv .wxcard img,.dcol.cs li > .dv .reccard img{width:28rem}
+  .dcol.cs li > .dv .swap{display:none}
+  .dcol.cs li > .dv figcaption{white-space:normal;font-size:1.3rem}
+  .dcol.cs li > .dv figcaption strong{font-size:1.4rem;white-space:normal}
+  .dcol.cs li > .dv figcaption b{font-size:1.8rem;margin-top:.8rem}
+  .dcol.cs li > .dv[data-v="3"]{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .dcol.cs li > .dv .rcard.phone-btn{width:auto}
+  .dcol.cs li > .dv-safe{display:grid;grid-template-columns:1fr 1fr;margin:1.8rem 0 0;padding:0}
+  .dcol.cs li > .dv-safe .stage-tag{display:none}
+  .dcol.cs li > .dv-safe figure{grid-row:auto}
+  /* 增长策略：概览三张卡上下排，展开层（拉新 / 漏斗 / 承接 / 留存周期 / 留存方案）直接排在下面 */
+  .gw{width:auto;margin-bottom:0}
+  .gw-cards{grid-template-columns:1fr;gap:1rem;margin-top:1.6rem}
+  .gw-cards li,.gw-cards li:not(.shown){opacity:1;translate:none;padding:1.8rem 2rem;cursor:default}
+  .gw-cards i{font-size:3.4rem}
+  .gw-cards h3{font-size:2.4rem;margin-top:.6rem}
+  .gw-cards p b{white-space:normal;font-size:1.6rem}
+  .gw-goal,.gw-goal:not(.shown),.gw-kpi,.gw-kpi:not(.shown){opacity:1;translate:none}
+  .gw-goal .gw-link::before,.gw-goal .gw-link::after{scale:1}
+  .gw-obj{font-size:2.6rem}
+  .gw-kpi{grid-template-columns:1fr;gap:1.8rem}
+  .gw-kpi b{font-size:2.3rem}
+  .gw-zoom{position:static;visibility:visible;overflow:visible;background:none;container-type:normal}
+  .gz-track{display:block;width:auto;height:auto;translate:none!important;transition:none}
+  .gz-page{width:auto;height:auto;display:block;padding:0!important;margin-top:6.4rem}
+  .gz-pg{display:none}
+  .gz,.ga,.gb,.gr,.gm{width:auto}
+  .gz .opp-title span{display:inline}
+  .gz-cards{grid-template-columns:1fr;gap:1.2rem}
+  .gz-cards .gz-card{min-height:23rem}
+  .gz-front h3{font-size:2.2rem}
+  .gz-shots{--shot:15.5rem}
+  .ga-cols{gap:1.2rem}
+  .ga-col h3{font-size:2.2rem}
+  .ga-fun li{font-size:1.2rem;padding:.8rem .3rem;width:calc(100% - var(--k) * 5%)}
+  .ga:not(.play) .ga-fun li,.ga:not(.play) .ga-goal,.ga:not(.play) .ga-col:first-child .ga-fun::before,.ga:not(.play) .ga-col:first-child .ga-fun::after{opacity:1}
+  .ga{width:100%}
+  .ga-cols{margin-bottom:4.6rem}
+  .ga-col:first-child .ga-fun::before{content:"";margin:-.4rem calc(-100% - 1.2rem - .6rem) -.4rem -.6rem}   /* 手机上两列太窄，绿条只留底色，说明挪到漏斗下面 */
+  .ga-col:first-child .ga-fun::after{content:"首次价值时刻：发出首条咨询后，24 小时内收到对方回复";position:absolute;left:0;right:0;bottom:-3.6rem;width:auto;margin:0;white-space:normal;font-size:1.3rem;font-weight:700}
+  .ga-link{margin:0 calc((100% - 1.2rem) / 4)}
+  .ga-obj{font-size:2.6rem}
+  .gb-cards{grid-template-columns:1fr;gap:1.2rem}
+  .gb-card h3{font-size:2.2rem}
+  .gr-life{height:11rem;margin-top:1.6rem;grid-template-columns:1.4fr 1fr 1fr;column-gap:.6rem}
+  .gr-zone{padding:.8rem}
+  .gr-zone b{font-size:1.1rem}
+  .gr-cycle{font-size:1.1rem;bottom:.8rem}
+  .gr-cards{grid-template-columns:1fr;row-gap:1.2rem}
+  .gr-card.main{min-height:16rem}
+  .gr-card.main h3{font-size:2.6rem}
+  .gr-card h3{font-size:2.2rem}
+  .gm-row{grid-template-columns:1fr;gap:1.2rem;margin-top:1.6rem}
+  .gm-card{padding:2rem 2rem 2.2rem}
+  .gm-card h3{font-size:2.4rem}
+  .gm-line li{padding-left:2.8rem}
+  .gm-line p{font-size:1.6rem}
+  .gm-line small{font-size:1.35rem}
+  .gm-met{flex-direction:column;align-items:flex-start;gap:1.6rem}
+  .gm-met .r{text-align:left}
+  .gm-met b{font-size:2.6rem}
+  /* 复盘：正面复盘、背面网页端，上下排开；网页端四张截图全部列出来，小票直接打印好 */
+  .book,#reflect{display:block;padding:8.4rem 2rem 4.4rem}
+  html,body{overflow-x:clip}
+  .leaf,.leaf.front,.leaf.back{position:static;inset:auto;display:block;padding:0;overflow:visible;clip-path:none!important;background:none!important}
+  .leaf.back{margin-top:6rem}
+  .curl,.curl-hit,.curl-back{display:none!important}
+  .rf{width:auto}
+  .rf-row{grid-template-columns:1fr;gap:1.2rem}
+  .rf-card{padding:1.8rem 2rem}
+  .rf-card ul{font-size:1.5rem}
+  .rf-core{flex-direction:column;align-items:flex-start;gap:1.2rem;padding:2rem}
+  .rf-core p{font-size:1.6rem}
+  .rf-core b{font-size:2.6rem;white-space:normal}
+  .rf-plan{padding:1.8rem 2rem}
+  .rf-plan h4{font-size:2rem}
+  .rf-steps span{font-size:1.4rem;padding:.6rem 1rem}
+  .rf-scenes b{font-size:1.4rem}
+  .leaf.back .wall-head{text-align:left}
+  .leaf.back .wall-head h2{font-size:3rem}
+  .webtour{grid-template-columns:1fr;gap:2rem;margin-top:1.6rem}
+  .wshots{height:auto;display:grid;gap:1.6rem;place-items:stretch}
+  .wshot,.wshot.show{grid-area:auto;display:block;animation:none}
+  .wshot img{max-width:100%;max-height:none;width:100%}
+  .wshot .rcpt .slot{scale:1 1;opacity:1}
+  .wshot .rcpt .paper{translate:0 0;animation:none!important}
+  .rcpt .paper{font-size:.6rem;padding:.4rem .5rem}
+  .rcpt .rh,.rcpt .rf{font-size:.45rem}
+  .rcpt .tot{font-size:.7rem}
+  .wlist{min-height:0}
+  .witem .why{display:grid;gap:.3rem}
+  /* Saviu：三个角色的界面全部排出来，不用切 */
+  .sv-head{width:auto;flex-direction:column;gap:1.6rem}
+  .trio-sec .wall-head h2{font-size:3rem;white-space:normal}
+  .sv-stats{flex-wrap:wrap;gap:1.4rem 1.6rem}
+  .sv-stats dt{font-size:2.4rem}
+  .sv-stats dd{white-space:normal}
+  .roles{display:none}
+  .roles-wrap{display:block}
+  .stage{height:auto;display:block;margin-top:2.4rem}
+  .pane,.pane.show{display:flex;flex-direction:column;align-items:stretch;gap:1.6rem;animation:none;margin-bottom:4rem}
+  .screen{width:auto}
+  .device{width:20rem;align-self:center}
+  .say,.pane.tall .say{width:auto}
+  .say h3{font-size:2.2rem}
+  .say li{font-size:1.5rem}
+  /* 三面 */
+  .sides-sec .wall-head{text-align:left}
+  .sides-sec .wall-head h2{font-size:3rem}
+  .facets{zoom:1;grid-template-columns:1fr;gap:4rem;margin-top:2rem}
+  .facet,.facets.focus .facet{padding-top:0;opacity:1;translate:none;cursor:default}
+  .facet::before{font-size:6.4rem}
+  .facet-meta{white-space:normal}
+  .facet-body{zoom:.72}
+  /* 为什么是小红书：信全部展开，结尾那句跟在信后面 */
+  #tencent{display:block}
+  .letter{width:auto}
+  .letter h2{font-size:3rem}
+  .letter-body{margin-top:2rem;gap:1.4rem}
+  .letter-body p,.letter.focus .letter-body p{font-size:1.6rem;opacity:1}
+  #tencent.fin .letter{opacity:1;translate:none;pointer-events:auto}
+  .finale{margin-top:4rem;font-size:2.6rem;opacity:1;translate:none}
+}
 </style>
 </head>
 <body>
@@ -1800,6 +2000,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
 
 <script>
 (() => {
+  const MOB = matchMedia('(max-width: 640px)');   // 手机长页阅读版：不翻页、点屏幕不翻页、分步内容全展开
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s, el = document) => el.querySelector(s);
@@ -2101,7 +2302,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     clearTimeout(gzFallT); gzEl.classList.remove('fall');   // 小红薯从洞里回来
     setGs(-1);
     gzK = k;
-    gzPages.forEach((pg, i) => { pg.inert = i !== k; });
+    if (!MOB.matches) gzPages.forEach((pg, i) => { pg.inert = i !== k; });
     clearTimeout(gzWalkT);
     gzEl.classList.remove('walking', 'back');
     if (instant || reduce) {
@@ -2377,8 +2578,10 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
 
   // 小红书版（用户 11-21）：点屏幕空白处 = ↓ 下一步。点在按钮、截图、卡片这些本来就能点的东西上，照旧做它自己的事
   const OWN_CLICK = 'a,button,[role=button],input,textarea,select,label,[data-anim],.facet,.curl-hit,.gs-card,.gw-cards li,.gz-back,.srcard,.role,#lightbox,.nav';
+  if (MOB.matches) $$('#feat .dv').forEach(v => { const li = csRows[+v.dataset.v - 1]; if (li) li.append(v); });   // 手机：每一点的截图跟在这一点下面
+  if (MOB.matches) { gzPages.forEach(pg => { pg.inert = false; }); $('.ga').classList.add('play'); $$('[data-anim]').forEach(go); }   // 手机：增长展开页都能点，漏斗直接显示
   document.addEventListener('click', e => {
-    if (e.button !== 0 || e.defaultPrevented || lb.classList.contains('open')) return;
+    if (MOB.matches || e.button !== 0 || e.defaultPrevented || lb.classList.contains('open')) return;
     if (e.target.closest(OWN_CLICK)) return;
     if (String(getSelection())) return;          // 在选字，不翻页
     stepBy(e.shiftKey ? -1 : 1);                 // Shift + 点击：上一步
