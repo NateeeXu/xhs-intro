@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>徐显策｜自我介绍</title>
+<!--
+  小红书 · C 端用增产品实习生（转化链路）· 自我介绍（由腾讯版复制，主题色换成小红书红）
+  操作：↓ / → / 空格 / 翻页笔 = 下一个模块　↑ / ← = 上一个模块　顶部导航可直接跳转
+  每个模块里的东西都可以点：翻面、盖章、赛跑、打印小票、放大手机、撕票根……
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+<style>
+:root{--wx:#07C160;--wx-d:#06A853;--wx-bg:#E3F6EA;
+  --white:#ffffff;
+  --mist:#f5f5f7;
+  --ink:#1d1d1f;
+  --muted:#6e6e73;
+  --soft:#86868b;
+  --line:#d2d2d7;
+  --line-soft:#e8e8ed;
+  --brand:#FF2442;          /* 小红书红 */
+  --sun:#FFD43B;
+  --coral:#FF6B4A;
+  --mint:#3DDC97;
+  --pink:#FFA9D2;
+  --nu:#4E2A84;
+  --xhs:#FF2442;
+  --text:-apple-system,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --display:"Bricolage Grotesque",-apple-system,"PingFang SC","Hiragino Sans GB",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --hand:Caveat,"Kaiti SC",STKaiti,KaiTi,cursive;
+  --mono:"JetBrains Mono",Menlo,"PingFang SC",monospace;
+  --num:"Bricolage Grotesque","DIN Alternate",-apple-system,sans-serif;
+  --card:0 .3rem .6rem rgba(0,0,0,.07),0 1.4rem 2.6rem rgba(0,0,0,.10);
+}
+/* 1rem = 10px on a 1440 × 820 screen; every module is exactly one screen */
+html{font-size:max(4px, min(calc(100vw / 144), calc(100vh / 82)));scroll-snap-type:y mandatory;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--text);-webkit-font-smoothing:antialiased}
+p,h1,h2,figure,dl,dd{margin:0}
+button{font:inherit;color:inherit}
+.num{font-family:var(--num);font-weight:800;font-style:normal}
+:focus-visible{outline:.3rem solid var(--brand);outline-offset:.3rem}
+
+/* ---------- 顶部导航 ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:100;height:6.4rem;display:flex;align-items:center;justify-content:space-between;padding:0 6rem;background:none}   /* 用户 11-19：导航去掉白色半透明底条，直接放在页面底色上 */
+.nav.on-dark a[data-to]{color:#A3ACBE}
+.nav.on-dark a[data-to].cur{color:#fff}
+/* 左上角是紫色的 Northwestern 字样，点它回到开场；不跟其他入口一样变色、加下划线 */
+.nav ol{list-style:none;display:flex;gap:2.6rem;margin:0 0 0 auto;padding:0}   /* 左上角的 Northwestern 用户让删了，关卡导航仍靠右 */
+.nav a[data-to]{display:inline-flex;align-items:center;gap:.6rem;font-size:1.5rem;color:var(--muted);text-decoration:none;padding:.4rem 0;border-bottom:.2rem solid transparent}
+.nav a[data-to]:hover{color:var(--ink)}
+.nav a[data-to].cur{color:var(--ink);font-weight:600;border-bottom-color:var(--brand)}
+
+/* ---------- 键帽 / 游戏 HUD ---------- */
+.key{display:inline-grid;place-items:center;min-width:3rem;height:3rem;padding:0 .8rem;border-radius:.6rem;background:linear-gradient(180deg,#fff 35%,#EDEDF1);border:1px solid #C9C9D1;box-shadow:inset 0 1px 0 #fff,inset 0 -.3rem .3rem rgba(0,0,0,.05),0 .45rem 0 #B3B3BD,0 .45rem 0 1px rgba(0,0,0,.1),0 .8rem 1.2rem rgba(0,0,0,.22);font-family:var(--mono);font-style:normal;font-weight:700;font-size:1.4rem;line-height:1;color:var(--ink);translate:0 -.3rem;transition:translate .06s,box-shadow .06s}
+.key.wide{min-width:6.4rem}
+.key.sm{min-width:2.2rem;height:2.2rem;padding:0 .5rem;font-size:1.1rem;border-radius:.45rem;translate:0 -.2rem;box-shadow:inset 0 1px 0 #fff,0 .3rem 0 #B3B3BD,0 .3rem 0 1px rgba(0,0,0,.1),0 .55rem .8rem rgba(0,0,0,.2)}
+.key.down{translate:0 .15rem;background:linear-gradient(180deg,#FFE27A,var(--sun));border-color:#E2B70F;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 0 0 #B3B3BD,0 .1rem .25rem rgba(0,0,0,.2)}
+.hud{position:fixed;inset:auto 0 0;z-index:100;height:5.2rem;display:flex;align-items:center;justify-content:center;gap:.8rem;padding:0 6rem;font-family:var(--mono);font-size:1.3rem;color:var(--muted);transition:color .3s}   /* 用户：去掉白色底栏，键帽直接放在页面上 */
+.hud.on-dark{color:#A3ACBE}   /* Saviu 那屏是深色底，文字换浅色 */
+.hud-keys{display:flex;align-items:center;gap:.8rem}
+.hud-keys span{margin-right:1.4rem;font-family:var(--text)}
+.hud-play{display:flex;align-items:center;gap:.8rem;padding:0;border:0;background:none;font-family:var(--text);font-size:1.3rem;color:var(--muted);cursor:pointer}
+.hud-play .key svg{width:1.2rem;height:1.2rem;fill:currentColor}
+.hud-play .i-play,.hud-play.paused .i-pause{display:none}
+.hud-play.paused .i-play{display:inline}
+.hud-play:hover span{color:var(--ink)}
+.ach{display:flex;gap:.4rem}
+.ach i{width:1.3rem;height:1.3rem;border-radius:.3rem;background:var(--line-soft);transition:background .3s,scale .3s}
+.ach i.on{background:var(--sun);box-shadow:inset 0 0 0 .15rem var(--ink);scale:1.1}
+.toast{position:fixed;z-index:150;left:50%;bottom:7.6rem;translate:-50% 3rem;display:flex;align-items:center;gap:1.2rem;padding:1.1rem 2rem 1.1rem 1.2rem;border-radius:1.4rem;background:var(--ink);color:#fff;font-size:1.6rem;opacity:0;pointer-events:none;transition:translate .35s cubic-bezier(.2,1.3,.4,1),opacity .25s;box-shadow:0 1.2rem 2.4rem rgba(0,0,0,.25)}
+.toast.show{translate:-50% 0;opacity:1}
+.toast .key{background:linear-gradient(180deg,#FFE27A,var(--sun));border-color:#E2B70F;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 .45rem 0 #C99F12,0 .8rem 1.2rem rgba(0,0,0,.2)}
+.toast small{font-family:var(--mono);font-size:1.3rem;opacity:.7}
+.toast b{font-weight:700}
+.lv{font-family:var(--mono);font-weight:700;font-size:1.2rem;color:#fff;background:var(--ink);border-radius:.4rem;padding:.2rem .7rem;margin-right:.2rem}
+
+/* ---------- 模块骨架 ---------- */
+.sec{height:100vh;scroll-snap-align:start;display:grid;place-items:center;padding:6.4rem 6rem 5.2rem;overflow:hidden}
+.sec.mist{background:var(--mist)}
+.split{display:grid;grid-template-columns:48rem 78rem;gap:6rem;align-items:center}
+.split.flip{grid-template-columns:78rem 48rem}
+.split.flip .copy{order:2}
+.tag{display:flex;align-items:center;gap:1.2rem;font-size:1.7rem;color:var(--muted)}
+.wall-head .tag{justify-content:center}
+.copy h2{margin-top:2rem;font-family:var(--display);font-weight:800;font-size:5rem;line-height:1.12;letter-spacing:-.01em}
+.copy h2 span{display:block;color:var(--soft)}
+.lede{margin-top:2rem;font-size:1.9rem;line-height:1.7;color:#424245}
+.uv{margin-top:2rem;display:grid;gap:1rem}
+.uv div{display:grid;grid-template-columns:7.4rem 1fr;gap:1.2rem;align-items:baseline}
+.uv dt{justify-self:start;font-size:1.3rem;font-weight:700;color:#fff;background:var(--brand);border-radius:.5rem;padding:.3rem .9rem;white-space:nowrap}
+.uv div + div dt{background:var(--ink)}
+.uv dd{font-size:1.6rem;line-height:1.6;color:#424245}
+.try{margin-top:2rem;display:flex;align-items:center;gap:1rem;font-family:var(--hand);font-weight:700;font-size:2.5rem;color:var(--brand);rotate:-1.5deg;transform-origin:0 50%}
+
+.board{position:relative;width:78rem;height:60rem;border-radius:2.8rem;background:var(--mist);padding:2.4rem;display:flex;align-items:center;justify-content:center;gap:2.8rem;overflow:hidden}
+.mist .board{background:var(--white)}
+.col{display:flex;flex-direction:column;align-items:center;gap:2.4rem}
+
+.hand{font-family:var(--hand);font-weight:700;font-size:2.6rem;line-height:1.15;color:var(--brand)}
+.hand.abs{position:absolute;left:var(--x);top:var(--y);rotate:var(--r,-4deg);white-space:nowrap;pointer-events:none}
+.hand svg{position:absolute;width:7rem;height:4rem;overflow:visible}
+.hand path{fill:none;stroke:var(--brand);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* 每个物件进场：轻轻落下。倾斜用 rotate 属性，不和动画打架 */
+.obj{rotate:var(--r,0deg)}
+.sec .obj{opacity:0}
+.sec.in .obj{opacity:1;animation:rise .5s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:calc(var(--i,0) * 110ms + 80ms)}
+@keyframes rise{from{opacity:0;translate:0 2.4rem}}
+@keyframes thump{0%{opacity:0;scale:2.4}60%{opacity:.92;scale:.94}100%{opacity:.88;scale:1}}
+@keyframes pop{40%{scale:1.5}}
+@keyframes blink{50%{opacity:0}}
+@keyframes sway{0%,100%{rotate:var(--r)}30%{rotate:calc(var(--r) + 5deg)}65%{rotate:calc(var(--r) - 2.5deg)}}
+
+/* ========== 开场：一张真照片 + 像说话一样的自我介绍，不放翻牌卡片、不做贴纸 ========== */
+.hello{width:max-content;max-width:122rem;display:grid;grid-template-columns:34rem auto;gap:7rem;align-items:center;justify-self:center}   /* 用户：照片小一点，照片 + 文字整体居中 */
+.hello-photo{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2.4rem}   /* 用户 11-18 换成城堡前的竖版照片 */
+.hero h1{font-family:var(--display);font-weight:800;font-size:6.4rem;line-height:1.1;letter-spacing:-.01em;white-space:nowrap}
+.hello-text p{margin-top:2rem;font-size:2.2rem;line-height:1.75;color:#3A3A3C;text-wrap:pretty}
+.hello-text h1+p{margin-top:3rem}
+.hello-when{color:var(--ink)!important}
+/* 用户 11-18：开场的自我介绍段换成两行身份：项目名 + 角色 */
+.hello-roles{margin:3rem 0 0;display:grid;grid-template-columns:auto 1fr;column-gap:3.2rem;row-gap:1.4rem;align-items:baseline}
+.hello-roles dt{font-family:var(--text);font-size:2.6rem;font-weight:700;color:var(--ink)}   /* 用户：不要 Bricolage 那个英文字体，用正文的系统字体 */
+.hello-roles dd{margin:0;font-size:2.2rem;color:#6E6E73}
+.hello-when b,.hello .nw{white-space:nowrap}
+.hello-when b{font-weight:700;color:var(--brand)}
+.next{margin-top:3rem!important;display:flex;align-items:center;gap:.6rem;font-size:1.5rem!important;color:var(--muted)!important}
+
+/* ========== 本科：工牌 / 短视频 / 笔记 ========== */
+.badge{position:relative;width:19rem;margin-top:6rem;padding:3.6rem 1.6rem 1.8rem;background:#fff;border-radius:1.6rem;display:grid;justify-items:center;gap:.3rem;text-align:center;box-shadow:var(--card);transform-origin:50% -4rem}
+.badge::before{content:"";position:absolute;left:50%;bottom:calc(100% - 1.8rem);width:2.2rem;height:30rem;margin-left:-1.1rem;background:var(--brand)}
+.badge::after{content:"";position:absolute;left:50%;top:1.2rem;width:5rem;height:1.1rem;margin-left:-2.5rem;border-radius:99rem;background:var(--ink)}
+.badge:hover{animation:sway 1.2s ease}
+.badge-school{font-size:1.4rem;font-weight:600;color:var(--muted)}
+.badge-photo{width:9.6rem;height:9.6rem;margin:.6rem 0;border-radius:50%;background:var(--sun);overflow:hidden}
+.badge-photo img{width:118%;margin:6% 0 0 -9%;display:block}
+.badge b{font-size:2.6rem}
+.badge-major{font-size:1.45rem}
+.badge .num{font-size:2.3rem;margin-top:.4rem}
+.badge small{font-size:1.25rem;color:var(--muted)}
+.badge-role{margin-top:.8rem;font-size:1.35rem;font-weight:600;background:var(--pink);border-radius:99rem;padding:.3rem 1.2rem}
+
+.vid{position:relative;width:19rem;height:34rem;padding:1.6rem;border:0;border-radius:2rem;background:#111;color:#fff;display:grid;grid-template-rows:auto 1fr auto auto;text-align:left;cursor:pointer;box-shadow:var(--card)}
+.vid-top{font-size:1.3rem;opacity:.8}
+.vid-play{place-self:center;width:6.4rem;height:6.4rem;background:#fff;clip-path:polygon(22% 8%,22% 92%,94% 50%);filter:drop-shadow(-.35rem 0 0 #25F4EE) drop-shadow(.35rem 0 0 #FE2C55)}
+.vid-count b{display:block;font-family:var(--num);font-weight:800;font-size:4rem;line-height:1}
+.vid-count small{font-size:1.4rem;opacity:.8}
+.vid-meta{margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.22);font-size:1.3rem;line-height:1.5;opacity:.8}
+
+/* 用户 11-18：抖音去掉；小红书两张里程碑卡（6 周年、阅读量破 100 万）斜着叠在主账号卡后面当背景 */
+.xhs-stack{position:relative;display:grid;place-items:center}
+.xhs-bg{position:absolute;top:50%;left:50%;width:17.6rem;height:auto;border-radius:1.4rem;box-shadow:var(--card)}
+.xhs-bg.l{translate:calc(-50% - 16rem) -50%;rotate:-7deg}   /* 用户：三张别挡太多——背景卡往两边摊开，红卡只压住内侧边缘 */
+.xhs-bg.r{translate:calc(-50% + 16rem) -47%;rotate:6deg}
+.xhs-stack .xhs{position:relative;z-index:1}
+.xhs{width:23rem;background:#fff;border-radius:1.6rem;overflow:hidden;box-shadow:var(--card)}
+.xhs-cover{height:17rem;padding:1.8rem;background:var(--xhs);color:#fff;display:grid;align-content:end;gap:.3rem}
+.xhs-cover small{font-size:1.4rem;opacity:.9}
+.xhs-cover b{font-family:var(--num);font-weight:800;font-size:4.6rem;line-height:1}
+.xhs-cover b em{font-family:var(--text);font-style:normal;font-size:2rem;font-weight:600;margin-left:.4rem}
+.xhs-body{padding:1.4rem 1.6rem 1.2rem}
+.xhs-body p{font-size:1.6rem;font-weight:600;line-height:1.5}
+.xhs-foot{margin-top:1rem;display:flex;justify-content:space-between;align-items:center;font-size:1.3rem;color:var(--muted)}
+.like{display:flex;align-items:center;gap:.4rem;white-space:nowrap;padding:.3rem .6rem;border:0;border-radius:99rem;background:none;color:var(--muted);font-size:1.35rem;cursor:pointer}
+.heart{flex:none;width:2.2rem;height:2.2rem;overflow:visible}
+.heart path{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linejoin:round;stroke-linecap:round;transition:fill .15s}
+.like[aria-pressed=true] .heart path{fill:currentColor}
+.like[aria-pressed=true] .heart{animation:pop .35s}
+.like[aria-pressed=true]{color:var(--xhs)}
+.like[aria-pressed=true] i{animation:pop .35s}
+
+/* ========== 交换：护照盖章 / 流水线时序 ========== */
+.passport{position:relative;width:31rem;height:45rem;padding:0;border:0;border-radius:1.2rem;background:#EDF1EE repeating-linear-gradient(0deg,transparent 0 4.1rem,rgba(0,50,98,.13) 4.1rem 4.2rem);color:#003262;cursor:pointer;box-shadow:var(--card)}
+.pp-head{position:absolute;left:2rem;top:1.3rem;font-size:1.25rem;letter-spacing:.2em;opacity:.6}
+.stamp{position:absolute;left:var(--sx);top:var(--sy);rotate:var(--sr);display:grid;place-content:center;justify-items:center;text-align:center;gap:.1rem;color:var(--sc);border:.3rem solid currentColor;opacity:0;mix-blend-mode:multiply}
+.stamp.round{width:19rem;height:19rem;border-radius:50%;outline:.15rem solid currentColor;outline-offset:-1rem}
+.stamp.round b{font-family:var(--serif);font-weight:400;font-size:3.1rem;line-height:1.05}
+.stamp.rect{padding:.5rem 1.4rem .6rem;border-radius:.6rem}
+.stamp.rect b{font-family:var(--num);font-weight:800;font-size:2.4rem;line-height:1.1}
+.stamp small{font-size:1.4rem;font-weight:600}
+.stamp em{font-style:normal;font-family:var(--mono);font-size:1.25rem;margin-top:.3rem}
+.passport.go .stamp{animation:thump .45s cubic-bezier(.2,1.4,.4,1) forwards;animation-delay:calc(var(--i) * 380ms + 350ms)}
+
+.pipe{width:38rem;padding:2rem 2rem 1.6rem;background:#fff;border-radius:1.6rem;box-shadow:var(--card)}
+.pipe-head{display:flex;justify-content:space-between;align-items:baseline}
+.pipe-head b{font-size:1.8rem}
+.pipe-head .num{font-size:3.6rem;line-height:1;color:var(--brand)}
+.pipe-grid{margin-top:1.6rem;display:grid;grid-template-columns:repeat(9,1fr);gap:.45rem}
+.pipe-grid span{height:3.4rem;border-radius:.5rem;display:grid;place-items:center;font-family:var(--mono);font-size:1.1rem;font-weight:700;opacity:.2;transition:opacity .2s,scale .2s}
+.pipe-grid span.e{opacity:0}
+.pipe-grid span.past{opacity:.5}
+.pipe-grid span.now{opacity:1;scale:1.08}
+.s-IF{background:var(--brand);color:#fff}.s-ID{background:var(--mint)}.s-EX{background:var(--sun)}.s-MEM{background:var(--coral);color:#fff}.s-WB{background:var(--ink);color:#fff}
+.pipe-clock{margin-top:.7rem;display:grid;grid-template-columns:repeat(9,1fr);gap:.45rem;text-align:center;font-family:var(--mono);font-size:1.1rem;color:var(--soft)}
+.pipe-clock span.now{color:var(--brand);font-weight:700}
+.pipe-foot{margin-top:1.4rem;display:flex;justify-content:space-between;align-items:center;font-size:1.4rem;color:var(--muted)}
+.pill-btn{padding:.5rem 1.4rem;border:0;border-radius:99rem;background:var(--ink);color:#fff;font-size:1.35rem;font-weight:600;cursor:pointer}
+.pill-btn:hover{background:#000}
+
+/* ========== 流片：照片 / 模块示意 / 签核清单 ========== */
+img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,0,.18))}
+.fp{width:27rem;display:grid;gap:1.2rem}
+.fp-die{aspect-ratio:1;padding:2.3rem;border-radius:.8rem;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);grid-template-areas:"adc adc pga pga" "adc adc pga pga" "mux bgr ldo ldo" "mux bgr ldo ldo";gap:.7rem;box-shadow:var(--card);
+  background:
+   repeating-linear-gradient(90deg,#8E97A8 0 .8rem,transparent .8rem 1.7rem) 2.3rem .6rem/calc(100% - 4.6rem) .8rem no-repeat,
+   repeating-linear-gradient(90deg,#8E97A8 0 .8rem,transparent .8rem 1.7rem) 2.3rem calc(100% - .6rem)/calc(100% - 4.6rem) .8rem no-repeat,
+   repeating-linear-gradient(0deg,#8E97A8 0 .8rem,transparent .8rem 1.7rem) .6rem 2.3rem/.8rem calc(100% - 4.6rem) no-repeat,
+   repeating-linear-gradient(0deg,#8E97A8 0 .8rem,transparent .8rem 1.7rem) calc(100% - .6rem) 2.3rem/.8rem calc(100% - 4.6rem) no-repeat,
+   #1E2533}
+.blk{border:.15rem solid rgba(255,255,255,.35);border-radius:.4rem;background:rgba(255,255,255,.06);color:#fff;font-size:1.5rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s}
+.blk:hover{background:rgba(255,255,255,.16)}
+.blk.on{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.blk.tall{writing-mode:vertical-rl;letter-spacing:.1em}
+.fp-read{min-height:6.6rem;padding:1.1rem 1.4rem;border-radius:1rem;background:var(--mist);font-size:1.45rem;line-height:1.5}
+.fp small{font-size:1.2rem;color:var(--soft);text-align:center}
+
+.signoff{position:relative;width:20rem;padding:3.6rem 1.8rem 6.4rem;background:#fff;border:1px solid var(--line);border-radius:.8rem;box-shadow:var(--card);cursor:pointer}
+.signoff::before{content:"";position:absolute;left:50%;top:-1rem;width:8rem;height:2.6rem;margin-left:-4rem;border-radius:.6rem .6rem .3rem .3rem;background:#8E97A8}
+.signoff b{font-size:1.7rem}
+.signoff ul{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:1.1rem}
+.signoff li{display:flex;gap:.9rem;align-items:center;font-size:1.4rem}
+.signoff li::before{content:"";flex:none;width:1.8rem;height:1.8rem;border:.18rem solid var(--ink);border-radius:.4rem;background:center/0 no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M4 9.5l3.2 3L14 5.5' fill='none' stroke='%231d1d1f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.signoff.go li::before{animation:tick .3s forwards;animation-delay:calc(var(--i) * 360ms + 400ms)}
+@keyframes tick{to{background-size:100%;background-color:var(--mint);border-color:var(--mint)}}
+.ok-stamp{position:absolute;right:1rem;bottom:1.2rem;rotate:-12deg;padding:.3rem 1.2rem;border:.3rem solid var(--coral);border-radius:.6rem;color:var(--coral);font-size:2.4rem;font-weight:800;letter-spacing:.1em;opacity:0;mix-blend-mode:multiply}
+.signoff.go .ok-stamp{animation:thump .45s cubic-bezier(.2,1.4,.4,1) forwards;animation-delay:2s}
+
+/* ========== 创业：logo / 发消息赛跑 / 小票 / 小程序码 ========== */
+.logo{width:31rem;padding:1.8rem 2.2rem 1.6rem;background:#fff;border-radius:1.6rem;box-shadow:var(--card)}
+.logo img{width:100%;height:auto;display:block}
+.mist .logo,.mist .race{box-shadow:var(--card),inset 0 0 0 1px var(--line-soft)}
+.logo p{margin-top:1rem;font-size:1.6rem;font-weight:600}
+.logo small{font-size:1.35rem;color:var(--muted)}
+.race{width:31rem;padding:1.8rem 2rem;background:#fff;border-radius:1.6rem;box-shadow:var(--card);display:grid;gap:1.1rem}
+.race-head{display:flex;justify-content:space-between;align-items:center;font-size:1.6rem;font-weight:600}
+.lane{display:grid;grid-template-columns:5.2rem 1fr 6.6rem;align-items:center;gap:1rem;font-size:1.4rem}
+.lane i{height:1.4rem;border-radius:99rem;background:var(--mist);overflow:hidden}
+.lane u{display:block;width:0;height:100%;border-radius:99rem;background:var(--soft)}
+.lane em{font-family:var(--num);font-weight:800;font-style:normal;font-size:2rem;text-align:right}
+.lane.new em{color:var(--brand)}
+.race.go .old u{width:100%;transition:width 1.1s linear .3s}
+.race.go .new u{width:32%;background:var(--brand);transition:width .35s linear .3s}
+.race small{font-size:1.25rem;line-height:1.5;color:var(--muted)}
+
+.printer{position:relative;width:25rem;padding-top:1.2rem;cursor:pointer}
+.printer::before{content:"";position:absolute;z-index:2;left:-.8rem;right:-.8rem;top:0;height:2rem;border-radius:.8rem;background:var(--ink);box-shadow:0 .4rem .6rem rgba(0,0,0,.2)}
+.receipt-wrap{filter:drop-shadow(0 .8rem 1.2rem rgba(0,0,0,.14))}
+.receipt{padding:2.2rem 1.8rem 3rem;background:#fff;font-family:var(--mono);font-size:1.22rem;line-height:1.55;clip-path:inset(0 0 100% 0);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/1.6rem 100%;
+          mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/1.6rem 100%}
+.printer.go .receipt{animation:print 1.9s steps(17) forwards .3s}
+@keyframes print{to{clip-path:inset(0 0 0 0)}}
+.rc-title{text-align:center;font-family:var(--text);font-size:1.7rem;font-weight:700}
+.rc-sub{text-align:center;font-family:var(--text);font-size:1.25rem;color:var(--muted)}
+.rc-rule{margin:.9rem 0;border-top:.15rem dashed var(--ink);opacity:.5}
+.rc-row{display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono)}
+.rc-row span:first-child{font-family:var(--text)}
+.rc-row.big{font-weight:700;font-size:1.5rem}
+.qr{width:13rem;padding:.8rem .8rem .3rem;background:#fff;border-radius:1.2rem;box-shadow:var(--card)}
+.qr img{width:100%;height:auto;display:block}
+
+/* ========== 创业（整屏版）：欢迎页手机 + 两类用户 + 竖向漏斗 ========== */
+.cs-sec{align-content:center;gap:2rem}
+.cs-head{width:122rem;display:flex;justify-content:space-between;align-items:flex-end;gap:4rem}
+.cs-head .wall-head{text-align:left;max-width:78rem;min-width:0}
+.cs-logo{display:block;height:7.6rem;width:auto;margin:0 0 1.3rem -.5rem}
+.cs-head .wall-head h2{margin-top:0;font-size:3.8rem;white-space:nowrap;color:var(--brand)}   /* 整行一个颜色：腾讯蓝 */
+.cs-head .wall-head h2 span{display:inline;color:inherit}
+.cs-stats{display:flex;gap:2.8rem;margin:0 0 .6rem}
+.cs-stats div{padding-left:1.4rem;border-left:.2rem solid var(--line)}
+.cs-stats dt{font-family:var(--num);font-weight:800;font-size:2.8rem;line-height:1.1;white-space:nowrap}
+.cs-stats dd{margin-top:.4rem;font-size:1.25rem;line-height:1.5;color:var(--muted);white-space:nowrap}
+.cs-right{flex:none;display:flex;align-items:flex-end;gap:2.8rem}
+.cs-qr{display:block;width:9.6rem;height:auto;border-radius:.8rem;background:#fff;box-shadow:var(--card)}
+/* 第 1 屏：机会洞察。左边叠着两个真实渠道（小红书在后、微信群在前，群聊慢慢往下滚），按 E 把群里第一条转租消息拆成右边的房源卡 */
+.opp-sec{align-content:center}
+.opp{width:122rem}
+.opp-eyebrow{font-size:1.5rem;font-weight:600;color:var(--brand)}
+.opp-title{margin-top:0;font-family:var(--display);font-weight:800;font-size:4.2rem;line-height:1.18;letter-spacing:-.01em;white-space:nowrap}
+.opp-title span{color:var(--brand)}
+.opp-sub{margin-top:.6rem;font-size:2rem;font-weight:500;line-height:1.4;color:var(--muted)}   /* 用户：主标题换成「市场洞察」，原来那句变成下面的小字说明 */
+.opp-stage{margin-top:1.4rem;height:43.6rem;display:grid;grid-template-columns:56rem 5rem 1fr;align-items:center}
+.opp-src{position:relative;height:100%}
+.opp-src .src-more{display:none}
+/* 两张卡叠着：前面一张正着放，后面一张缩小、斜着露出左边；点后面那张，它先往左抽出来再盖到前面 */
+.srcard{--bx:-15rem;--by:4.4rem;--br:-6deg;--bs:.62;position:absolute;left:15rem;top:0;width:41rem;height:43rem;border-radius:1.8rem;overflow:hidden;background:#fff;transform-origin:0 0;transition:translate .25s}
+.srcard.is-front{z-index:2;box-shadow:0 .4rem .8rem rgba(0,0,0,.08),0 2.4rem 4.8rem rgba(0,0,0,.16)}
+.srcard.is-back{z-index:1;translate:var(--bx) var(--by);rotate:var(--br);scale:var(--bs);cursor:pointer;box-shadow:var(--card)}
+.srcard.is-back:hover{translate:calc(var(--bx) - .8rem) calc(var(--by) - .8rem)}
+.srcard.is-back *{pointer-events:none}
+.srcard.to-front{animation:src-front .9s cubic-bezier(.45,0,.2,1)}
+.srcard.to-back{animation:src-back .9s cubic-bezier(.45,0,.2,1)}
+@keyframes src-front{0%{translate:var(--bx) var(--by);rotate:var(--br);scale:var(--bs);z-index:1}45%{translate:calc(var(--bx) - 9rem) calc(var(--by) - 2rem);rotate:-11deg;scale:.7;z-index:1}46%{z-index:3}100%{translate:0 0;rotate:0deg;scale:1;z-index:3}}
+@keyframes src-back{0%{translate:0 0;rotate:0deg;scale:1;z-index:2}45%{translate:3rem 1rem;rotate:2deg;scale:.95;z-index:2}100%{translate:var(--bx) var(--by);rotate:var(--br);scale:var(--bs);z-index:1}}
+.xhs-view{height:100%;overflow:hidden}
+.xhs-shot img{display:block;width:100%;height:auto}
+.wx-win{width:100%;height:100%;background:#EDEDED;display:grid;grid-template-rows:auto 1fr}
+.wx-head.phone-btn{display:grid;grid-template-columns:3rem 1fr 3rem;align-items:center;padding:1.3rem 1.4rem;background:#F7F7F7;border-bottom:1px solid #DCDCDC;font:inherit;font-size:1.6rem;font-weight:600;color:var(--ink);text-align:center}
+.wx-head i{font-style:normal;font-size:2rem;line-height:1;color:#555}
+.wx-head .src-full{display:none}
+.wx-feed{overflow:hidden;padding:0 1.6rem 2rem}
+.wx-time{margin:1.4rem 0 1rem;text-align:center;font-size:1.25rem;color:#9A9A9A}
+.wx-line{display:flex;gap:1rem;align-items:flex-start}
+.wx-line > i{flex:none;width:3.8rem;height:3.8rem;border-radius:.6rem;background:var(--av);filter:blur(.2rem)}   /* 头像只留一块模糊色块 */
+.wx-bub{max-width:33rem;padding:1rem 1.3rem;border-radius:.7rem;background:#fff;font-size:1.45rem;line-height:1.6;color:#1A1A1A}
+.opp mark{background:none;color:inherit;border-radius:.3rem;transition:background .3s,color .3s,box-shadow .3s}
+.opp.hit mark{background:#FFE6EA;color:var(--brand);box-shadow:0 0 0 .2rem #FFE6EA}
+.opp-arrow{justify-self:center;font-style:normal;font-size:4rem;line-height:1;color:var(--brand)}
+/* 右边：真实的小程序房源详情页，上、中、下三段；圈是字段飞过来时出现的 */
+.mps{position:relative;height:100%;display:grid;grid-template-columns:repeat(3,auto);justify-content:center;align-content:center;gap:.4rem 1.4rem}
+.mp{position:relative;height:37rem;aspect-ratio:776/1600}
+.mps-tag{position:absolute;z-index:3;top:-3.4rem;left:50%;translate:-50% 0;margin:0;padding:.3rem 1.1rem;border-radius:99rem;background:#F0F1F4;font-size:1.3rem;font-weight:600;color:#8E8E93}   /* 右边是另一套房源的界面示例 */
+.mp .phone-btn{width:100%;height:100%}
+.mp img{display:block;width:100%;height:100%;filter:drop-shadow(0 1.2rem 1.6rem rgba(0,0,0,.16))}
+.ring{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);border-radius:.7rem;background:rgba(255,36,66,.08);box-shadow:0 0 0 .22rem var(--brand);opacity:0;scale:1.08;transition:opacity .35s,scale .35s;pointer-events:none}
+.ring.on{opacity:1;scale:1}
+/* 手机下面的说明：一个括号把它管着的手机框住 */
+.mp-cap{text-align:center;font-size:1.4rem;line-height:1.4;color:var(--muted)}
+.mp-cap::before{content:"";display:block;height:.7rem;margin:0 1.2rem .7rem;border:.2rem solid #FF9AA8;border-top:0;border-radius:0 0 .5rem .5rem}
+.mp-cap b{display:block;margin-bottom:.2rem;font-size:1.8rem;font-weight:700;color:var(--brand)}
+/* 底部中间一格：先空着；第一次 E 拆解完出现机会洞察；第二次 E 换成 CloudSublet */
+.opp-mid{display:grid;place-items:center;text-align:center}
+.opp-mid > *{grid-area:1 / 1}
+.opp-insight{opacity:0;translate:0 1rem;transition:opacity .5s,translate .5s}
+.opp.done .opp-insight{opacity:1;translate:0 0}
+.role-r{justify-self:end;text-align:right}
+.role-r .hang{margin-right:-1em}   /* 行尾标点挂到边线外，让「下」「源」和「侧」「实」对齐 */   /* 小红书版（用户 11-19）：整块贴最右边，每一行都靠右 */
+.opp-insight h3{margin:0;font-size:1.5rem;font-weight:700;letter-spacing:.04em;color:var(--brand)}
+.opp-insight p{margin-top:0;font-family:var(--display);font-size:2.2rem;font-weight:800;line-height:1.3;color:var(--brand)}   /* 小红书版：OPPORTUNITY 删了，结论句用品牌红 */
+.opp-roles{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.4rem;align-items:center}
+.opp-roles h3{margin:0;font-size:1.5rem;font-weight:700;color:var(--brand)}
+.opp-roles .q{margin-top:.4rem;font-size:1.85rem;font-weight:700;line-height:1.4;color:var(--ink)}
+.opp-roles .nw{white-space:nowrap}
+.opp-roles .q + p{margin-top:.2rem;font-size:1.45rem;color:var(--muted)}
+.fly{position:fixed;z-index:80;left:0;top:0;padding:0 .4rem;border-radius:.4rem;background:var(--brand);color:#fff;font-size:1.45rem;line-height:1.6;font-weight:600;white-space:nowrap;pointer-events:none;box-shadow:0 .6rem 1.4rem rgba(255,36,66,.35)}
+
+/* 差异化（按用户的 p6 排版）：先只看成熟平台的真实页面和「顾问驱动」；按 E 直接换成寓见云居：三条自动化触达在上、三个小程序页面在下，左边换成「用户需求驱动」 */
+.diff-sec{align-content:center}
+/* 用户 11-18：创业复盘——成果 / 不足并排，中间一条蓝带写他自己的话（一切以用户为本），最后是下一阶段规划 */
+.rf{width:122rem}
+.rf-row{margin-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.rf-card{padding:2rem 2.6rem;border-radius:1.6rem;background:#fff}
+.rf-card h3{margin:0 0 1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line);font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--ink)}
+.rf-card ul{list-style:none;margin:0;padding:0;display:grid;gap:.9rem;font-size:1.7rem;color:#3A3A3C}
+.rf-done li{display:flex;align-items:center;gap:1rem}
+.rf-done svg{flex:none;width:2rem;height:2rem;fill:none;stroke:var(--brand);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.rf-gap li{position:relative;padding-left:3rem}
+.rf-gap li::before{content:"";position:absolute;left:.7rem;top:50%;width:.9rem;height:.2rem;border-radius:.1rem;background:#AEAEB2}
+.rf-core{margin-top:1.8rem;padding:2rem 2.8rem;border-radius:1.6rem;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.rf-core p{font-size:1.9rem;line-height:1.55}
+.rf-core small{display:block;margin-bottom:.3rem;font-size:1.3rem;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.7)}
+.rf-core b{flex:none;font-family:var(--display);font-size:3.4rem;font-weight:800;white-space:nowrap}
+.rf-h{margin-top:2.4rem;font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--ink)}
+.rf-h + .rf-row{margin-top:1.2rem}
+.rf-plan{padding:1.8rem 2.6rem;border-radius:1.6rem;background:#fff}
+.rf-plan h4{margin:0;display:flex;align-items:baseline;gap:1rem;font-family:var(--display);font-size:2.4rem;font-weight:800;color:var(--brand)}
+.rf-plan h4 i{font-style:normal;font-family:var(--num)}
+.rf-steps{margin-top:1.4rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.rf-steps span{padding:.7rem 1.4rem;border-radius:1rem;background:#F2F4F8;font-size:1.6rem;color:#3A3A3C}
+.rf-steps i{font-style:normal;color:#C7C7CC}
+.rf-scenes{margin-top:1.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.rf-scenes div{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.9rem;border-radius:1rem;background:#F2F4F8}
+.rf-scenes svg{width:2.2rem;height:2.2rem;fill:none;stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rf-scenes b{font-size:1.6rem;font-weight:600;color:var(--ink)}
+.rf-note{margin-top:.9rem;font-size:1.35rem;font-weight:600;color:var(--brand)}
+/* 产品定位（竞品分析和「以用户需求定义产品」之间）：左边是现在——We are + 一句定位 + 四个关键词；右边是长期愿景，周围飘着想法云 */
+.pos{width:122rem;align-self:stretch;display:flex;flex-direction:column;padding-top:3.5rem}   /* 标题和「竞品分析」页停在同一高度，翻页时不跳 */
+/* 用户 11-18：这一页只讲产品定位——一句定位（主角）+ 四个关键词，每个关键词顶上写它回应的是前面「市场洞察 / 竞品分析」里的哪个问题 + 最底下一行边界（现在 / 长期愿景） */
+.pz{margin:auto 0;padding-bottom:2rem}
+.pz-we{font-family:var(--display);font-size:2.2rem;font-weight:700;color:var(--muted)}
+.pz-is{margin-top:.4rem;font-family:var(--display);font-size:5.4rem;font-weight:800;line-height:1.2;letter-spacing:-.01em;color:var(--ink)}
+.pz-is span{color:var(--brand)}
+.pz-keys{list-style:none;margin:4.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+.pz-keys li{padding:2.6rem 2.4rem;border-radius:1.6rem;background:#fff;overflow:hidden}
+.pz-from{margin:0 -2.4rem 2.4rem;padding:1.3rem 2.4rem;background:#F7F2F3;font-size:1.45rem;line-height:1.45;color:#6E6E73}
+.pz-from b{display:block;margin-bottom:.2rem;font-size:1.2rem;font-weight:600;letter-spacing:.06em;color:#AEAEB2}
+.pz-from b::after{content:"中的问题";font-weight:500}
+.pz-keys svg{display:block;width:3.2rem;height:3.2rem;fill:none;stroke:var(--wx);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pz-keys h3{margin:1.2rem 0 0;font-family:var(--display);font-size:2.8rem;font-weight:800;line-height:1.2;color:var(--ink)}
+.pz-keys li > span{display:block;margin-top:.5rem;font-size:1.6rem;color:var(--wx-d);font-weight:600}
+.diff{width:122rem;margin-bottom:1.6rem}
+.diff-body{margin-top:2.4rem;height:52rem;display:grid;grid-template-columns:47rem 72rem;gap:3rem;align-items:center}
+.dcols{display:grid}
+.dcol{grid-area:1 / 1;transition:opacity .45s,translate .45s}
+.dcol h3{margin:0;font-size:1.45rem;font-weight:600;letter-spacing:.03em;color:var(--muted)}
+.dcol h4{margin:.6rem 0 2rem;font-family:var(--display);font-size:4.4rem;font-weight:800;line-height:1.15;color:var(--ink)}
+.dcol ul{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.dcol li{padding:1.6rem 2rem;border-radius:1.2rem;background:#fff;font-size:1.9rem;line-height:1.4;color:#48484A}
+/* 竞品一列：每条是一个用户痛点，编号 + 短语 + 一句解释 */
+.dcol.comp h4{margin-bottom:1.6rem;font-size:3.6rem;white-space:nowrap}
+/* 竞品一列：先承认优势，再写仍有空间的地方（只留截图能看出来的两条），最后一句我们的选择 */
+.dcol.comp .dsub{margin:0 0 .8rem;font-size:1.4rem;font-weight:600;color:var(--muted)}
+.dcol.comp .pros{grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.8rem}
+.dcol.comp .pros li{text-align:center;padding:1.1rem 1.6rem;font-size:1.7rem;color:var(--ink)}
+.dcol.comp .gaps li{display:grid;grid-template-columns:5.4rem 1fr;column-gap:1rem;align-items:center;padding:1.3rem 2.2rem}
+.dcol.comp .gaps li i{grid-row:1 / 3;font-style:normal;font-family:var(--num);font-size:3.6rem;font-weight:700;line-height:1;color:#AEAEB2}
+.dcol.comp .gaps li b{font-size:2.2rem;font-weight:800;line-height:1.3;color:var(--ink)}
+.dcol.comp .gaps li span{margin-top:.2rem;font-size:1.5rem;line-height:1.45;color:var(--muted)}
+.dcol.comp .gaps li span em{font-style:normal;white-space:nowrap}
+.dcol.comp li.pain-lead i,.dcol.comp li.pain-lead b{color:var(--brand)}   /* 第一条是寓见云居切进来的口子，用腾讯蓝 */
+.diff:not([data-s="0"]) .dcol.comp{opacity:0;translate:-1.6rem 0;pointer-events:none}
+.dcol.cs h3,.dcol.cs h4{color:var(--brand);transition:opacity .45s,translate .45s}
+.dcol.cs h3{margin-bottom:1.6rem}
+.dcol.cs{position:relative;top:2.4rem}
+#feat .diff-body{margin-top:.8rem}
+#feat .dcol.cs{top:0}   /* 用户：产品设计页整体往上一点 */   /* 五点整体略往下 */
+.diff[data-s="0"] .dcol.cs h3,.diff[data-s="0"] .dcol.cs h4{opacity:0;translate:1.6rem 0}
+/* 五点：编号 + 一句话 + 最右边灰字标是给谁的；正在讲的那条填成腾讯蓝 */
+.dcol.cs li{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;column-gap:1.4rem;padding:1.4rem 2rem;font-size:1.8rem;color:var(--ink);opacity:0;translate:1.6rem 0;transition:opacity .45s,translate .45s,background .3s,color .3s;transition-delay:calc(var(--k,0) * 70ms)}
+.dcol.cs li i{font-style:normal;font-family:var(--num);font-size:1.5rem;color:#AEAEB2;transition:color .3s}
+.dcol.cs li .how{grid-column:2 / -1;grid-row:2;max-height:0;overflow:hidden;opacity:0;font-size:1.5rem;line-height:1.5;color:rgba(255,255,255,.85);transition:max-height .35s,opacity .35s,margin .35s}
+.dcol.cs li .how b{display:block;font-size:1.75rem;font-weight:700;color:#fff}
+.dcol.cs li.cur .how{max-height:7rem;opacity:1;margin-top:.8rem}   /* 讲到哪一点，就展开它的解决方案和具体做法 */
+.dcol.cs li em{font-style:normal;font-size:1.4rem;color:#AEAEB2;transition:color .3s}
+.dcol.cs li::after{content:"›";grid-column:4;grid-row:1;width:1rem;font-size:2.2rem;line-height:1;color:transparent}
+.dcol.cs li.shown{opacity:1;translate:0 0}
+.dcol.cs li.cur{background:var(--brand);color:#fff}
+.dcol.cs li.cur i,.dcol.cs li.cur em{color:rgba(255,255,255,.75)}
+.dcol.cs li.cur::after{color:#fff}
+.dstage{position:relative;height:100%}
+.cshot{position:absolute;left:var(--x);top:1rem;width:21rem;margin:0;transition:opacity .5s,translate .6s cubic-bezier(.3,.8,.3,1)}
+.cshot img{display:block;width:100%;height:auto;border-radius:1.6rem;box-shadow:var(--card)}
+.cshot .phone-btn{rotate:var(--r)}   /* 只斜截图，下面的名字保持水平、同一高度 */
+.cshot figcaption{margin-top:.9rem;padding-left:.6rem;font-size:1.35rem;font-weight:600;color:var(--muted)}
+.diff:not([data-s="0"]) .cshot{opacity:0;translate:-8rem 0;pointer-events:none}
+/* 每一条对应一组画面，一次只显示一组 */
+.dv{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:4rem;opacity:0;translate:0 2rem;pointer-events:none;transition:opacity .5s,translate .6s cubic-bezier(.3,.8,.3,1)}
+.diff[data-s="1"] .dv[data-v="1"],.diff[data-s="2"] .dv[data-v="2"],.diff[data-s="3"] .dv[data-v="3"],.diff[data-s="4"] .dv[data-v="4"],.diff[data-s="5"] .dv[data-v="5"]{opacity:1;translate:0 0;pointer-events:auto}
+.dv figure{margin:0;display:grid;justify-items:center;text-align:center}
+.dv .ph.phone-btn{width:auto}
+.dv .ph img{display:block;height:42rem;width:auto;filter:drop-shadow(0 1.2rem 1.6rem rgba(0,0,0,.16))}
+.dv figcaption{font-size:1.45rem;line-height:1.4;color:var(--muted)}
+.dv figcaption b{display:block;margin:1.2rem 0 .2rem;font-family:var(--display);font-size:2.8rem;font-weight:800;line-height:1.2;color:var(--brand)}
+.dv figcaption strong{display:block;margin-bottom:.3rem;font-size:1.7rem;font-weight:700;color:var(--ink)}
+.dv .swap{display:block;width:4.8rem;margin-bottom:6rem}
+.dv .swap svg{display:block;width:100%;height:auto;fill:none;stroke:var(--brand);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.dv-share{gap:2rem}   /* 微信群文案、小红书文案，最右边是转发到群里的小程序卡片；三句说明在同一高度 */
+.dv-share figure{grid-template-rows:42rem auto}
+.dv-share figure > .phone-btn{align-self:center}
+.dv-share figcaption{margin-top:1.4rem}
+/* 小红书版（用户 11-21）：加了朋友圈海报，这一页变成 4 张，手机和卡片缩小一点、往右多占一点 */
+.dv-share{gap:1.4rem;margin-right:-3rem}
+.dv-share figure{grid-template-rows:34rem auto}
+.dv-share .ph img{height:34rem}
+.dv.dv-share .wxcard img{width:21rem}
+.dv-share figcaption strong{font-size:1.55rem;white-space:nowrap}
+.dv .wxcard.phone-btn{width:auto}
+.dv .wxcard img{display:block;width:26rem;height:auto;border-radius:1.4rem;box-shadow:0 .4rem .8rem rgba(0,0,0,.06),0 1.8rem 3.6rem rgba(0,0,0,.14)}
+/* 全链路信任与安全机制（按用户的 p1）：上面三条阶段标签，事前横跨两台；中间四台手机；下面标题 + 说明 */
+.dv-safe{display:grid;grid-template-columns:repeat(4,16.5rem);grid-template-rows:auto auto;column-gap:1.4rem;row-gap:1.2rem;align-content:center;justify-content:end;padding-right:.6rem;margin-right:-3rem}
+.dv-safe .stage-tag{grid-row:1;margin:0;padding:.9rem 0;border-radius:1rem;background:var(--wx-bg);text-align:center;font-size:1.55rem;font-weight:600;color:var(--wx-d)}
+.dv-safe figure{grid-row:2}
+.dv-safe .ph img{height:34rem}
+.dv-safe figcaption b{margin:1.4rem 0 .3rem;font-size:1.9rem}
+.dv-safe figcaption{white-space:nowrap}
+/* 个性化需求匹配：多维筛选、个性化推荐、校园地图、通勤场景，四样一行，说明在同一高度 */
+.dv-rec{display:grid;grid-auto-flow:column;align-content:center;justify-content:end;align-items:start;column-gap:.8rem;padding-right:.6rem;margin-right:-3rem}
+.dv-rec figure{grid-template-rows:33rem auto}
+.dv-rec figcaption{white-space:nowrap}
+.dv-rec figure > .phone-btn{align-self:center}
+.dv-rec .ph img{height:33rem}
+.dv .reccard.phone-btn{width:auto}
+.dv .reccard img{display:block;width:21rem;height:auto;border-radius:1.4rem;box-shadow:0 .4rem .8rem rgba(0,0,0,.06),0 1.8rem 3.6rem rgba(0,0,0,.14)}
+.dv-rec figcaption b{margin:1.4rem 0 .3rem;font-size:1.9rem}
+.dv[data-v="3"]{display:grid;grid-template-columns:repeat(2,30rem);gap:1.6rem 2rem;align-content:center;align-items:center;justify-content:end;padding-right:.6rem}   /* 四条订阅消息两行两列平铺 */
+.dv .rcard.phone-btn{width:30rem}
+.dv .rcard img{display:block;width:100%;height:auto;border-radius:1.8rem;box-shadow:0 .4rem .8rem rgba(0,0,0,.06),0 1.8rem 3.6rem rgba(0,0,0,.14)}
+
+/* 第 2 屏：两类用户 × 拉新 / 激活 / 留存。格子的位置写在 --mr（行）--mc（列）里，竖屏时行列对调 */
+.cs-sec{align-content:center;gap:2.2rem}
+.mx .nw{white-space:nowrap}
+.mx-title{align-self:end;margin:0;padding:0 1rem 1.8rem 0;font-family:var(--display);font-weight:800;font-size:2.8rem;line-height:1.2}
+.mx{width:122rem;display:grid;grid-template-columns:23rem repeat(3,1fr);grid-template-rows:auto auto auto auto}
+.mx > *{grid-row:var(--mr) / span var(--ms,1);grid-column:var(--mc) / span var(--mcs,1);position:relative}
+.mx-bg{border-radius:1.8rem;background:#fff;box-shadow:var(--card)}
+.mx-col{padding:0 2.2rem 1.3rem}
+.mx-col h3{margin:0;font-family:var(--display);font-weight:800;font-size:2.8rem;line-height:1.1;color:var(--brand)}
+.mx-col h3 small{display:block;margin-top:.4rem;font-family:var(--text);font-size:1.3rem;font-weight:400;color:var(--muted)}
+.mx-col p{margin-top:.9rem;font-size:1.65rem;font-weight:700;line-height:1.4;color:var(--ink)}
+.mx-col + .mx-col::before{content:"→";position:absolute;left:-1.2rem;top:.1rem;font-size:2.4rem;line-height:1;color:var(--brand)}
+.mx-role{padding:1.7rem 2.2rem;cursor:pointer;transition:opacity .3s}
+.mx-role h4{margin:0;font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1.1}
+.mx-role .who{margin-top:.8rem;font-size:1.35rem;line-height:1.5;color:var(--muted)}
+.mx-role .need{margin-top:.8rem;font-size:1.55rem;font-weight:600;line-height:1.5;color:var(--ink)}
+.mx-cell{padding:1.7rem 2.2rem;border-left:1px solid var(--line-soft);transition:opacity .3s}
+.mx .b-row{border-bottom:1px solid var(--line-soft)}
+.mx-cell ul{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.mx-cell li{position:relative;padding-left:2.2rem;font-size:1.5rem;line-height:1.5;color:#3A3A3C}
+.mx-cell li::before{content:"✓";position:absolute;left:0;top:0;font-weight:700;color:var(--brand)}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .7rem;margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px dashed var(--line);font-size:1.5rem;font-weight:600;line-height:1.4}
+.chain span,.chain em{white-space:nowrap}
+.chain i{font-style:normal;color:var(--soft)}
+.chain em{font-style:normal;font-weight:800;color:var(--brand)}   /* 第一天要走到的那一步 */
+.mx-mlab{padding:1.3rem 2.2rem 0;font-size:1.4rem;color:var(--muted)}
+.mx-metric{padding:1.3rem 2.2rem 0;font-size:1.65rem;font-weight:700;line-height:1.4;color:var(--ink)}
+.mx-metric small{display:block;margin-top:.3rem;font-size:1.3rem;font-weight:400;line-height:1.5;color:var(--muted)}
+.mx-col .m{display:none}
+.mx.focus [data-row]{opacity:.3}
+.mx[data-on="0"] [data-row="0"],.mx[data-on="1"] [data-row="1"]{opacity:1}
+.cs-phone{position:relative;justify-self:center}
+.cs-phone > img{display:block;width:19.4rem;height:auto;filter:drop-shadow(0 1.4rem 2rem rgba(0,0,0,.2))}
+.cs-phone figcaption{position:absolute;right:-3.2rem;bottom:1.6rem;display:grid;justify-items:center;gap:.2rem;rotate:5deg}
+.cs-phone figcaption img{width:8.4rem;height:auto;border-radius:.8rem;box-shadow:var(--card)}
+.cs-phone .hand{font-size:2rem}
+
+
+/* ========== 作品墙：图钉挂手机，点开放大 ========== */
+.wall-sec{align-content:center;gap:2.6rem}
+#work .wall-head h2 span{display:inline}
+#work .leaf.front .wall-head h2{margin-top:0}
+#work .leaf.front .wall-head h2 span{color:var(--brand)}   /* 标题后半句用腾讯蓝 */
+.wall-head{text-align:center}
+.wall-head h2{margin-top:1.6rem;font-family:var(--display);font-weight:800;font-size:5rem;line-height:1.1}
+.wall-head h2 span{display:block;color:var(--soft)}
+.wall{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:2.2rem;padding-top:4.8rem}
+.wall-string{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.wall-string path{fill:none;stroke:rgba(45,28,10,.3);stroke-width:.5rem;stroke-linecap:round;filter:blur(.32rem);translate:.25rem .6rem}   /* 绳子落在墙上的影子 */
+.rope ellipse{stroke:#6E5130;stroke-width:.05rem}
+.rope .a{fill:#D2B484}
+.rope .b{fill:#B8935C}
+/* 球形大头钉：高光、反光、暗部和投影 */
+.tack{position:absolute;z-index:3;width:2.9rem;height:2.9rem;margin:-1.45rem 0 0 -1.45rem;border-radius:50%;pointer-events:none;
+  background:
+    radial-gradient(circle at 31% 26%,rgba(255,255,255,.96) 0 5%,rgba(255,255,255,.5) 10%,transparent 23%),
+    radial-gradient(circle at 70% 78%,color-mix(in srgb,var(--pin),white 28%) 0,transparent 28%),
+    radial-gradient(circle at 40% 35%,color-mix(in srgb,var(--pin),white 26%) 0,var(--pin) 42%,color-mix(in srgb,var(--pin),black 40%) 84%,color-mix(in srgb,var(--pin),black 58%) 100%);
+  box-shadow:.3rem .6rem .7rem rgba(0,0,0,.38),.1rem .15rem .2rem rgba(0,0,0,.3),inset 0 -.2rem .35rem rgba(0,0,0,.22)}
+/* 木夹子：夹口在下面，同时咬住绳子和手机上沿 */
+.clip{position:absolute;z-index:2;left:50%;top:-3.1rem;width:1.9rem;height:4.05rem;margin-left:-.95rem;pointer-events:none;filter:drop-shadow(.15rem .35rem .3rem rgba(0,0,0,.36))}
+.clip svg{display:block;width:100%;height:100%}
+.phone{position:relative;width:14.6rem;transform:translateY(var(--y)) rotate(var(--r));transform-origin:50% 0}
+.phone-btn{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.phone img{display:block;width:100%;height:auto;filter:drop-shadow(0 1rem 1.4rem rgba(0,0,0,.18))}
+.pin{position:absolute;z-index:2;left:50%;top:-.9rem;width:2.4rem;height:2.4rem;margin-left:-1.2rem;border-radius:50%;background:radial-gradient(circle at 34% 30%,rgba(255,255,255,.75) 0 16%,transparent 19%),var(--pin);box-shadow:0 .35rem .5rem rgba(0,0,0,.3);pointer-events:none}
+.phone figcaption{margin-top:1.2rem;text-align:center;font-family:var(--hand);font-weight:700;font-size:2.2rem;line-height:1.2}
+.sec .phone{opacity:0}
+.sec.in .phone{opacity:1;animation:hang 1.4s cubic-bezier(.3,.7,.4,1) backwards;animation-delay:calc(var(--i) * 110ms + 100ms)}
+.sec.in .phone.hung{animation:none}                       /* entrance has finished: never replay it on hover-out */
+.sec.in .phone.hung:hover{animation:swing 1.2s ease}
+@keyframes hang{0%{opacity:0;transform:translateY(calc(var(--y) - 4rem)) rotate(calc(var(--r) + 14deg))}30%{opacity:1;transform:translateY(var(--y)) rotate(calc(var(--r) - 7deg))}55%{transform:translateY(var(--y)) rotate(calc(var(--r) + 3.5deg))}78%{transform:translateY(var(--y)) rotate(calc(var(--r) - 1.2deg))}100%{transform:translateY(var(--y)) rotate(var(--r))}}
+@keyframes swing{0%,100%{transform:translateY(var(--y)) rotate(var(--r))}30%{transform:translateY(var(--y)) rotate(calc(var(--r) + 5deg))}65%{transform:translateY(var(--y)) rotate(calc(var(--r) - 2.5deg))}}
+.lightbox{position:fixed;inset:0;z-index:200;display:none;place-items:center;background:rgba(245,245,247,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:zoom-out}
+.lightbox.open{display:grid}
+.lightbox figure{display:grid;justify-items:center;gap:1.4rem}
+.lightbox img{height:62rem;width:auto;filter:drop-shadow(0 2rem 3rem rgba(0,0,0,.22))}
+.lightbox figcaption{font-family:var(--hand);font-weight:700;font-size:3.2rem}
+.lb-close{position:absolute;right:4rem;top:3rem;padding:.8rem 1.8rem;border:0;border-radius:99rem;background:var(--ink);color:#fff;font-size:1.5rem;font-weight:600;cursor:pointer}
+
+/* ========== 第 2、3 屏横向拼成一条：竖向各留一屏滚动距离，画面钉住不动，横着平移 ========== */
+.duo{position:relative;height:200vh;--walk:2.4s}   /* 横向走一趟用的时间，脚本里的 WALK 会写进来 */
+.duo-stop{position:absolute;left:0;top:0;width:100%;height:100vh;scroll-snap-align:start;pointer-events:none}
+.duo-stop+.duo-stop{top:100vh}
+.duo-pin{position:sticky;top:0;height:100vh;overflow:hidden}
+.duo-track{position:relative;display:flex;width:200%;height:100%;will-change:translate;transition:translate var(--walk) cubic-bezier(.5,0,.3,1)}
+.duo.at2 .duo-track{translate:-50% 0}
+.duo-track>.sec{flex:none;width:50%;scroll-snap-align:none}
+.duo.jump .duo-track,.duo.jump .walker{transition:none}
+/* 拉行李箱的企鹅：平时站在第 2 屏右下角，翻到第 3 屏时摇摇摆摆走过接缝，停在第 3 屏左下角 */
+.walker{position:absolute;z-index:6;left:50%;bottom:1rem;width:10.44rem;height:8.2rem;margin-left:-11.67rem;pointer-events:none;transition:translate var(--walk) cubic-bezier(.5,0,.3,1)}
+.duo.at2 .walker{translate:13.27rem 0}
+.walker svg{display:block;width:100%;height:100%;overflow:visible}
+.duo.back .walker svg{scale:-1 1}
+.w-shadow{fill:rgba(0,0,0,.13)}
+.w-body{transform-origin:66px 108.5px}
+.w-fin{transform-origin:98px 61px}
+.w-tail{transform-origin:46px 65.5px}
+/* 小红书版（用户 11-19）：企鹅换成小红薯，头顶的小芽走路时跟着晃 */
+.w-sprout{transform-origin:70.5px 15.5px}
+.gz-pg .w-fin{transform-origin:96px 65.5px}   /* 小红薯的右手绕肩膀摆，不会和身体错开 */
+:is(.duo,.gw-zoom).walking .w-sprout{animation:w-sprout calc(var(--walk) / 6) ease-in-out 6}
+@keyframes w-sprout{25%{rotate:-10deg}75%{rotate:10deg}}
+.w-case{transform-origin:2px 110.25px}
+:is(.duo,.gw-zoom).walking .w-leg.a{animation:w-step calc(var(--walk) / 6) linear 6}
+:is(.duo,.gw-zoom).walking .w-leg.b{animation:w-step calc(var(--walk) / 6) linear calc(var(--walk) / -12) 6}
+:is(.duo,.gw-zoom).walking .w-body{animation:w-waddle calc(var(--walk) / 6) linear 6}
+:is(.duo,.gw-zoom).walking .w-fin{animation:w-fin calc(var(--walk) / 6) ease-in-out 6}
+:is(.duo,.gw-zoom).walking .w-tail{animation:w-flap calc(var(--walk) / 6) ease-in-out 6}
+:is(.duo,.gw-zoom).walking .w-case{animation:w-rattle calc(var(--walk) / 6) ease-in-out 6}
+@keyframes w-step{0%,50%,100%{translate:0 0}25%{translate:3.4px -3.4px}}
+@keyframes w-waddle{0%,100%{rotate:0deg}25%{rotate:4.5deg}75%{rotate:-4.5deg}}
+@keyframes w-fin{50%{rotate:-16deg}}
+@keyframes w-flap{50%{rotate:8deg}}
+@keyframes w-rattle{50%{rotate:-2.2deg}}
+
+/* ========== 第 3 屏的翻页：正面小程序，背面 Web 端，右下角折角 ========== */
+.sec.book{position:relative;display:block;padding:0}
+.leaf{position:absolute;inset:6.4rem 0 5.2rem;display:grid;place-items:center;align-content:center;gap:2.6rem;padding:0 6rem;overflow:hidden}
+.leaf.front{z-index:2;background:#fff;padding-bottom:4rem}   /* 内容整体上移一点，左下角留给走过来的小人 */
+.leaf.back{z-index:1;background:var(--mist)}
+.leaf.back .wall-head h2{margin-top:0}
+/* 小红书版（用户 11-19）：复盘页右下角翻页，背面是网页端；正面沿用页面灰底，背面白底 */
+#reflect .leaf.front{background:var(--mist);padding-bottom:0}
+#reflect .leaf.back{background:#fff}
+.curl{position:absolute;z-index:3;left:0;top:6.4rem;width:100%;height:calc(100% - 11.6rem);overflow:visible;pointer-events:none}
+.curl .flap{filter:drop-shadow(-.5rem -.5rem 1rem rgba(0,0,0,.22))}
+.curl-hit{position:absolute;z-index:4;right:0;bottom:5.2rem;width:11rem;height:11rem;padding:0;border:0;background:none;cursor:pointer;clip-path:polygon(100% 0,100% 100%,0 100%)}
+.curl-back{position:absolute;z-index:4;right:6rem;bottom:7.2rem;display:none;align-items:center;gap:1rem;padding:.8rem 1.8rem .8rem 1rem;border:0;border-radius:99rem;background:var(--ink);color:#fff;font-size:1.5rem;font-weight:600;cursor:pointer}
+/* 翻到背面后，右下角仍留一个小折角，点它翻回正面 */
+.book.flipped .curl-hit{width:7rem;height:7rem;clip-path:none;background:linear-gradient(315deg,#fff 0 50%,#D9D9E0 50%,#F4F4F7 64%,#fff 100%);box-shadow:-.4rem -.4rem .9rem rgba(0,0,0,.16)}
+/* 背面：Web 端截图一次放大一张；右边一列功能，当前这条展开「用户痛点 → 解决方案」 */
+.webtour{display:grid;grid-template-columns:78rem 34rem;gap:4.4rem;align-items:start}
+.wshots{display:grid;height:50rem;place-items:start end}
+.wshot{grid-area:1/1;display:none;margin:0}
+.wshot.show{display:block;animation:rise .4s cubic-bezier(.2,.8,.3,1)}
+.wshot .phone-btn{display:block;border-radius:1.2rem;overflow:hidden;background:#fff;box-shadow:var(--card)}
+.wshot .win-bar{background:#EDEDF0;color:var(--muted)}
+.wshot img{display:block;width:auto;height:auto;max-width:78rem;max-height:46.6rem}
+.wlist{display:grid}
+.witem{border-top:1px solid var(--line)}
+.witem:last-child{border-bottom:1px solid var(--line)}
+.wbtn{display:block;width:100%;padding:1.5rem 0;border:0;background:none;text-align:left;font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1.2;color:var(--muted);cursor:pointer;transition:color .2s}
+.wbtn:hover{color:var(--ink)}
+.witem.on .wbtn{color:var(--brand)}
+.why{display:none;margin:-.2rem 0 0;padding-bottom:1.8rem}
+.witem.on .why{display:grid;gap:.3rem;animation:rise .4s cubic-bezier(.2,.8,.3,1)}
+.why dt{font-size:1.4rem;color:var(--muted)}
+.why dd{margin:0 0 1.1rem;font-size:1.7rem;line-height:1.55;color:#3A3A3C}
+.why dd:last-child{margin-bottom:0}
+.why ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.why li{position:relative;padding-left:1.6rem}
+.why .nw{white-space:nowrap}
+/* 小红书版（用户 11-19）：房源详情截图上，「First-month estimate」下面像网页端一样打印出一张小票 */
+.wimg{position:relative;display:block}
+.rcpt{position:absolute;left:70.4%;width:25.6%;top:49.4%;pointer-events:none}
+.rcpt .slot{position:absolute;z-index:2;left:-3%;right:-3%;top:0;height:.75rem;border-radius:.45rem;background:linear-gradient(180deg,#2b2b30,#121215);box-shadow:inset 0 -.15rem 0 rgba(255,255,255,.08),0 .25rem .6rem rgba(0,0,0,.18);scale:0 1;opacity:0;transition:scale .3s cubic-bezier(.2,.8,.3,1),opacity .2s}
+.rcpt .feed{position:absolute;left:1.5%;right:1.5%;top:.38rem;height:16rem;overflow:hidden}
+.rcpt .paper{position:relative;display:block;margin-bottom:2.4rem;padding:.75rem .85rem .7rem;background-color:#fffdf6;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.018) 0 1px,transparent 1px 3px);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;line-height:1.42;color:#2a2826;text-align:left;translate:0 -110%;box-shadow:0 1.4rem 2.6rem rgba(30,25,40,.22)}
+.rcpt .paper::after{content:"";position:absolute;left:0;right:0;top:100%;height:.5rem;background:linear-gradient(135deg,#fffdf6 50%,transparent 50%) 0 0/.7rem .5rem repeat-x,linear-gradient(-135deg,#fffdf6 50%,transparent 50%) 0 0/.7rem .5rem repeat-x}
+.rcpt .rh{display:flex;justify-content:space-between;gap:.5rem;margin-bottom:.3rem;padding-bottom:.3rem;border-bottom:1px dashed #d6d0c4;font-size:.68rem;font-weight:600;letter-spacing:.04rem;color:#8a857c}
+.rcpt .rl{display:flex;align-items:baseline;gap:.4rem;white-space:nowrap}
+.rcpt .rl > span{overflow:hidden;text-overflow:ellipsis;min-width:0}
+.rcpt .rl i{flex:1;min-width:.6rem;border-bottom:1.5px dotted #c9c2b4;translate:0 -.25rem}
+.rcpt .rl b{font-weight:600;font-variant-numeric:tabular-nums}
+.rcpt .tot{margin-top:.3rem;padding-top:.3rem;border-top:1.5px solid #2a2826;font-size:1.1rem;font-weight:700}
+.rcpt .tot b{font-weight:700}
+.rcpt .rf{display:block;margin-top:.3rem;font-size:.68rem;line-height:1.35;color:#8a857c;white-space:normal}
+.wshot.print .rcpt .slot{scale:1 1;opacity:1}
+.wshot.print .rcpt .paper{animation:rc-feed 1.25s steps(14,end) .3s forwards}
+@keyframes rc-feed{from{translate:0 -110%}to{translate:0 0}}
+.why li::before{content:"";position:absolute;left:0;top:.95rem;width:.6rem;height:.6rem;border-radius:50%;background:var(--brand)}
+
+/* ========== Saviu：三端系统（深色一屏，选角色看对应的端，截图为主） ========== */
+.sec.night{background:#101623;color:#fff}
+.night .tag{color:#B4BED2}
+.trio-sec{align-content:center;gap:2rem}
+.sv-head{width:112rem;display:flex;justify-content:space-between;align-items:stretch;gap:3rem}   /* 左边标题块和右边数字块一样高 */
+.sv-head .wall-head{text-align:left;display:flex}
+.sv-head .tag{justify-content:flex-start}
+.trio-sec .wall-head h2{margin-top:0;font-size:3.6rem;line-height:1.02;white-space:nowrap;display:flex;flex-direction:column;justify-content:space-between}
+.sv-stats{display:flex;gap:2.8rem;margin:0}
+.sv-stats div{padding-left:1.4rem;border-left:.2rem solid rgba(255,255,255,.22)}
+.sv-stats dt{font-family:var(--num);font-weight:800;font-size:3rem;line-height:1.1;color:#fff;white-space:nowrap}
+.sv-stats dd{margin-top:.4rem;font-size:1.25rem;line-height:1.5;color:#9DAAC4;white-space:nowrap}
+.trio-sec .wall-head h2 span{display:block;color:var(--sun)}
+.roles{position:relative;display:flex;align-items:center;justify-content:center;gap:1.4rem}
+.role{display:grid;gap:.2rem;padding:1rem 2rem;border:.2rem solid rgba(255,255,255,.16);border-radius:1.4rem;background:rgba(255,255,255,.04);color:#fff;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,translate .25s cubic-bezier(.2,1.3,.4,1)}
+.role b{font-size:2.1rem}
+.role span{font-size:1.35rem;color:#9DAAC4}
+.role:hover{background:rgba(255,255,255,.09)}
+.role.on{background:var(--sun);border-color:var(--sun);color:var(--ink);translate:0 -.5rem}
+.role.on span{color:#5A4A0A}
+.link{display:flex;align-items:center;gap:.8rem;font-family:var(--hand);font-weight:700;font-size:2.1rem;color:var(--sun);white-space:nowrap}
+.link::after{content:"→";font-family:var(--text);font-size:2.2rem}
+.roles .hint{position:absolute;left:100%;top:50%;translate:0 -50%;margin-left:2.4rem;white-space:nowrap;display:flex;align-items:center;gap:1rem;font-size:1.5rem;color:#9DAAC4}
+.stage{height:47rem;display:grid;place-items:center}
+.pane{display:none;align-items:center;justify-content:center;gap:4rem}
+.pane.show{display:flex;animation:rise .4s cubic-bezier(.2,.8,.3,1)}
+.screen{flex:none;width:76rem}
+.screen .phone-btn{border-radius:1.2rem;overflow:hidden;background:#22252C;box-shadow:0 2rem 4rem rgba(0,0,0,.5)}
+.screen img{display:block;width:100%;height:auto}
+.win-bar{display:flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;color:#9BA1AD;font-family:var(--mono);font-size:1.2rem;text-align:left}
+.win-bar i{width:1.1rem;height:1.1rem;border-radius:50%;background:#FF5F57}
+.win-bar i:nth-child(2){background:#FEBC2E}
+.win-bar i:nth-child(3){background:#28C840}
+.win-bar em{font-style:normal;margin-left:.8rem}
+.device{flex:none;width:22.6rem}
+.device img{display:block;width:100%;height:auto;filter:drop-shadow(0 2rem 3rem rgba(0,0,0,.5))}
+.say{width:32rem;display:grid;gap:1.6rem}
+.pane.tall .say{width:40rem}
+.say h3{margin:0;font-size:2.6rem;line-height:1.3}
+.say h3 small{display:block;margin-bottom:.5rem;font-size:1.5rem;font-weight:400;color:var(--sun)}
+.say ul{list-style:none;margin:0;padding:0;display:grid;gap:1.2rem}
+.say li{position:relative;padding-left:2rem;font-size:1.7rem;line-height:1.55;color:#D5DCEA}
+.say li::before{content:"";position:absolute;left:0;top:.9rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--sun)}
+.say li b{color:#fff}
+
+/* ========== 研究生：校旗 / 终端 ========== */
+.plaque{width:34rem;padding:2.2rem 2rem 2.4rem;border-radius:.6rem;background:radial-gradient(120% 100% at 50% 0%,#7B69AA 0%,#5E4A94 55%,#503C86 100%);color:#ECE9F3;box-shadow:var(--card),inset 0 .2rem 0 rgba(255,255,255,.18)}
+.plaque-lock{display:flex;align-items:center;gap:1rem}
+.plaque-lock b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:2.7rem;line-height:1;letter-spacing:.01em}
+.plaque-lock span{padding-left:1rem;border-left:.15rem solid rgba(236,233,243,.85);font-size:1.75rem;font-weight:600;line-height:1.05;letter-spacing:.03em}
+.plaque-lock small{display:block;margin-bottom:.25rem;font-size:.95rem;font-weight:700;letter-spacing:.02em}
+.plaque p{margin-top:1rem;font-size:1.72rem;letter-spacing:.01em}
+.nu-card{width:34rem;padding:1.8rem 2rem;background:#fff;border-radius:1.4rem;box-shadow:var(--card);display:grid;gap:.3rem}
+.nu-card b{font-size:2.3rem}
+.nu-card span{font-size:1.45rem;color:#424245}
+.nu-card small{font-size:1.3rem;color:var(--muted)}
+.term{width:36rem;height:38rem;padding:0;border:0;border-radius:1.4rem;background:#16181D;overflow:hidden;display:grid;grid-template-rows:auto 1fr;text-align:left;cursor:pointer;box-shadow:var(--card)}
+.term-bar{display:flex;align-items:center;gap:.6rem;padding:1.1rem 1.4rem;background:#22252C;color:#9BA1AD;font-family:var(--mono);font-size:1.2rem}
+.term-bar i{width:1.1rem;height:1.1rem;border-radius:50%;background:#FF5F57}
+.term-bar i:nth-child(2){background:#FEBC2E}
+.term-bar i:nth-child(3){background:#28C840}
+.term-bar em{font-style:normal;margin-left:.8rem}
+.term-body{display:block;padding:1.6rem 1.8rem;font-family:var(--mono);font-size:1.3rem;line-height:1.95;color:#E6E9EF}
+.term-body span{display:block}
+.term-body .dim{color:#7D8492}
+.term-body .hl{color:var(--sun);font-weight:700}
+.term-body b{color:var(--mint);font-weight:700}
+.term-body .cur{display:inline-block;width:.8rem;height:1.6rem;background:#E6E9EF;vertical-align:-.25rem;animation:blink 1s steps(1) infinite}
+
+/* ========== 黑客松：点阵 / 奖章 / 对照柱 ========== */
+.dots-panel{width:34rem;padding:2.2rem 2.4rem;border-radius:1.8rem;background:#101623;color:#E6ECF7;display:grid;gap:1.5rem;cursor:pointer;box-shadow:var(--card)}
+.dots-panel p{font-size:1.45rem;line-height:1.55;color:#B4BED2}
+.dots{display:grid;grid-template-columns:repeat(16,1.3rem);gap:.55rem;justify-content:center}
+.dots i{width:1.3rem;height:1.3rem;border-radius:50%;background:rgba(255,255,255,.12)}
+.dots i.hit{background:#5B8CFF}
+.dots i.miss{background:none;box-shadow:inset 0 0 0 .24rem var(--sun)}
+.dots-foot{display:flex;justify-content:space-between;align-items:flex-end}
+.dots-foot div{font-family:var(--num);font-weight:800;font-size:4.6rem;line-height:1;color:#fff}
+.dots-foot div small{font-size:2rem;opacity:.6}
+.dots-foot span{font-size:1.35rem;line-height:1.5;text-align:right;color:#B4BED2}
+.dots-foot span b{display:block;font-family:var(--num);font-size:2.4rem;color:var(--mint);line-height:1.1}
+.medal-row{display:flex;align-items:center;gap:1.8rem;width:35rem}
+.medal-wrap{flex:none;filter:drop-shadow(.35rem 0 0 #fff) drop-shadow(-.35rem 0 0 #fff) drop-shadow(0 .35rem 0 #fff) drop-shadow(0 -.35rem 0 #fff) drop-shadow(0 .8rem 1rem rgba(0,0,0,.16))}
+.medal{position:relative;width:15rem;height:15rem;background:var(--coral);color:#fff;clip-path:var(--scallop);display:grid;place-content:center;text-align:center;line-height:1.2}
+.medal::before{content:"";position:absolute;inset:1.3rem;border:.2rem dashed rgba(255,255,255,.75);border-radius:50%}
+.medal b{font-family:var(--num);font-weight:800;font-size:4.4rem;line-height:1.05}
+.medal span{font-size:1.3rem;font-weight:600}
+.medal-text{display:grid;gap:.3rem;font-size:1.45rem;color:#424245}
+.medal-text b{font-size:2rem;color:var(--ink)}
+.bars{width:35rem;padding:1.8rem 2.2rem 1.6rem;border-radius:1.6rem;background:var(--mist);cursor:pointer;display:grid;gap:1rem}
+.bars > b{font-size:1.7rem}
+.bar-row{height:17rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;padding:0 2rem}
+.bar{position:relative;height:0;border-radius:.8rem .8rem 0 0;background:var(--line);transition:none}
+.bar.new{background:var(--coral)}
+.bar em{position:absolute;left:0;right:0;bottom:100%;margin-bottom:.4rem;text-align:center;font-size:2.8rem;line-height:1}
+.bars.go .bar{height:calc(var(--h) * .8%);transition:height .9s cubic-bezier(.2,.8,.3,1) .3s}
+.bar-lab{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:0 2rem;text-align:center;font-size:1.35rem;font-weight:600}
+.bars small{font-size:1.25rem;color:var(--muted);text-align:center}
+
+/* ========== 三面：本科 / 交换 / 流片 合成一屏（不用卡片：大字在后，实物摆在桌面上） ========== */
+.sides-sec{align-content:center;gap:1.6rem}
+.sides-sec .wall-head h2{margin-top:0}
+.sides-sec .wall-head h2 span{display:inline}
+.facets{display:grid;grid-template-columns:repeat(3,42rem);justify-content:center;align-items:start;gap:1rem}
+.facet{padding-top:var(--top,0rem);display:grid;justify-items:center;cursor:pointer;transition:opacity .3s,translate .3s}
+.facet::before{content:attr(data-name);font-family:var(--display);font-weight:800;font-size:11rem;line-height:.95;letter-spacing:-.02em;color:rgba(29,29,31,.2);white-space:nowrap;transition:color .3s}
+.facet[data-name="创作者"] .facet-body{margin-top:1.4rem}   /* 卡片往下放，别挡住背景大字 */   /* 用户：社媒换成小红书创作者；六个字用 11rem 会盖到旁边一栏 */
+.facet-body{position:relative;margin-top:-2.2rem;display:flex;align-items:center;justify-content:center;gap:1.6rem}
+.facet-meta{margin:2.2rem 0 0;font-size:2.4rem;font-weight:700;line-height:1.3;color:var(--ink);text-align:center;white-space:nowrap}
+.facet-meta small{display:block;margin-top:.4rem;font-size:1.5rem;font-weight:400;color:var(--muted)}
+.facet-say{margin-top:.4rem;max-width:37rem;font-family:var(--hand);font-weight:700;font-size:2.3rem;line-height:1.25;color:var(--brand);text-align:center}
+.facet[data-name="交换生"]{zoom:.86;margin-left:-6rem}
+.facet[data-name="芯片"]{zoom:.86;margin-right:-6rem}   /* 用户：芯片也小一点；和交换生对称，往右挪 */   /* 用户：交换生这一栏往左、小一点（用 zoom 和外边距，不占用讲解时的 translate） */
+.facets.focus .facet{opacity:.3}
+.facets.focus .facet.on{opacity:1;translate:0 -1rem}
+.facets.focus .facet.on::before{color:var(--brand)}
+.dy{position:relative;flex:none;width:18.4rem;rotate:-4deg}
+.dy img{display:block;width:100%;height:auto;border-radius:1.6rem;box-shadow:var(--card)}
+.dy-badge{position:absolute;left:-1.4rem;right:.8rem;bottom:-1.6rem;padding:1.1rem 1.4rem;border:0;border-radius:1.2rem;background:#111;color:#fff;text-align:left;cursor:pointer;box-shadow:var(--card);rotate:3deg}
+.dy-badge b{display:block;font-family:var(--num);font-weight:800;font-size:3.2rem;line-height:1}
+.dy-badge small{display:block;margin-top:.4rem;font-size:1.25rem;line-height:1.45;opacity:.85}
+.facet .vid{width:17.6rem;height:30rem;rotate:-4deg}
+.facet .vid-count b{font-size:3.6rem}
+.facet .xhs{width:19.6rem;rotate:3deg;translate:0 2.4rem}
+.facet .xhs-cover{height:13.6rem}
+.facet .xhs-cover b{font-size:4rem}
+.fit{flex:none;width:24.2rem;height:35.1rem;rotate:2.5deg}
+.fit .passport{transform:scale(.78);transform-origin:0 0}
+.mhz{width:13.6rem;padding:1.6rem 1.4rem;border-radius:1.2rem;background:var(--mint);display:grid;gap:.3rem;rotate:-5deg;translate:0 -3rem;box-shadow:var(--card)}
+.mhz b{font-family:var(--num);font-weight:800;font-size:3.4rem;line-height:1}
+.mhz span{font-size:1.4rem;font-weight:600;line-height:1.4}
+.mhz small{font-size:1.25rem}
+.facet img.chipphoto{width:16.4rem;rotate:-5deg}
+.snap{position:relative;flex:none;width:19rem;padding:.9rem .9rem 1.1rem;background:#fff;box-shadow:var(--card);rotate:-4deg}
+.snap img{display:block;width:100%;height:auto}
+.snap .tape{position:absolute;left:50%;top:-1.2rem;width:8rem;height:2.4rem;margin-left:-4rem;background:rgba(253,213,90,.78);rotate:-3deg;box-shadow:0 .1rem .2rem rgba(0,0,0,.12)}
+.seal-col{position:relative;z-index:1;margin-left:-5rem;display:grid;justify-items:center;gap:1.4rem}
+.seal{width:21rem;height:21rem;padding:0;border:0;background:none;cursor:pointer;rotate:-9deg;mix-blend-mode:multiply}
+.seal svg{display:block;width:100%;height:100%;opacity:0}
+.seal.go svg{animation:thump .5s cubic-bezier(.2,1.4,.4,1) forwards .5s}
+.seal-col .mhz{translate:2rem 0}
+.facet .signoff{rotate:3deg;translate:0 1.6rem}
+
+/* ========== 为什么是腾讯：只有文字，不放任何道具 ========== */
+.letter{width:80rem}
+.letter h2{margin-top:1.6rem;font-family:var(--display);font-weight:800;font-size:5rem;line-height:1.12}
+.letter-body{margin-top:3.2rem;display:grid;gap:2rem}
+.letter-body p{font-size:2.2rem;line-height:1.7;color:#3A3A3C;text-wrap:pretty;transition:opacity .3s}
+.letter-body b{font-weight:600;color:var(--ink)}
+.letter-body b.tx{color:var(--brand)}
+.letter.focus .letter-body p{opacity:.28}          /* 按 E 一段一段读：当前这段保持清楚，其余退后 */
+.letter.focus .letter-body p.on{opacity:1}
+/* 小红书版结尾（用户 11-19）：读完四段再按 ↓，信件淡出，最后一句单独放大、品牌红，作为整场演示的结尾 */
+#tencent > .letter, #tencent > .finale{grid-area:1/1}
+#tencent .letter{transition:opacity .5s,translate .5s}
+#tencent.fin .letter{opacity:0;translate:0 -2rem;pointer-events:none}
+.finale{margin:0;text-align:center;font-family:var(--text);font-weight:800;font-size:6.4rem;line-height:1.35;letter-spacing:.02em;color:var(--brand);opacity:0;translate:0 2rem;transition:opacity .6s .15s,translate .6s .15s;pointer-events:none}
+#tencent.fin .finale{opacity:1;translate:0 0}
+.letter-sign{margin-top:2.4rem;text-align:right;font-family:var(--hand);font-weight:700;font-size:3.4rem;line-height:1.2;color:var(--brand)}   /* 署名「有鹅必选鹅」用腾讯蓝 */
+
+/* ---------- 窄窗口（竖屏 / 预览窗格）：上文下板，仍然一屏一个模块 ---------- */
+/* 第 3 屏：增长框架。拉新、激活、留存一张一张出来，三条线汇到核心目标，最后是两个指标 */
+.gw-sec{align-content:center}
+.gw{width:122rem;margin-bottom:1.6rem}
+.gw-cards{list-style:none;margin:2.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+.gw-cards li{padding:2.2rem 2.6rem 2.2rem;border-radius:1.8rem;background:#fff;transition:opacity .45s,translate .5s cubic-bezier(.2,.8,.3,1)}
+.gw-cards li:not(.shown){opacity:0;translate:0 1.6rem}
+.gw-cards i{display:block;font-style:normal;font-family:var(--num);font-weight:800;font-size:5.2rem;line-height:1;letter-spacing:-.02em;color:var(--brand)}
+.gw-cards h3{margin:1rem 0 0;font-family:var(--display);font-size:3.6rem;font-weight:800;line-height:1.15;color:var(--ink)}
+.gw-cards small{display:block;margin-top:.4rem;font-size:1.5rem;color:#8E8E93}
+.gw-cards p{margin:1.4rem 0 0;padding-top:1.4rem;border-top:1px solid var(--line-soft);font-size:1.6rem;line-height:1.5;color:var(--muted)}
+.gw-cards p b{display:block;margin-bottom:.5rem;font-size:1.9rem;font-weight:700;color:var(--ink)}
+/* 只在没轮到时隐藏；轮到了不写 opacity，交给 .obj 跟整屏一起进场 */
+.gw-goal{text-align:center;transition:opacity .45s}
+.gw-goal:not(.shown){opacity:0}
+/* 连线：从三张卡的中点往下，汇成一条落到核心目标 */
+.gw-link{position:relative;display:block;height:4.4rem;margin:0 calc((100% - 4rem) / 6)}
+.gw-link::before{content:"";position:absolute;inset:0 0 50%;border:.2rem solid rgba(255,36,66,.4);border-top:0;scale:0 1;transition:scale .5s cubic-bezier(.3,.8,.3,1)}
+.gw-link::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:.2rem;margin-left:-.1rem;background:rgba(255,36,66,.4);scale:1 0;transform-origin:50% 0;transition:scale .4s .3s}
+.gw-goal.shown .gw-link::before,.gw-goal.shown .gw-link::after{scale:1}
+.gw-label{margin-top:1rem;font-size:1.5rem;font-weight:500;letter-spacing:.06em;color:var(--muted)}
+.gw-obj{margin-top:.2rem;font-family:var(--display);font-size:4.8rem;font-weight:800;line-height:1.2;color:var(--brand)}
+/* 底部两个指标：左边北极星指标，右边核心效率指标 */
+.gw-kpi{margin-top:2rem;padding-top:1.8rem;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;text-align:center;transition:opacity .45s,translate .45s}
+.gw-kpi:not(.shown){opacity:0;translate:0 1rem}
+.gw-kpi p{margin:0;font-size:1.5rem;line-height:1.5;color:#8E8E93}
+.gw-kpi small{display:block;font-size:1.5rem;font-weight:500;letter-spacing:.06em;color:var(--muted)}
+.gw-def{display:block;font-style:normal;font-size:1.45rem;line-height:1.5;color:#8E8E93}   /* 用户 11-18：北极星指标的口径说明 */
+.gw-kpi b{display:block;margin:.2rem 0 .1rem;font-family:var(--display);font-size:3.4rem;font-weight:800;line-height:1.25;color:var(--ink)}
+
+/* 拉新展开：01 卡片从原位置铺满整屏（clip-path 动画，白底渐变成灰底），再浮出六张获客渠道卡 */
+.gw-sec{position:relative}
+.gw-cards li{cursor:pointer}
+.gw-cards li{position:relative}
+.gw-zoom{position:absolute;inset:0;z-index:5;container-type:size;overflow:hidden;background:var(--mist);visibility:hidden;--walk:2.4s}
+.gz-track{position:relative;display:flex;width:500%;height:100%;transition:translate var(--walk) cubic-bezier(.5,0,.3,1)}
+.gw-zoom[data-k="1"] .gz-track{translate:calc(-100% * 1 / 5) 0}
+.gw-zoom[data-k="2"] .gz-track{translate:calc(-100% * 2 / 5) 0}
+.gw-zoom[data-k="3"] .gz-track{translate:calc(-100% * 3 / 5) 0}
+.gw-zoom[data-k="4"] .gz-track{translate:calc(-100% * 4 / 5) 0}
+.gw-zoom.jump .gz-track,.gw-zoom.jump .gz-pg{transition:none}
+.gz-page{flex:none;width:calc(100% / 5);height:100%;display:grid;place-items:center;padding:6.4rem 6rem 5.2rem}
+.gw-zoom.open{visibility:visible}
+.gz{width:122rem}
+.gz-cards{margin-top:1.2rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem 1.8rem;perspective:180rem}
+/* 两排各一行标签：上排已执行（蓝点），下排下一阶段计划（灰点），按用户稿 */
+.gz-row{grid-column:1 / -1;margin:0 0 -.6rem;display:flex;align-items:center;gap:.8rem;font-size:1.5rem;font-weight:600;line-height:1.2;color:var(--brand)}
+.gz-row::before{content:"";width:.9rem;height:.9rem;border-radius:50%;background:currentColor}
+.gz-row.plan{color:#8E8E93}
+/* 每张卡里的三条都能点：整张卡翻过来，背面放这一条的证据截图；点背面空白处、「返回」或按 ↑ 翻回 */
+.gz-card{position:relative;display:flex;transform-style:preserve-3d;transition:rotate .7s cubic-bezier(.3,.7,.25,1)}
+.gz-cards .gz-card{min-height:24.6rem}   /* 上排删了结果句后正面变矮，背面的证据截图会漏出卡片；和下排一样高 */
+.gz-card.flip{rotate:y 180deg}
+.gz-face{border-radius:1.8rem;background:#fff;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.gz-front{position:relative;flex:1;display:flex;flex-direction:column;padding:1.5rem 2.4rem 1.6rem}
+.gz-back{position:absolute;inset:0;rotate:y 180deg;padding:1.6rem 1.8rem 1.6rem 2.4rem;cursor:pointer}
+.gz-n{display:block;font-style:normal;font-family:var(--num);font-weight:800;font-size:3rem;line-height:1;letter-spacing:-.02em;color:var(--brand)}
+.gz-ic{position:absolute;top:1.5rem;right:2.4rem;width:2.6rem;height:2.6rem;fill:none;stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.gz-front h3{margin:.4rem 0 0;font-family:var(--display);font-size:2.6rem;font-weight:800;line-height:1.15;color:var(--ink)}
+.gz-front small{display:block;margin-top:.3rem;font-size:1.4rem;color:#8E8E93}
+.gz-items{flex:1;margin:.9rem 0 0;padding-top:.7rem;border-top:1px solid var(--line-soft);display:grid;align-content:center;gap:.1rem}
+.gz-items:has(> :nth-child(2):last-child){gap:1.6rem}   /* 只有两条时拉开一点，不挤在中间 */   /* 只有两条的卡（03、05），两条在中间上下居中 */
+.gz-items.plan span{display:block;padding:.2rem 1rem;font-size:1.6rem;line-height:1.45;text-align:center;color:var(--ink)}   /* 计划中的条目不能点 */
+.gz-it{display:block;width:100%;padding:.2rem 1rem;border:0;border-radius:.8rem;background:none;font:inherit;font-size:1.6rem;line-height:1.45;color:var(--ink);text-align:center;cursor:pointer;transition:background .2s,color .2s}
+.gz-it:hover,.gz-it:focus-visible{background:var(--mist);color:var(--brand)}
+.gz-front > b{display:block;margin-top:.7rem;text-align:center;font-size:1.5rem;font-weight:700;color:var(--brand)}
+.gz-ev{display:none;height:100%;grid-template-columns:minmax(0,1fr) auto;column-gap:1.6rem}
+.gz-ev.on{display:grid}
+.gz-ev-t{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.gz-ev-t small{font-size:1.3rem;font-weight:600;color:var(--brand)}
+.gz-ev-t h4{margin:.5rem 0 0;font-family:var(--display);font-size:2.2rem;font-weight:800;line-height:1.25;color:var(--ink)}
+.gz-ev-t p{margin:.8rem 0 0;font-size:1.4rem;line-height:1.5;color:var(--muted)}
+/* 截图用固定高度：按百分比算时，两张图或估宽度的那一轮会退回原图尺寸，把卡片撑破 */
+.gz-shots{--shot:20.8rem;display:flex;justify-content:flex-end;align-items:center;gap:.8rem;cursor:default}
+.gz-shots .phone-btn{width:auto}
+.gz-shots img{display:block;width:auto;height:var(--shot)}
+.gz-shots .flat img{border-radius:1rem;box-shadow:0 0 0 1px var(--line-soft)}
+.gz-todo{margin:0;display:grid;place-items:center;width:13rem;height:var(--shot);border:.15rem dashed var(--line);border-radius:1.2rem;font-size:1.4rem;line-height:1.5;color:#8E8E93;text-align:center}
+/* 右下角的企鹅，和走过接缝那只同一个画法、同一个位置；底栏去掉后都站在底面上，和键帽同一高度 */
+.gz-pg{position:absolute;z-index:2;left:calc(100% / 5);bottom:1rem;width:10.44rem;height:8.2rem;margin-left:-11.67rem;pointer-events:none;transition:translate var(--walk) cubic-bezier(.5,0,.3,1)}
+.gw-zoom[data-k="1"] .gz-pg{translate:13.27rem 0}
+.gw-zoom[data-k="2"] .gz-pg{translate:calc(100cqw + 13.27rem) 0}
+.gw-zoom[data-k="3"] .gz-pg{translate:calc(200cqw + 13.27rem) 0}
+.gw-zoom[data-k="4"] .gz-pg{translate:calc(300cqw + 13.27rem) 0}
+.gw-zoom.back .gz-pg svg{scale:-1 1}
+/* 激活页：两条漏斗（越往下越窄、颜色越深），汇到同一个 Aha moment */
+.ga{width:122rem}
+.gz,.ga,.gb,.gr,.gs,.gt{position:relative}
+/* 用户 11-18：需求期留存展开成两页——策略表（策略 / 目标用户 / 运营动作 / 衡量指标），再用一个示例用户的 Day 1–7 讲动态机制 + 衡量指标 */
+.gs,.gt{width:122rem}
+/* 用户 11-18：表格像在读 PPT → 按「用户卡在哪」排成两条泳道；平时只看卡点和策略名，按 ↓ 一张张点亮，点亮的那张才展开运营动作和指标 */
+.gz-page:has(> .gs){place-items:start center;padding-top:15rem}
+/* 小红书版（用户 11-19）：「需求期留存」「精细化运营方案」合成一页——求租者 / 转租者两张卡，每张一条线串起三个卡点，底下两个核心指标 */
+.gm{width:122rem}
+.gm-row{margin-top:2.6rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.gm-card{padding:2.6rem 3rem 2.8rem;border-radius:1.8rem;background:#fff}
+.gm-card h3{margin:0;font-family:var(--display);font-size:3.2rem;font-weight:800;color:var(--ink)}
+.gm-line{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:2.2rem}
+.gm-line li{position:relative;padding-left:3.4rem}
+.gm-line li::before{content:"";position:absolute;z-index:1;left:0;top:.35rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--brand);box-shadow:0 0 0 .4rem #fff}   /* 白圈把线断开一点，点压在线上 */
+.gm-line li:not(:last-child)::after{content:"";position:absolute;z-index:0;left:.6rem;top:1.05rem;width:.2rem;height:calc(100% + 2.2rem);background:#FFB3BE}   /* 从这个点的圆心连到下一个点的圆心 */
+.gm-line small{display:block;font-size:1.6rem;line-height:1.3;color:#8E8E93}
+.gm-line p{margin-top:.5rem;font-size:1.95rem;font-weight:600;line-height:1.4;color:var(--brand)}
+.gm-line p i{margin:0 .6rem;font-style:normal}
+.gm-line p + p{margin-top:.3rem}
+.gm-push{display:inline-block;margin-left:1rem;padding:.25rem .9rem;border-radius:.6rem;background:#FFE9EC;font-family:var(--text);font-style:normal;font-size:1.25rem;font-weight:700;line-height:1.4;letter-spacing:.02em;color:var(--brand);vertical-align:.25rem}   /* 用户 11-19：通过 Push 触达的三条加标签 */
+.gm-met{margin-top:2.8rem;padding-top:2.2rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end}
+.gm-met small{display:block;font-size:1.6rem;color:#6E6E73}
+.gm-met b{display:block;margin-top:.3rem;font-family:var(--display);font-size:4rem;font-weight:800;line-height:1.15;color:var(--ink)}
+.gm-met b.hot{color:var(--brand)}
+.gm-met .r{text-align:right}
+.gm-note{margin-top:1rem;font-size:1.6rem;color:#6E6E73}   /* 顶部对齐：卡片展开时只往下推，不整页跳 */
+.gs-core{margin-top:.6rem;font-size:1.9rem;color:#6E6E73}
+.gs-core b{font-weight:700;color:var(--brand)}
+.gs-lanes{margin-top:3.2rem;display:grid;gap:2.4rem}
+.gs-lane{display:grid;grid-template-columns:9rem 1fr;align-items:stretch;gap:1.6rem}
+.gs-who{align-self:center;font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--ink)}
+.gs-track{display:grid;grid-template-columns:1fr 3rem 1fr 3rem 1fr;align-items:stretch}
+.gs-ar{align-self:center;justify-self:center;font-style:normal;font-size:2rem;color:#C7C7CC}
+.gs-card{padding:2rem 2.2rem;border-radius:1.6rem;background:#fff;transition:opacity .35s,translate .35s,box-shadow .35s}
+.gs-card small{display:block;font-size:1.45rem;line-height:1.4;color:#8E8E93}
+.gs-card b{display:block;margin-top:.6rem;font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--ink)}
+.gs-more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s,opacity .3s}
+.gs-more > *{min-height:0;overflow:hidden}
+.gs-more p{font-size:1.6rem;line-height:1.5;color:#3A3A3C}
+.gs-more span{justify-self:start;margin-top:.2rem;padding:.3rem 1.1rem;border-radius:99rem;background:#FFE9EC;font-size:1.4rem;font-weight:700;color:var(--brand)}
+.gs-lanes.focus .gs-card{opacity:.35}
+.gs-lanes.focus .gs-card.on{opacity:1;translate:0 -.4rem;box-shadow:0 0 0 .2rem var(--brand),0 1.2rem 2.4rem rgba(255,36,66,.14)}
+.gs-card.on .gs-more{grid-template-rows:auto auto;opacity:1;row-gap:.8rem;margin-top:1.2rem}
+.gt-who{margin-top:1.6rem;display:flex;align-items:center;gap:1.6rem}
+.gt-head{display:flex;justify-content:space-between;align-items:center;gap:4rem}   /* 小红书版：用户画像放到标题同一行的最右边 */
+.gt-head .gt-who{margin-top:0}
+.gt-av{flex:none;display:grid;place-items:center;width:4.8rem;height:4.8rem;border-radius:50%;background:var(--brand)}
+.gt-av svg{width:2.6rem;height:2.6rem;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.gt-who p{font-size:1.7rem;color:#3A3A3C}
+.gt-who p b{display:block;font-size:1.4rem;font-weight:600;color:#8E8E93}
+.gt-line{position:relative;list-style:none;margin:2.2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem}
+.gt-line::before{content:"";position:absolute;left:1rem;right:1rem;top:3.5rem;height:.3rem;border-radius:.2rem;background:linear-gradient(90deg,var(--brand) 76%,var(--wx) 84%)}
+/* 用户 11-18：触达只在这一页带一句规则（画像标签和约束标签用户让删了）；指标分主次——回访率最大，有效联系率次之，另两个是辅助观察 */
+.gt-rule{margin-top:1.8rem;display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1rem;font-size:1.6rem;color:#3A3A3C}
+.gt-rule b{margin-right:.4rem;font-size:1.5rem;font-weight:700;color:var(--ink)}
+.gt-met{margin-top:1.8rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:stretch}
+.gt-met small{display:block;font-size:1.3rem;font-weight:600;letter-spacing:.04em}
+.gt-met .k1{padding:1.6rem 2.2rem;border-radius:1.4rem;background:var(--brand);color:#fff}
+.gt-met .k1 small{color:rgba(255,255,255,.75)}
+.gt-met .k1 b{display:block;margin-top:.3rem;font-family:var(--display);font-size:3rem;font-weight:800}
+.gt-met .k1 span{display:block;margin-top:.3rem;font-size:1.45rem;color:rgba(255,255,255,.85)}
+.gt-met .k2{padding:1.6rem 2.2rem;border-radius:1.4rem;background:#fff;box-shadow:inset 0 0 0 .2rem var(--brand)}
+.gt-met .k2 small{color:var(--brand)}
+.gt-met .k2 b{display:block;margin-top:.3rem;font-family:var(--display);font-size:2.5rem;font-weight:800;color:var(--brand)}
+.gt-met .k2 span{display:block;margin-top:.3rem;font-size:1.45rem;color:#6E6E73}
+.gt-met .k3{padding:1.6rem 2.2rem;border-radius:1.4rem;background:#fff}
+.gt-met .k3 small{color:#8E8E93}
+.gt-met .k3 p{margin-top:.5rem;display:flex;gap:1.6rem}
+.gt-met .k3 p b{font-size:1.7rem;font-weight:700;color:var(--ink)}
+.gt-met .k3 span{display:block;margin-top:.5rem;font-size:1.3rem;line-height:1.45;color:#8E8E93}
+.gt-day{display:block;font-family:var(--num);font-size:1.8rem;font-weight:800;color:var(--brand)}
+.gt-node{position:relative;display:block;width:1.4rem;height:1.4rem;margin:.9rem 0 1.4rem;border-radius:50%;background:var(--brand);box-shadow:0 0 0 .5rem var(--mist)}
+.gt-line li.end .gt-day{color:var(--wx-d)}
+.gt-line li.end .gt-node{background:var(--wx)}
+.gt-card{height:calc(100% - 5.7rem);padding:1.6rem 1.8rem;border-radius:1.4rem;background:#fff}
+.gt-card small{font-size:1.3rem;color:#8E8E93}
+.gt-card p{margin-top:.5rem;font-size:1.7rem;font-weight:700;line-height:1.4;color:var(--ink)}
+.gt-card em{display:block;margin-top:.9rem;padding-top:.9rem;border-top:1px dashed var(--line);font-style:normal;font-size:1.5rem;line-height:1.45;color:var(--brand)}
+.gt-line li.end .gt-card em{color:#6E6E73}
+/* 用户 11-18：留存页按「一个用户的租房周期」讲——上面一条需求强度曲线（需求期高 → 满足后落下 → 空窗期 → 开学季/毕业季/实习季再升起），
+   下面三张卡对齐三段时间；需求期留存最关键，所以那一段最宽、卡片整张腾讯蓝 */
+.gr{width:122rem}
+.gr .opp-sub{margin-top:.2rem;font-size:1.8rem}
+.gr-life,.gr-cards{display:grid;grid-template-columns:1.75fr 1fr 1fr;column-gap:2rem}
+.gr-life{position:relative;margin-top:2.4rem;height:13rem}
+.gr-wave{position:absolute;inset:0 0 0 0;width:100%;height:100%;overflow:visible}
+.gr-area{fill:rgba(255,36,66,.07)}
+.gr-line{fill:none;stroke:var(--brand);stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0}
+.gr-next{fill:none;stroke:#FF8797;stroke-width:2.5;stroke-dasharray:6 7;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.gr-zone{position:relative;border-radius:1.4rem;padding:1.2rem 1.6rem;display:flex;flex-direction:column;justify-content:flex-start;gap:.4rem}
+.gr-zone.z1{background:rgba(255,36,66,.06)}
+.gr-zone b{font-size:1.45rem;font-weight:600;color:#6E6E73}
+.gr-zone.z1 b{color:var(--brand)}
+.gr-cycle{position:absolute;bottom:1.6rem;left:50%;translate:-50% 0;white-space:nowrap;font-size:1.3rem;font-weight:600;color:#FF4D64}
+.gr-cards{margin-top:1.4rem}
+.gr-card{position:relative;padding:2.2rem 2.6rem 2.4rem;border-radius:1.8rem;background:#fff}
+.gr-card h3{margin:1rem 0 0;font-family:var(--display);font-size:2.6rem;font-weight:800;line-height:1.2;color:var(--ink)}
+.gr-card ul{list-style:none;margin:1.4rem 0 0;padding:1.4rem 0 0;border-top:1px solid var(--line);display:grid;gap:.9rem;font-size:1.65rem;color:#3A3A3C}
+.gr-card.main{background:var(--brand);color:#fff}
+.gr-card.main .gb-n,.gr-card.main h3{color:#fff}
+.gr-card.main .gb-ic{stroke:#fff}
+.gr-card.main h3{font-size:3.2rem}
+.gr-desc{margin-top:.6rem;font-size:1.7rem;color:rgba(255,255,255,.85)}
+/* 小红书版（用户 11-19）：胶囊删了以后卡片下半空着，标题和说明放到卡片正中 */
+.gr-card.main{display:flex;flex-direction:column}
+.gr-card.main h3{margin-top:auto;text-align:center}
+.gr-card.main .gr-desc{margin-bottom:auto;text-align:center}
+.gr-card.main ul{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:start;column-gap:1rem;border-top-color:rgba(255,255,255,.25)}
+.gr-card.main li{padding:.6rem 1.4rem;border-radius:99rem;background:rgba(255,255,255,.16);color:#fff;font-weight:600}
+.gr-key{position:absolute;top:2.3rem;right:6.4rem;padding:.3rem 1rem;border-radius:99rem;background:#fff;font-size:1.25rem;font-weight:700;color:var(--brand)}
+/* 走到这一页时曲线从左往右画出来 */
+.gr.play .gr-line{animation:gr-draw 1.4s cubic-bezier(.4,0,.2,1) backwards;animation-delay:var(--d0,0ms)}
+.gr.play .gr-next,.gr.play .gr-cycle{animation:gr-fade .6s ease backwards;animation-delay:calc(var(--d0,0ms) + 1300ms)}
+@keyframes gr-draw{from{stroke-dashoffset:1}}
+@keyframes gr-fade{from{opacity:0}}
+/* 用户 11-18：激活第二部分——三个环节各一张卡，上面优化前（卡点标红），下面优化后（腾讯蓝），最底下一句结果 */
+.gb{width:122rem}
+.gb .opp-sub{margin-top:.2rem;font-size:1.8rem}
+.gb-cards{margin-top:2.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.gb-card{position:relative;padding:2.2rem 2.6rem 2.4rem;border-radius:1.8rem;background:#fff}
+.gb-n{display:block;font-style:normal;font-family:var(--num);font-weight:800;font-size:3.6rem;line-height:1;color:var(--brand)}
+.gb-ic{position:absolute;top:2.4rem;right:2.6rem;width:2.6rem;height:2.6rem;fill:none;stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.gb-card h3{margin:1rem 0 0;font-family:var(--display);font-size:2.6rem;font-weight:800;line-height:1.2;color:var(--ink)}
+.gb-lab{margin:1.4rem 0 .8rem;font-size:1.4rem;color:#8E8E93}
+.gb-lab.new{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--wx-d)}
+.gb-flow{display:grid;justify-items:stretch}
+.gb-st{display:block;padding:.55rem 1rem;border-radius:.9rem;text-align:center;font-size:1.6rem;line-height:1.4}
+.gb-st.old{background:#F2F2F4;color:#6E6E73}
+.gb-st.old.bad{background:#EDEDF0;color:#3A3A3C}
+.gb-st.new{background:var(--wx-bg);color:var(--wx-d)}
+.gb-t{margin-left:.8rem;font-style:normal;font-family:var(--num);font-size:1.35rem;font-weight:700;opacity:.85}
+.gb-ar{display:block;font-style:normal;text-align:center;font-size:1.1rem;line-height:1.35;color:#AEAEB2}
+.gb-res{text-align:center;margin-top:1.4rem;font-size:1.8rem;font-weight:700;color:var(--brand)}   /* 小红书版：结果句用品牌红，前面加「有效」 */
+.ga-cols{position:relative;margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.ga-col{text-align:center}
+.ga-col h3{margin:0;font-family:var(--display);font-size:3.4rem;font-weight:800;line-height:1.15;color:var(--ink)}
+.ga-fun{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;justify-items:center;gap:.9rem}
+.ga-fun li{box-sizing:border-box;width:calc(100% - var(--k) * 7%);padding:1.05rem 1rem;border-radius:1rem;background:var(--c);font-size:1.7rem;font-weight:600;line-height:1.3;color:#7A1020}
+.ga-fun li:nth-child(1){--c:#FDEDEF;grid-row:1}
+.ga-fun li:nth-child(2){--c:#FBD6DC;grid-row:2}
+.ga-fun li:nth-child(3){--c:#F8B3BE;grid-row:3}
+.ga-fun li:nth-child(4){--c:#FF8797;grid-row:4}
+.ga-fun li:nth-child(5){--c:#FF4D64;color:#fff;grid-row:5}
+.ga-fun li:nth-child(6){--c:var(--brand);color:#fff;grid-row:6}
+.ga-fun li{grid-column:1;position:relative;z-index:1}   /* 底色浮现时带透明度 / 缩放动画会被提到上层，所以条子固定压在它上面 */
+/* 用户：「建立有效联系」这一行整行铺一条浅色（换个颜色，蓝条不动），两条漏斗中间写「首次价值时刻」。
+   底色是左边那条漏斗的伪元素，放在第 5 行，用负外边距横跨到右边那列；它排在条子前面，所以被两边的蓝条盖住，只在空隙里露出来 */
+.ga-col:first-child .ga-fun::before{content:"首次价值时刻";position:relative;z-index:0;grid-row:5;grid-column:1;justify-self:stretch;display:flex;align-items:center;justify-content:center;margin:-.45rem calc(-100% - 3rem - 1.6rem) -.45rem -1.6rem;border-radius:1.2rem;background:var(--wx-bg);font-size:1.6rem;font-weight:700;letter-spacing:.04em;color:var(--wx-d)}
+/* 用户：横带保持原版，定义写在旁边——横带正下方、两条「成功交换联系方式」中间的空白里，两行小字 */
+.ga-col:first-child .ga-fun::after{content:"发出首条咨询后，\A 24 小时内收到对方回复";white-space:pre;text-align:center;position:relative;z-index:0;grid-row:6;grid-column:1;justify-self:end;align-self:center;width:20rem;margin:0 -11.5rem 0 0;font-size:1.3rem;font-weight:500;line-height:1.45;color:var(--wx-d);pointer-events:none}
+.ga-goal{text-align:center}
+/* 用户：两边从「进入小程序」开始，像竹简一样一节一节落下来。每节挂在上一节下沿，从折起来往下翻开，带一点回弹；落完再出底部的目标 */
+.ga-fun li{transform-origin:50% 0;backface-visibility:hidden}
+.ga:not(.play) .ga-fun li,.ga:not(.play) .ga-goal,.ga:not(.play) .ga-col:first-child .ga-fun::before,.ga:not(.play) .ga-col:first-child .ga-fun::after{opacity:0}
+.ga.play .ga-fun li{animation:ga-drop .6s cubic-bezier(.25,.8,.35,1) backwards;animation-delay:calc(var(--d0, 0ms) + var(--k) * 160ms)}
+.ga.play .ga-goal{animation:ga-goal .5s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:calc(var(--d0, 0ms) + 6 * 160ms + 300ms)}
+.ga.play .ga-col:first-child .ga-fun::before,.ga.play .ga-col:first-child .ga-fun::after{animation:ga-band .5s ease backwards;animation-delay:calc(var(--d0, 0ms) + 4 * 160ms + 600ms)}
+@keyframes ga-band{from{opacity:0;scale:.96 1}}
+@keyframes ga-drop{
+  0%{opacity:0;transform:perspective(60rem) rotateX(-100deg)}
+  35%{opacity:1}
+  65%{transform:perspective(60rem) rotateX(16deg)}
+  85%{transform:perspective(60rem) rotateX(-5deg)}
+  100%{opacity:1;transform:perspective(60rem) rotateX(0deg)}
+}
+@keyframes ga-goal{from{opacity:0;translate:0 1.2rem}}
+.ga-link{position:relative;display:block;height:4.4rem;margin:0 calc((100% - 3rem) / 4)}   /* 从两条漏斗的中线往下汇成一条 */
+.ga-link::before{content:"";position:absolute;inset:0 0 50%;border:.2rem solid rgba(255,36,66,.4);border-top:0}
+.ga-link::after{content:"";position:absolute;left:50%;top:50%;bottom:0;width:.2rem;margin-left:-.1rem;background:rgba(255,36,66,.4)}
+.ga-obj{margin-top:.2rem;font-family:var(--display);font-size:4.8rem;font-weight:800;line-height:1.2;color:var(--brand)}
+.ga-sub{margin-top:.4rem;font-size:1.5rem;color:var(--muted)}
+.gz-pg svg{display:block;width:100%;height:100%;overflow:visible}
+/* 小红书版（用户 11-19）：走到最后一页，脚下冒出一个黑洞，小红薯吓一跳、掉下去，洞再合上 */
+.gz-fall{position:absolute;inset:0}
+.gz-hole{position:absolute;left:2%;width:96%;top:calc(96.4% - 1.1rem);height:2.2rem;border-radius:50%;
+  background:radial-gradient(closest-side,#000 0 58%,#16161a 74%,rgba(22,22,26,.55) 88%,rgba(22,22,26,0) 100%);
+  box-shadow:inset 0 .35rem .6rem rgba(255,255,255,.08);scale:0;pointer-events:none}
+.gw-zoom.fall .gz-fall{clip-path:inset(-300% -300% 3.6% -300%)}   /* 地面以下看不见：脚一过这条线就像掉进洞里 */
+.gw-zoom.fall .gz-hole{animation:gz-hole 1.35s cubic-bezier(.3,.7,.3,1) forwards}
+.gw-zoom.fall .gz-fall svg{animation:gz-drop .75s .22s cubic-bezier(.55,0,.85,.35) forwards}
+.gw-zoom.fall .w-shadow{opacity:0;transition:opacity .2s}
+@keyframes gz-hole{0%{scale:0 0}12%{scale:1.08 1.08}20%{scale:1 1}75%{scale:1 1}100%{scale:0 0}}
+@keyframes gz-drop{0%{translate:0 0;rotate:0deg}22%{translate:0 -9%;rotate:-6deg}34%{translate:0 -9%;rotate:5deg}100%{translate:0 135%;rotate:-14deg}}
+
+@media (max-aspect-ratio: 11/10){
+  html{font-size:max(3.5px, min(calc(100vw / 86), calc(100vh / 122)))}
+  .nav{padding:0 4rem}
+  .nav .key{display:none}
+  .hud{padding:0 4rem}
+  .nav ol{gap:1.9rem}
+  .sec{padding:6.4rem 4rem 5.2rem}
+  .split,.split.flip{grid-template-columns:78rem;gap:3rem}
+  .split.flip .copy{order:0}
+  .hello{width:78rem;grid-template-columns:1fr;gap:3.6rem;justify-items:start}
+  .hello-photo{width:26rem}
+  .hero h1{font-size:6rem}
+  .wall{flex-wrap:wrap;width:76rem;row-gap:5rem;column-gap:3rem}
+  .facets{zoom:.6}
+  .leaf{padding:0 4rem}
+  .webtour{grid-template-columns:78rem;gap:3rem}
+  .leaf.back{align-content:start;padding-top:2rem}   /* 竖屏内容靠上，左下角留给企鹅 */
+  .wshots{height:44rem;place-items:start center}
+  .wshot img{max-height:40.8rem}
+  .wlist{min-height:42.2rem;align-content:start}   /* 展开哪一条整块都不上下跳 */
+  .cs-head{width:78rem;flex-direction:column;align-items:flex-start;gap:1.4rem}
+  .cs-head .wall-head h2{white-space:normal}
+  .cs-phone{display:none}
+  .opp{width:78rem}
+  .opp-title{white-space:normal}
+  .opp-title span{display:block}   /* 竖屏在逗号后换行 */
+  .opp-stage{height:46rem;grid-template-columns:38rem 2.6rem 1fr}
+  .srcard{--bx:-4rem;--by:5rem;left:4rem;width:34rem;height:46rem}
+  .opp-arrow{font-size:2.4rem}
+  .mps{gap:.6rem}
+  .mp{height:23rem}
+  .mp-cap{font-size:1.25rem}
+  .mp-cap b{font-size:1.55rem}
+  .opp-insight p{font-size:2.1rem}
+  .opp-roles{grid-template-columns:1fr;gap:1.6rem}
+  .role-r{justify-self:start}
+  .mx-title{font-size:2.4rem;padding:0 1rem 1.6rem 0}
+  .diff{width:78rem}
+  .pos{width:78rem}
+  .pz-is{font-size:4.2rem}
+  .pz-keys{grid-template-columns:1fr 1fr}
+  .diff-body{margin-top:1.6rem;height:auto;grid-template-columns:1fr;gap:1.6rem;justify-items:center}
+  .dcols{width:78rem}
+  .dstage{width:72rem;height:52rem;zoom:.74}   /* 竖屏：左边文字变长了，配图区整体缩小 */
+  .dv .ph img{height:39rem}
+  .dv-share figure{grid-template-rows:34rem auto}
+  .dv-share .ph img{height:34rem}
+  .gw{width:78rem}
+  .gw .opp-title span,.gz .opp-title span{display:inline}   /* 这一屏标题一行放得下 */
+  .gz-page{padding:6.4rem 4rem 5.2rem}   /* 和竖屏 .sec 的左右边距一致，不然展开页偏右 */
+  .ga{width:78rem}
+  .ga .opp-title{font-size:3.8rem}
+  .ga .opp-title span{display:inline}
+  .ga-cols{gap:2rem}
+  .ga-fun li{font-size:1.5rem;padding:1rem .6rem}
+  .ga-link{margin:0 calc((100% - 2rem) / 4)}
+  .ga-col:first-child .ga-fun::before{margin:-.45rem calc(-100% - 2rem - 1rem) -.45rem -1rem;font-size:1.4rem}
+  .gz{width:78rem}
+  .gz-front{padding:2rem 1.8rem 2.2rem}
+  .gz-front h3{font-size:2.5rem}
+  .gz-it,.gz-items.plan span{font-size:1.45rem;padding:.2rem .4rem}
+  .gz-front > b{font-size:1.4rem}
+  .gz-back{padding:1.8rem}
+  .gz-ev{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);row-gap:1.2rem}   /* 竖屏卡片窄：文字在上，截图在下 */
+  .gz-ev-t h4{font-size:2rem}
+  .gz-ev-t p{display:none}
+  .gz-shots{--shot:15rem;justify-content:center}   /* 竖屏卡片约 26rem 高，标题占掉一截 */
+  .gw-cards li{padding:2.2rem 1.8rem 2.4rem}
+  .gw-cards i{font-size:5rem}
+  .gw-cards h3{font-size:3.2rem}
+  .gw-cards p b{font-size:1.55rem;white-space:nowrap}   /* 竖屏卡片窄，问题保持一行 */
+  .gw-cards p{font-size:1.5rem}
+  .mx{width:78rem;grid-template-columns:15rem 1fr 1fr}
+  .mx > *{grid-row:var(--mc) / span var(--mcs,1);grid-column:var(--mr) / span var(--ms,1)}
+  .mx-mlab,.mx-metric{display:none}
+  .mx-col{padding:1.8rem 1.6rem 1.8rem 0}
+  .mx-col h3{font-size:2.4rem}
+  .mx-col p{font-size:1.45rem}
+  .mx-col .m{display:block;margin-top:1rem;font-size:1.3rem;font-weight:400;color:var(--muted)}
+  .mx-col .m b{display:block;margin-top:.2rem;font-size:1.45rem;font-weight:700;color:var(--ink)}
+  .mx-col + .mx-col::before{content:"↓";left:0;top:-1.2rem;font-size:1.8rem}
+  .mx-cell{padding:1.8rem 1.8rem;border-left:0;border-top:1px solid var(--line-soft)}
+  .mx .b-row{border-bottom:0;border-right:1px solid var(--line-soft)}
+  .mx-role{padding:1.8rem}
+  .letter{width:78rem}
+  .wall .phone{width:14rem}
+  .roles{flex-wrap:wrap;row-gap:1rem}
+  .link span,.roles .hint{display:none}
+  .sv-head{width:78rem;flex-direction:column;align-items:flex-start;gap:1.6rem}
+  .stage{height:62rem}
+  .pane{flex-direction:column;gap:2.4rem}
+  .screen{width:78rem}
+  .say,.pane.tall .say{width:74rem}
+  .device{width:22rem}
+}
+@media (prefers-reduced-motion: reduce){
+  .ga .ga-fun li,.ga .ga-goal,.ga .ga-col:first-child .ga-fun::before,.ga .ga-col:first-child .ga-fun::after{opacity:1!important;animation:none!important}
+  html{scroll-behavior:auto}
+  .sec .obj,.sec .phone{opacity:1;animation:none!important}
+  .stamp,.ok-stamp,.seal svg{opacity:.88;animation:none!important}
+  .signoff li::before{background-size:100%;background-color:var(--mint);border-color:var(--mint);animation:none!important}
+  .receipt{clip-path:none;animation:none!important}
+  .bar,.lane u,.duo-track,.walker{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="模块">
+  <ol>
+    <li><a href="#hero" data-to="hero"><kbd class="key sm" data-key="1">1</kbd>首页</a></li>
+    <li><a href="#why" data-to="why"><kbd class="key sm" data-key="2">2</kbd>创业</a></li>
+    <li><a href="#saviu" data-to="saviu"><kbd class="key sm" data-key="3">3</kbd>Saviu</a></li>
+    <li><a href="#sides" data-to="sides"><kbd class="key sm" data-key="4">4</kbd>三面</a></li>
+    <li><a href="#tencent" data-to="tencent"><kbd class="key sm" data-key="5">5</kbd>为什么是小红书</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ========== 开场 ========== -->
+<section class="sec hero" id="hero">
+  <div class="hello">
+    <img class="hello-photo obj" src="img/me-photo-castle.jpg" width="1200" height="1600" alt="徐显策" style="--i:0">
+    <div class="hello-text">
+      <h1>面试官您好，<br>我是徐显策同学。</h1>
+      <dl class="hello-roles obj" style="--i:1"><dt>Northwestern</dt><dd>电子工程</dd><dt>CloudSublet</dt><dd>联合创始人 · 产品 / 研发</dd><dt>Saviu</dt><dd>开发者</dd></dl>
+      <p class="hello-when obj" style="--i:2">我 <b>12 月初</b>可以到岗，<b>每周工作 5 天</b>，能实习 <b>6 个月</b>。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== 创业 · 为什么做 ========== -->
+<section class="sec mist opp-sec" id="why">
+  <div class="opp">
+    <h2 class="opp-title obj" style="--i:0">市场洞察</h2>
+    <div class="opp-stage">
+      <div class="opp-src obj" style="--i:1">
+        <div class="srcard is-back" data-src="xhs">
+          <div class="xhs-view"><button class="phone-btn xhs-shot" type="button" tabindex="-1" aria-label="放大看小红书搜索截图"><img src="img/opp/xhs-1.jpg" width="920" height="2000" alt="小红书搜索「埃文斯顿转租」：房源和求租笔记混在一起"></button></div>
+          <button class="phone-btn src-more" type="button" tabindex="-1" aria-hidden="true"><img src="img/opp/xhs-2.jpg" width="920" height="2000" alt="小红书搜索「埃文斯顿转租」：租期、价格等信息要逐条点开确认"></button>
+        </div>
+        <div class="srcard is-front" data-src="wx">
+        <div class="wx-win">
+          <button class="phone-btn wx-head" type="button" aria-label="放大看微信租房群截图"><img class="src-full" src="img/opp/wechat-1.jpg" width="920" height="2000" alt="微信租房群：转租信息和换汇等消息混在一起"><i>‹</i><span>26Fall 西北大学-租房群 (183)</span><i>···</i></button>
+          <button class="phone-btn src-more" type="button" tabindex="-1" aria-hidden="true"><img src="img/opp/wechat-2.jpg" width="920" height="2000" alt="微信租房群：每条转租信息格式都不一样"></button>
+          <div class="wx-feed">
+            <p class="wx-time">10月22日 01:23</p>
+            <div class="wx-line"><i style="--av:linear-gradient(135deg,#B9D4E8,#6F97B8)"></i><p class="wx-bub"><mark data-to="type">男生个人转租</mark>，，<mark data-to="furn">家具可全部赠送</mark><br>租期 <mark data-to="period">2027/1/3-2027/3/29</mark><br>可以<mark data-to="furn">拎包入住</mark>，租金优惠 <mark data-to="rent">850 刀/月</mark><br>公寓距离学校<mark data-to="map">步行 15 分钟左右</mark>，也可以坐<mark data-to="shuttle">公交 201，213 路</mark>去学校<br>有意向可以私聊</p></div>
+            <p class="wx-time">10月22日 10:47</p>
+            <div class="wx-line"><i style="--av:linear-gradient(135deg,#7A7F86,#3E4349)"></i><p class="wx-bub">出 3000🔪 zelle 换，汇率 6.67 打包，🉑拆</p></div>
+            <p class="wx-time">10月22日 21:29</p>
+            <div class="wx-line"><i style="--av:linear-gradient(135deg,#D8C2A8,#A88E72)"></i><p class="wx-bub">🔔因个人原因 GAP 回国，转租部分租期<br>租期 2027/2/17-2027/8/31<br>🛏️超大次卧☀️房，可以拎包入住，租金🉑协商 1K 出头<br>公寓距离学校步行 15 分钟左右，也可以坐公交 201，213 路去学校<br>快递室，24 小时洗衣房健身房，周边也有大超市<br>感兴趣🉑👀实拍视频～租期灵活可商量</p></div>
+            <p class="wx-time">11月8日 19:35</p>
+            <div class="wx-line"><i style="--av:linear-gradient(135deg,#8C6E4E,#4A3624)"></i><p class="wx-bub">寒假转租<br>主卧～2b2b 中 1b1b<br>位置：1501Maple Ave<br>租期：12.5-1.5 可以一周之类的短租<br>家具齐全，拎包入住，离 target 超近。淡季超低价转。有意向联系我🙋</p></div>
+            <p class="wx-time">11月8日 20:25</p>
+            <div class="wx-line"><i style="--av:linear-gradient(135deg,#B9D4E8,#6F97B8)"></i><p class="wx-bub">同学因签证春季转租（租金可降 300🔪）<br>📍位置：1501 Maple Ave, Evanston<br>租期：2027/2/17-2027/8/31<br>🌟房源亮点：<br>房间超大，采光和通风都超好，住起来很舒服<br>客厅和厨房空间也很宽敞，适合喜欢做饭或者偶尔朋友小聚<br>室内设施齐全：空调/暖气/冰箱/烤箱/微波炉/洗碗机，完全拎包入住<br>公寓配套超全：健身房、洗衣房、天台，生活超方便<br>🚶周边环境：<br>步行 5 分钟到校车站，13 分钟到学校，通勤超轻松</p></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <i class="opp-arrow obj" style="--i:2" aria-hidden="true">→</i>
+      <div class="mps obj" style="--i:2">
+        <p class="mps-tag">界面示例</p>
+        <div class="mp">
+          <button class="phone-btn" type="button"><img src="img/opp/mp-top.webp" width="776" height="1600" alt="寓见云居房源详情（上）：价格、租期、地址、房源类型、校车覆盖都在固定位置"></button>
+          <i class="ring" data-ring="rent" style="--x:9%;--y:44.6%;--w:52%;--h:7.6%"></i>
+          <i class="ring" data-ring="period" style="--x:9%;--y:58.6%;--w:28%;--h:4%"></i>
+          <i class="ring" data-ring="type" style="--x:9%;--y:72.6%;--w:63%;--h:8.4%"></i>
+          <i class="ring" data-ring="shuttle" style="--x:73%;--y:72.6%;--w:16%;--h:8.4%"></i>
+        </div>
+        <div class="mp">
+          <button class="phone-btn" type="button"><img src="img/opp/mp-mid.webp" width="776" height="1600" alt="寓见云居房源详情（中）：地图位置、室友、费用和家具清单"></button>
+          <i class="ring" data-ring="map" style="--x:7%;--y:13.5%;--w:86%;--h:29.5%"></i>
+          <i class="ring" data-ring="furn" style="--x:7%;--y:67%;--w:86%;--h:23%"></i>
+        </div>
+        <div class="mp">
+          <button class="phone-btn" type="button"><img src="img/opp/mp-bot.webp" width="776" height="1600" alt="寓见云居房源详情（下）：学生身份、房源和房东批准的验证状态，以及联系前的风险提示"></button>
+          <i class="ring" data-ring="verify" style="--x:7%;--y:41.5%;--w:86%;--h:33%"></i>
+        </div>
+        <p class="mp-cap" style="grid-column:1 / 3"><b>信息结构化</b>降低筛选成本</p>
+        <p class="mp-cap" style="grid-column:3"><b>多维验证机制</b>降低信任成本</p>
+      </div>
+    </div>
+    <div class="opp-roles obj" style="--i:3">
+      <div class="role-l"><h3>转租者 · 供给侧</h3><p class="q">如何在最短时间内最大化有效曝光，<span class="nw">并及时获得租客反馈？</span></p><p>曝光不确定、精准触达困难、反馈不及时</p></div>
+      <div class="opp-mid">
+        <div class="opp-insight"><p>北美转租市场<br><span class="nw">缺乏高效、可信的转租平台。</span></p></div>
+      </div>
+      <div class="role-r"><h3>求租者 · 需求侧</h3><p class="q">如何在保障安全的前提下<span class="hang">，</span><br>高效找到符合预期的真实房源<span class="hang">？</span></p><p>信息分散、筛选成本高、真实性难以核实</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 创业 · 差异化 ========== -->
+<section class="sec mist diff-sec" id="diff">
+  <div class="diff" data-s="0">
+    <h2 class="opp-title obj" style="--i:0">竞品分析</h2>
+    <div class="diff-body">
+      <div class="dcols obj" style="--i:1">
+        <div class="dcol comp"><h3>COMPETITORS · 成熟租房平台</h3><h4>以公寓租赁与商业服务为主</h4><p class="dsub">它们的优势</p><ul class="pros"><li>专业公寓资源</li><li>顾问服务</li><li>品牌信任</li><li>预订与签约服务</li></ul><p class="dsub">仍有空间</p><ul class="gaps"><li class="pain-lead"><i>01</i><b>租期灵活性不足</b><span>以长期公寓租赁为主，<em>非标准租期与个人转租需求仍有探索空间。</em></span></li><li><i>02</i><b>信息干扰</b><span>营销广告、优惠活动与房源信息混杂。</span></li></ul></div>
+      </div>
+      <div class="dstage obj" style="--i:2">
+        <figure class="cshot" style="--x:0rem;--r:-2deg"><button class="phone-btn" type="button"><img src="img/diff/comp-1.jpg" width="920" height="2000" alt="ehomie 严选：平台严选房源，在线预订"></button><figcaption>ehomie 严选</figcaption></figure>
+        <figure class="cshot" style="--x:17rem;--r:1.5deg"><button class="phone-btn" type="button"><img src="img/diff/comp-2.jpg" width="920" height="2000" alt="Amber：学生公寓详情页，配专属顾问"></button><figcaption>Amber</figcaption></figure>
+        <figure class="cshot" style="--x:34rem;--r:-1.5deg"><button class="phone-btn" type="button"><img src="img/diff/comp-3.jpg" width="920" height="2000" alt="异乡好居：公寓列表，每套房都配顾问"></button><figcaption>异乡好居</figcaption></figure>
+        <figure class="cshot" style="--x:51rem;--r:2deg"><button class="phone-btn" type="button"><img src="img/diff/comp-4.jpg" width="920" height="2000" alt="异乡好居顾问在微信群里给我推房源"></button><figcaption>异乡好居顾问 · 微信群</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 创业 · 产品定位 ========== -->
+<section class="sec mist pos-sec" id="position">
+  <div class="pos">
+    <h2 class="opp-title obj" style="--i:0">产品定位</h2>
+    <div class="pz">
+      <p class="pz-we obj" style="--i:1">We are</p>
+      <p class="pz-is obj" style="--i:1">专注于北美的中国留学生<span>校园转租平台</span></p>
+      <ul class="pz-keys">
+        <li class="obj" style="--i:2"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01M16 17h.01" stroke-width="2.4"/></svg><h3>灵活租期</h3><span>聚焦非标准租期</span></li>
+        <li class="obj" style="--i:2.5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3.5 20 7.5l-4 4"/><path d="M20 7.5H5"/><path d="M8 20.5 4 16.5l4-4"/><path d="M4 16.5h15"/></svg><h3>双向匹配</h3><span>降低供需匹配成本</span></li>
+        <li class="obj" style="--i:3"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg><h3>自主决策</h3><span>以用户需求为导向</span></li>
+        <li class="obj" style="--i:3.5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 19.5 6v5.6c0 4.6-3.2 8.3-7.5 9.6-4.3-1.3-7.5-5-7.5-9.6V6z"/><path d="m8.6 12 2.4 2.4 4.6-4.8"/></svg><h3>安全可信</h3><span>降低用户信任成本</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 创业 · 以用户需求定义产品（用户 11-18：从竞品页拆出来，放在产品定位后面） ========== -->
+<section class="sec mist diff-sec" id="feat">
+  <div class="diff" data-s="0">
+    <h2 class="opp-title obj" style="--i:0">产品设计</h2>
+    <p class="opp-sub obj" style="--i:0">以用户需求定义产品</p>
+    <div class="diff-body">
+      <div class="dcols obj" style="--i:1">
+        <div class="dcol cs"><ul><li><i>01</i><span>最大化有效曝光</span><em>转租者</em><p class="how"><b>降低传播成本</b>AI 生成推广文案、微信与小红书分享</p></li><li><i>02</i><span>精准触达潜在租客</span><em>双方用户</em><p class="how"><b>双向供需匹配</b>主动浏览求租需求、寻找潜在租客</p></li><li><i>03</i><span>及时获得反馈</span><em>双方用户</em><p class="how"><b>自动化消息触达</b>新房源提醒、新求租提醒、未读消息提醒</p></li><li><i>04</i><span>高效找到心仪房源</span><em>求租者</em><p class="how"><b>个性化需求匹配</b>校区、预算、租期、户型筛选与推荐</p></li><li><i>05</i><span>安全可信的租房体验</span><em>求租者</em><p class="how"><b>全链路信任与安全机制</b>学生身份认证、房源审核、安全沟通、举报机制</p></li></ul></div>
+      </div>
+      <div class="dstage obj" style="--i:2">
+        <div class="dv dv-share" data-v="1"><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-4-v2.webp" width="778" height="1600" alt="寓见云居分享房源：一键生成结构清晰的微信群文案，一键分享至微信"></button><figcaption><strong>一键生成微信群文案</strong></figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-poster.webp" width="776" height="1600" alt="寓见云居分享房源：朋友圈一键保存房源海报，海报上有实拍图、价格、租期和小程序码"></button><figcaption><strong>一键生成朋友圈海报</strong></figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-5-v2.webp" width="776" height="1600" alt="寓见云居分享房源：一键生成小红书标题和文案，可选寒假短租、寒假回国、出去旅行等写法"></button><figcaption><strong>一键生成小红书标题和文案</strong></figcaption></figure><figure><button class="phone-btn wxcard" type="button"><img src="img/diff/share-chat.jpg" width="974" height="990" alt="我把寓见云居小程序卡片转发到微信群里的真实聊天截图"></button><figcaption><strong>一键转发至微信群中</strong></figcaption></figure></div>
+        <div class="dv" data-v="2"><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-0.webp" width="776" height="1600" alt="寓见云居可租房源列表：按学校和区域搜索、筛选、收藏"></button><figcaption><b>人找房</b><strong>从反复搜索到精准筛选</strong>求租者主动寻找心仪房源</figcaption></figure><i class="swap" aria-hidden="true"><svg viewBox="0 0 48 40"><path d="M6 13h34m-8-8 8 8-8 8M42 27H8m8-8-8 8 8 8"/></svg></i><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-2.webp" width="777" height="1600" alt="寓见云居求租需求列表：转租者能看到有谁在找房"></button><figcaption><b>房找人</b><strong>从被动等待到主动触达</strong>转租者主动寻找潜在租客</figcaption></figure></div>
+        <div class="dv" data-v="3"><button class="phone-btn rcard" type="button"><img src="img/diff/reach-1.png" width="1053" height="879" alt="寓见云居订阅消息：信息发布提醒"></button><button class="phone-btn rcard" type="button"><img src="img/diff/reach-2.png" width="1053" height="879" alt="寓见云居订阅消息：审核结果通知"></button><button class="phone-btn rcard" type="button"><img src="img/diff/reach-3.png" width="1053" height="789" alt="寓见云居订阅消息：未读消息提醒"></button><button class="phone-btn rcard" type="button"><img src="img/diff/reach-4.png" width="1053" height="879" alt="寓见云居订阅消息：收藏地点状态更新提醒，收藏的房源改价后通知求租者"></button></div>
+        <div class="dv dv-rec" data-v="4"><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-6.webp" width="776" height="1600" alt="寓见云居求租需求筛选：价格、房型、租期、区域"></button><figcaption><b>多维筛选</b>预算、户型、租期、区域</figcaption></figure><figure><button class="phone-btn reccard" type="button"><img src="img/diff/rec-card.jpg" width="1206" height="947" alt="寓见云居为你推荐：按租期和预算推荐房源，并标出学生认证、租期部分匹配、预算匹配"></button><figcaption><b>个性化推荐</b>需求匹配、匹配原因</figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-7.webp" width="776" height="1600" alt="寓见云居公寓位置地图：The Link Evanston 距 NU Campus 约 0.1 英里"></button><figcaption><b>校园地图</b>学校距离、地理位置</figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/app-8.webp" width="776" height="1600" alt="寓见云居校园交通地图：UChicago 校车线路和沿线房源"></button><figcaption><b>通勤场景匹配</b>校车线路、沿线房源</figcaption></figure></div>
+        <div class="dv dv-safe" data-v="5"><p class="stage-tag" style="grid-column:1 / 3">交易前 · 验证真实性</p><p class="stage-tag" style="grid-column:3">沟通中 · 保护隐私</p><p class="stage-tag" style="grid-column:4">遇到问题 · 举报处理</p><figure><button class="phone-btn ph" type="button"><img src="img/diff/safe-id.webp" width="776" height="1600" alt="寓见云居身份验证：学校邮箱验证码，或上传校园卡、在读证明人工审核"></button><figcaption><b>身份可信</b>学校邮箱、在读证明</figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/safe-lease.webp" width="776" height="1600" alt="寓见云居发布房源：Lease 转让需要上传 Lease / 房源证明，上传后才能继续"></button><figcaption><b>房源核验</b>Lease、房源证明</figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/safe-chat.webp" width="776" height="1600" alt="寓见云居站内聊天：聊满 3 轮、完成一项认证后才能交换联系方式"></button><figcaption><b>隐私保护</b>三轮对话、认证门槛</figcaption></figure><figure><button class="phone-btn ph" type="button"><img src="img/diff/safe-report.webp" width="776" height="1600" alt="寓见云居举报房源：选择问题类型、补充说明、上传证据截图"></button><figcaption><b>风险反馈</b>举报、证据提交</figcaption></figure></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 创业 · 增长 ========== -->
+<section class="sec mist gw-sec" id="growth">
+  <div class="gw" data-s="0">
+    <h2 class="opp-title obj" style="--i:0">增长策略</h2>
+    <ol class="gw-cards obj" style="--i:1"><li><i>01</i><h3>拉新</h3><small>Acquisition</small><p><b>如何低成本获取高意向用户？</b>建立有效供需密度</p></li><li><i>02</i><h3>激活</h3><small>Activation</small><p><b>如何让用户快速感受到价值？</b>缩短首次有效联系耗时</p></li><li><i>03</i><h3>留存</h3><small>Retention</small><p><b>如何让用户持续获得价值？</b>精准触达 · 高频校园场景</p></li></ol>
+    <div class="gw-goal obj" style="--i:1"><i class="gw-link" aria-hidden="true"></i><p class="gw-label">核心业务目标</p><p class="gw-obj">提升供需匹配效率与规模</p></div>
+    <div class="gw-kpi obj" style="--i:1"><p><small>北极星指标</small><b>每周达成有效联系的用户数</b><em class="gw-def">每周至少建立一次有效双向沟通的用户数量，同一用户每周仅计入一次。</em></p><p><small>核心效率指标</small><b>有效联系转化率</b><em class="gw-def">= 建立有效联系人数 ÷ 进入小程序人数 × 100%</em></p></div>
+  </div>
+  <!-- 展开层：01 / 02 卡铺满整屏后显示拉新 / 激活，两页横着排 -->
+  <div class="gw-zoom" aria-hidden="true" data-k="0">
+    <div class="gz-track">
+    <div class="gz-page">
+      <div class="gz">
+        <h2 class="opp-title">如何低成本获取<span>高意向用户？</span></h2>
+        <div class="gz-cards"><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">01</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><h3>主动获客</h3><small>Direct Outreach</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">跨平台 Reach Out</button><button class="gz-it" type="button" data-k="2">校园社群运营</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>01 · 主动获客</small><h4>跨平台 Reach Out</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/outreach.webp" width="776" height="1600" alt="小红书私信：看到对方刚发布的芝加哥 South Loop 转租帖，邀请把房源发布到 CloudSublet"></button></div></div><div class="gz-ev" data-k="2"><div class="gz-ev-t"><small>01 · 主动获客</small><h4>校园社群运营</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/group.webp" width="776" height="1600" alt="微信 NU26 群（110 人）的群公告：找房、转租、二手、约饭、活动都可以在群里发"></button></div></div></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">02</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 9h7M8.5 13h5"/></svg><h3>内容营销</h3><small>Content Marketing</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">官方小红书账号运营</button><button class="gz-it" type="button" data-k="1">UGC 真实体验笔记激励</button><button class="gz-it" type="button" data-k="2">Campus Guide 内容引流</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>官方小红书账号运营</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/xhs-account.webp" width="776" height="1600" alt="CloudSublet 官方小红书账号主页：Northwestern、UChicago、Yale、Berkeley 的留学生活笔记"></button></div></div><div class="gz-ev" data-k="1"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>UGC 真实体验笔记激励</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/phones/nu28.png" width="435" height="900" alt="寓见云居福利中心：体验笔记投稿奖励档位"></button></div></div><div class="gz-ev" data-k="2"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>Campus Guide<br>内容引流</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/phones/nu30.png" width="435" height="900" alt="寓见云居本地生活：Campus Guide 内容"></button></div></div></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">03</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg><h3>产品自传播</h3><small>Product-led Growth</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">一键种草文案生成</button><button class="gz-it" type="button" data-k="1">微信房源卡片分享</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>03 · 产品自传播</small><h4>一键种草文案生成</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/diff/app-4-v2.webp" width="778" height="1600" alt="寓见云居分享房源：一键生成结构清晰的微信群文案，一键分享至微信"></button><button class="phone-btn" type="button"><img src="img/diff/app-5-v2.webp" width="776" height="1600" alt="寓见云居分享房源：一键生成小红书标题和文案，可选寒假短租、寒假回国、出去旅行等写法"></button></div></div><div class="gz-ev" data-k="1"><div class="gz-ev-t"><small>03 · 产品自传播</small><h4>微信房源卡片分享</h4></div><div class="gz-shots"><button class="phone-btn flat" type="button"><img src="img/diff/share-card.jpg" width="753" height="925" alt="寓见云居房源小程序卡片：标题、价格和实拍图"></button></div></div></div></article><p class="gz-row plan">下一步</p><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">04</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><h3>校园地推</h3><small>Field Marketing</small><p class="gz-items plan"><span>校园 Poster 宣传</span><span>自主策划与主办活动</span><span>新生季定向推广</span></p><b>建立校园品牌认知</b></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">05</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg><h3>校园生态合作</h3><small>Campus Partnership</small><p class="gz-items plan"><span>华人学生会合作</span><span>各校区校园大使计划</span></p><b>建立本地化增长网络</b></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">06</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><h3>自然流量</h3><small>Organic Acquisition</small><p class="gz-items plan"><span>微信小程序搜索</span><span>品牌关键词搜索</span><span>Web SEO 优化</span></p><b>积累长期自然流量</b></div></article></div>
+      </div>
+    </div>
+    <!-- 激活：拉新页再按 ↓，整页左移，企鹅从拉新页右下角走过接缝 -->
+    <div class="gz-page" inert>
+      <div class="ga">
+        <h2 class="opp-title">新客转化漏斗</h2>
+        <div class="ga-cols"><div class="ga-col"><h3>转租者</h3><ol class="ga-fun"><li style="--k:0">进入小程序</li><li style="--k:1">开始发布房源</li><li style="--k:2">完成房源发布</li><li style="--k:3">收到租客咨询</li><li style="--k:4">建立有效联系</li><li style="--k:5">成功交换联系方式</li></ol></div><div class="ga-col"><h3>求租者</h3><ol class="ga-fun"><li style="--k:0">进入小程序</li><li style="--k:1">浏览与筛选房源</li><li style="--k:2">查看房源详情</li><li style="--k:3">发起私信咨询</li><li style="--k:4">建立有效联系</li><li style="--k:5">成功交换联系方式</li></ol></div></div>
+        <div class="ga-goal"><i class="ga-link" aria-hidden="true"></i><p class="gw-label">核心转化目标</p><p class="ga-obj">实现高效供需撮合</p></div>
+      </div>
+    </div>
+      <div class="gz-page" inert><div class="gb">
+        <h2 class="opp-title">新客承接与链路优化</h2>
+        <p class="opp-sub">缩短首次有效联系耗时</p>
+        <div class="gb-cards">
+          <article class="gb-card"><i class="gb-n">01</i><svg class="gb-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M9 16.5 13.5 12 9 7.5"/><path d="M13.5 12H3.5"/></svg><h3>进入与登录</h3><p class="gb-lab">优化前</p><div class="gb-flow"><span class="gb-st old">进入小程序</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st old bad">强制登录</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st old">浏览房源</span></div><p class="gb-lab new">优化后</p><div class="gb-flow"><span class="gb-st new">进入小程序</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st new">直接浏览房源</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st new">按需登录</span></div><p class="gb-res">有效降低新客进入门槛</p></article>
+          <article class="gb-card"><i class="gb-n">02</i><svg class="gb-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3.5 20 7.5l-4 4"/><path d="M20 7.5H5"/><path d="M8 20.5 4 16.5l4-4"/><path d="M4 16.5h15"/></svg><h3>寻找匹配对象</h3><p class="gb-lab">优化前</p><div class="gb-flow"><span class="gb-st old">浏览列表</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st old bad">手动筛选</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st old">寻找匹配对象</span></div><p class="gb-lab new">优化后</p><div class="gb-flow"><span class="gb-st new">识别租房偏好</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st new">双向个性化推荐</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st new">查看匹配对象</span></div><p class="gb-res">有效降低用户搜索成本</p></article>
+          <article class="gb-card"><i class="gb-n">03</i><svg class="gb-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><h3>建立联系</h3><p class="gb-lab">优化前</p><div class="gb-flow"><span class="gb-st old">点击咨询</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st old bad">等待会话创建<em class="gb-t">约 11 秒</em></span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st old">进入聊天</span></div><p class="gb-lab new">优化后</p><div class="gb-flow"><span class="gb-st new">点击咨询</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st new">立即进入聊天</span><i class="gb-ar" aria-hidden="true">↓</i><span class="gb-st new">后台创建会话<em class="gb-t">约 3 秒</em></span></div><p class="gb-res">有效减少沟通过程中的等待</p></article>
+        </div>
+      </div></div>
+      <div class="gz-page" inert><div class="gr">
+        <h2 class="opp-title">如何让用户<span>持续获得价值？</span></h2>
+        <p class="opp-sub">租房是低频且有明显周期性的需求，所以我们不盲目追求 DAU。</p>
+        <div class="gr-life">
+          <svg class="gr-wave" viewBox="0 0 1000 140" preserveAspectRatio="none" aria-hidden="true">
+            <path class="gr-area" d="M0 128 C 30 128 50 50 100 50 L 420 50 C 470 50 480 112 540 112 L 1000 112 L 1000 140 L 0 140 Z"/>
+            <path class="gr-line" pathLength="1" d="M0 128 C 30 128 50 50 100 50 L 420 50 C 470 50 480 112 540 112 L 880 112"/>
+            <path class="gr-next" d="M880 112 C 930 112 950 58 1000 52"/>
+          </svg>
+          <div class="gr-zone z1"><b>需求尚未满足</b><span class="gr-cycle">↻ 开学季 · 毕业季 · 实习季</span></div>
+          <div class="gr-zone z2"><b>租房需求已满足</b></div>
+          <div class="gr-zone z3"><b>租房需求空窗期</b></div>
+        </div>
+        <div class="gr-cards">
+          <article class="gr-card main"><span class="gr-key">最关键</span><i class="gb-n">01</i><svg class="gb-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><h3>需求期留存</h3><p class="gr-desc">持续提供新的匹配机会，驱动用户主动回访</p></article>
+          <article class="gr-card"><i class="gb-n">02</i><svg class="gb-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg><h3>口碑与用户推荐</h3><ul><li>成功经验分享</li><li>好友推荐</li><li>校园社群传播</li></ul></article>
+          <article class="gr-card"><i class="gb-n">03</i><svg class="gb-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></svg><h3>高频场景拓展</h3><ul><li>校园搭子</li><li>校园拼车</li><li>校园生活服务</li></ul></article>
+        </div>
+      </div></div>
+      <div class="gz-page" inert><div class="gm">
+        <h2 class="opp-title">需求期留存方案</h2>
+        <div class="gm-row">
+          <article class="gm-card"><h3>求租者</h3><ol class="gm-line"><li><small>尚未找到合适房源</small><p>新增符合预算、租期的房源<i aria-hidden="true">→</i>个性化推荐</p></li><li><small>收藏房源</small><p>收藏房源降价<i aria-hidden="true">→</i>动态提醒<em class="gm-push">Push</em></p><p>根据收藏偏好<i aria-hidden="true">→</i>推荐相似房源</p></li><li><small>需求仍在，长期未访问</small><p>出现新匹配机会<i aria-hidden="true">→</i>定向唤醒<em class="gm-push">Push</em></p></li></ol></article>
+          <article class="gm-card"><h3>转租者</h3><ol class="gm-line"><li><small>房源发布后</small><p>出现匹配求租需求<i aria-hidden="true">→</i>个性化推荐</p></li><li><small>收到咨询</small><p>存在未读消息<i aria-hidden="true">→</i>跟进提醒<em class="gm-push">Push</em></p></li><li><small>房源发布超过 7 天 / 14 天，仍无求租者主动触达</small><p>引导更新房源信息、优化曝光</p></li></ol></article>
+        </div>
+        <div class="gm-met">
+          <div><small>核心留存指标</small><b class="hot">需求期回访率</b></div>
+          <div class="r"><small>核心业务指标</small><b>有效联系率</b></div>
+        </div>
+      </div></div>
+    <div class="gz-pg" aria-hidden="true"><i class="gz-hole"></i><div class="gz-fall"><svg viewBox="-24 6 140 110"><defs>
+      <radialGradient id="rsSkin" cx=".38" cy=".28" r=".85"><stop offset="0" stop-color="#FFF7EC"/><stop offset=".6" stop-color="#F6E5CF"/><stop offset="1" stop-color="#E4CAAB"/></radialGradient>
+      <linearGradient id="rsFoot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3E1CA"/><stop offset="1" stop-color="#DCC09E"/></linearGradient>
+      <linearGradient id="rsShirt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF4A5F"/><stop offset="1" stop-color="#E61C3A"/></linearGradient>
+      <linearGradient id="rsLeaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86D08A"/><stop offset="1" stop-color="#3F9A57"/></linearGradient>
+      <clipPath id="rsClip"><path d="M66 15C85 15 99 38 100.5 62 102 88 88 106 66 106 44 106 30 88 31.5 62 33 38 47 15 66 15Z"/></clipPath>
+    </defs><ellipse class="w-shadow" cx="48" cy="113.8" rx="66" ry="2.2"/>
+    <g class="w-case">
+      <g transform="translate(-21.125 12.875) scale(1.25) translate(-24.5 7.5) rotate(16 43 70.4)">
+        <path d="M37 46.5v-6.3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6.3" fill="none" stroke="#8A8A90" stroke-width="1.5"/>
+        <circle cx="27" cy="70.4" r="2.6" fill="#1d1d1f"/><circle cx="27" cy="70.4" r=".9" fill="#9A9AA0"/>
+        <rect x="23.5" y="46" width="20.5" height="22.6" rx="3.4" fill="#FFD43B"/>
+        <path d="M23.5 62.4H44v2.8a3.4 3.4 0 0 1-3.4 3.4H26.9a3.4 3.4 0 0 1-3.4-3.4z" fill="#EDBE22"/>
+        <path d="M29.4 49.6v12M33.75 49.6v12M38.1 49.6v12" fill="none" stroke="#DDAE16" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M25.6 49.4a1.4 1.4 0 0 1 1.3-1.3" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity=".75"/>
+        <circle cx="43" cy="70.4" r="2.6" fill="#1d1d1f"/><circle cx="43" cy="70.4" r=".9" fill="#9A9AA0"/>
+      </g>
+    </g>
+    <g class="w-body">
+      <rect class="w-leg a" x="49.5" y="96" width="12.5" height="16.2" rx="5.6" fill="url(#rsFoot)"/>
+      <rect class="w-leg b" x="70.5" y="96" width="12.5" height="16.2" rx="5.6" fill="url(#rsFoot)"/>
+      <path d="M66 15C85 15 99 38 100.5 62 102 88 88 106 66 106 44 106 30 88 31.5 62 33 38 47 15 66 15Z" fill="url(#rsSkin)"/>
+      <g clip-path="url(#rsClip)">
+        <rect x="25" y="60" width="82" height="28" fill="url(#rsShirt)"/>
+        <rect x="25" y="85.4" width="82" height="2.6" fill="#D41634"/>
+        <path d="M30 61.4H102" stroke="#fff" stroke-width="1" opacity=".18"/>
+      </g>
+      <path d="M37 66.5 13 72.6" stroke="#F1DEC5" stroke-width="9" stroke-linecap="round"/>
+      <path d="M37.5 66.4 28.5 68.6" stroke="#F4304C" stroke-width="11.5" stroke-linecap="round"/>
+      <g class="w-fin">
+        <path d="M96 65.5 107.6 77" stroke="#F1DEC5" stroke-width="9" stroke-linecap="round"/>
+        <path d="M95.5 65 102.8 71.4" stroke="#F4304C" stroke-width="11.5" stroke-linecap="round"/>
+      </g>
+      <text x="66" y="79.6" text-anchor="middle" font-family="'Arial Rounded MT Bold','SF Pro Rounded',Helvetica,Arial,sans-serif" font-weight="800" font-size="12.5" letter-spacing=".6" fill="#FFF8F0">RED</text>
+      <g class="w-sprout">
+        <path d="M70.4 15.6V12" stroke="#4E9F5C" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M70.6 13.2C64.4 9 61.2 5.6 63 2.4 64.8-.6 68.6 0 70.6 3 72.6 0 76.4-.6 78.2 2.4 80 5.6 76.8 9 70.6 13.2Z" fill="url(#rsLeaf)" transform="rotate(-14 70.6 13.2)"/>
+      </g>
+      <path d="M51.6 40.8Q55.2 36.6 58.8 40.8M73.4 40.8Q77 36.6 80.6 40.8" fill="none" stroke="#3A2A22" stroke-width="1.7" stroke-linecap="round"/>
+      <ellipse cx="48.8" cy="53.2" rx="5.4" ry="4.2" fill="#E8A291" opacity=".75"/>
+      <ellipse cx="83.6" cy="53.2" rx="5.4" ry="4.2" fill="#E8A291" opacity=".75"/>
+      <circle cx="55.6" cy="48.4" r="3.4" fill="#1E1A18"/><circle cx="76.6" cy="48.4" r="3.4" fill="#1E1A18"/>
+      <circle cx="56.6" cy="47.2" r=".9" fill="#fff" opacity=".8"/><circle cx="77.6" cy="47.2" r=".9" fill="#fff" opacity=".8"/>
+      <path d="M62.4 53.4Q66.1 57 69.8 53.4" fill="none" stroke="#3A2A22" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M44 27C47 21 52.5 17.6 58 17" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    </g></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 创业 · 复盘（用户 11-18 稿 + 他的一段话） ========== -->
+<section class="sec mist rf-sec book" id="reflect">
+  <div class="leaf front">
+  <div class="rf">
+    <h2 class="opp-title obj" style="--i:0">从产品交付，<span>走向业务增长。</span></h2>
+    <div class="rf-row obj" style="--i:1">
+      <div class="rf-card"><h3>阶段性成果</h3><ul class="rf-done"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9.6"/></svg>从 0 到 1 完成产品上线</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9.6"/></svg>两轮用户内测与产品迭代</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9.6"/></svg>初步建立校园获客渠道</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9.6"/></svg>搭建核心业务指标体系</li></ul></div>
+      <div class="rf-card"><h3>现阶段不足</h3><ul class="rf-gap"><li>真实用户行为数据积累不足</li><li>获客成本与转化效率尚未验证</li><li>租房业务存在天然留存上限</li><li>尚未形成数据驱动的增长闭环</li></ul></div>
+    </div>
+    <div class="rf-core obj" style="--i:2"><p><small>最大的收获</small>这个项目推进到现在，我真正理解了我们面对的用户群体需要的是什么，从而更好地做出了差异化的价值。</p><b>一切以用户为本</b></div>
+    <p class="rf-h obj" style="--i:3">下一阶段业务规划</p>
+    <div class="rf-row obj" style="--i:3">
+      <div class="rf-plan"><h4><i>01</i>深耕核心业务</h4><p class="rf-steps"><span>完善数据埋点</span><i aria-hidden="true">→</i><span>定位流失节点</span><i aria-hidden="true">→</i><span>A/B 实验验证</span></p></div>
+      <div class="rf-plan"><h4><i>02</i>探索高频场景</h4><div class="rf-scenes"><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8"/><path d="M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></svg><b>找搭子</b></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b>二手交易</b></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-5h10l2 5v5"/><path d="M3.5 11h17v5h-17z"/><circle cx="7.5" cy="16.5" r="1.6"/><circle cx="16.5" cy="16.5" r="1.6"/></svg><b>校园拼车</b></div></div><p class="rf-note">正在开发 · 待市场验证</p></div>
+    </div>
+  </div>
+  </div>
+  <div class="leaf back" aria-hidden="true">
+    <div class="wall-head">
+      <h2>网页端同步开发中</h2>
+    </div>
+    <div class="webtour">
+      <div class="wshots">
+        <figure class="wshot show"><button class="phone-btn" type="button"><span class="win-bar"><i></i><i></i><i></i><em>寓见云居 网页端</em></span><img src="img/web/rooms.jpg" width="2000" height="1351" alt="Web 端：房源列表和地图"></button></figure>
+        <figure class="wshot"><button class="phone-btn" type="button"><span class="win-bar"><i></i><i></i><i></i><em>寓见云居 网页端</em></span><span class="wimg"><img src="img/web/detail.jpg" width="2000" height="1219" alt="Web 端：房源详情"><span class="rcpt" aria-hidden="true"><span class="slot"></span><span class="feed"><span class="paper"><span class="rh"><span>FIRST-MONTH ESTIMATE</span><span>NATE · 46068592</span></span><span class="rl"><span>Rent</span><i></i><b>$1,950</b></span><span class="rl"><span>Other costs</span><i></i><b>~$100</b></span><span class="rl"><span>Gas + Electricity + Heat + Water + Wi-Fi</span><i></i><b>INCL.</b></span><span class="rl"><span>Deposit</span><i></i><b>NONE</b></span><span class="rl tot"><span>EST. TOTAL</span><i></i><b>$2,050</b></span><span class="rf">~ estimated · paid to Nate, not Rentlet</span></span></span></span></span></button></figure>
+        <figure class="wshot"><button class="phone-btn" type="button"><span class="win-bar"><i></i><i></i><i></i><em>寓见云居 网页端</em></span><img src="img/web/around.jpg" width="2000" height="923" alt="Web 端：周边的学校、校车、公交、超市"></button></figure>
+        <figure class="wshot"><button class="phone-btn" type="button"><span class="win-bar"><i></i><i></i><i></i><em>寓见云居 网页端</em></span><img src="img/web/messages.jpg" width="2000" height="1057" alt="Web 端：站内聊天"></button></figure>
+      </div>
+      <div class="wlist">
+        <div class="witem on">
+          <button class="wbtn" type="button" aria-pressed="true">房源列表和地图</button>
+          <dl class="why">
+            <dt>用户痛点</dt><dd>信息分散，筛选效率低</dd>
+            <dt>解决方案</dt><dd><ul><li>按校区、日期、预算一次筛好</li><li>列表和地图一键切换，<span class="nw">价格和校车站</span><span class="nw">直接标在地图上</span></li></ul></dd>
+          </dl>
+        </div>
+        <div class="witem">
+          <button class="wbtn" type="button" aria-pressed="false">房源详情</button>
+          <dl class="why">
+            <dt>用户痛点</dt><dd>信息不完整，比较成本高</dd>
+            <dt>解决方案</dt><dd><ul><li>租金、首月花费、入住日期、<span class="nw">留下哪些家具</span>，<span class="nw">每套房都放在</span><span class="nw">同一个位置</span></li><li>超出预算多少，直接标出来</li></ul></dd>
+          </dl>
+        </div>
+        <div class="witem">
+          <button class="wbtn" type="button" aria-pressed="false">周边</button>
+          <dl class="why">
+            <dt>用户痛点</dt><dd>不熟悉校园和周边环境</dd>
+            <dt>解决方案</dt><dd><ul><li>学校、校车、公交、超市、餐厅、药店，<span class="nw">按步行 / 骑车 / 开车</span><span class="nw">算好时间</span></li></ul></dd>
+          </dl>
+        </div>
+        <div class="witem">
+          <button class="wbtn" type="button" aria-pressed="false">站内聊天</button>
+          <dl class="why">
+            <dt>用户痛点</dt><dd>沟通来回多，又要保证过程安全</dd>
+            <dt>解决方案</dt><dd><ul><li>日期、家具、费用、视频看房、房东同意，<span class="nw">5 件事逐项确认</span></li><li>学校邮箱认证，<span class="nw">双方聊天满 3 条</span><span class="nw">才解锁联系方式</span></li><li>收到新消息时，<span class="nw">自动发邮件提醒</span></li></ul></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="curl" aria-hidden="true">
+    <defs><linearGradient id="flapGrad" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C4C4CD"/><stop offset=".16" stop-color="#ECECF0"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient></defs>
+    <polygon class="flap" fill="url(#flapGrad)"/>
+  </svg>
+  <button class="curl-hit" type="button" aria-label="翻到背面，看网页端"></button>
+</section>
+
+<!-- ========== Saviu 三端 ========== -->
+<section class="sec night trio-sec" id="saviu">
+  <div class="sv-head">
+    <div class="wall-head">
+      <h2>Saviu：<span>面向三端的灾害救助系统</span></h2>
+    </div>
+    <dl class="sv-stats">
+      <div><dt>第 5</dt><dd>144 支队伍<br>Spacetime 赛道荣誉奖</dd></div>
+      <div><dt>99.1%</dt><dd>生命安全消息识别率<br>224 条里识别出 222 条</dd></div>
+      <div><dt>30% → 92%</dt><dd>72 小时确认率<br>3 万户地震模拟</dd></div>
+    </dl>
+  </div>
+  <div class="roles">
+    <button class="role on" type="button" aria-pressed="true" data-role="mgr"><b>管理者</b><span>管理端：总览与派单</span></button>
+    <p class="link"><span>派单</span></p>
+    <button class="role" type="button" aria-pressed="false" data-role="adj"><b>理赔员</b><span>理赔员端：任务推荐</span></button>
+    <p class="link"><span>接单后自动通知客户</span></p>
+    <button class="role" type="button" aria-pressed="false" data-role="cus"><b>受灾客户</b><span>客户端：消息中心</span></button>
+  </div>
+  <div class="roles-wrap">
+    <div class="stage">
+      <div class="pane show" data-pane="mgr">
+        <figure class="screen"><button class="phone-btn" type="button"><span class="win-bar"><i></i><i></i><i></i><em>Saviu · 管理端</em></span><img src="img/saviu/dashboard.jpg" width="2000" height="1142" alt="管理端：总览与派单"></button></figure>
+        <div class="say">
+          <h3><small>管理者想知道</small>谁还没联系上，先派谁去</h3>
+          <ul>
+            <li>还没联系上的住户数放在最上面</li>
+            <li>按 <b>P0–P2</b> 分级，最急的排最前</li>
+            <li>每个决定都有记录：大模型读消息，规则做决定</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pane tall" data-pane="adj">
+        <figure class="device"><button class="phone-btn" type="button"><img src="img/saviu/adjuster.png" width="436" height="900" alt="理赔员端：任务推荐"></button></figure>
+        <div class="say">
+          <h3><small>理赔员想知道</small>下一单去哪</h3>
+          <ul>
+            <li>按「紧急程度优先、路程最短」推荐下一单</li>
+            <li>同样 5 人、8 小时，完成的 P0 任务是按顺序派单的 <b>2.2 倍</b>（147 对 66）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pane tall" data-pane="cus">
+        <figure class="device"><button class="phone-btn" type="button"><img src="img/saviu/policyholder.png" width="436" height="900" alt="客户端：消息中心"></button></figure>
+        <div class="say">
+          <h3><small>受灾客户想知道</small>有没有人知道我的情况</h3>
+          <ul>
+            <li>理赔员接单后，自动收到通知</li>
+            <li>回数字或用自己的话都可以，英语、中文、西班牙语都能读懂</li>
+            <li>只要回复了，后面的电话和上门升级就撤销</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 三面：本科 / 交换 / 流片 ========== -->
+<section class="sec mist sides-sec" id="sides">
+  <div class="wall-head">
+    <h2>切换一下身份</h2>
+  </div>
+  <div class="facets">
+    <article class="facet obj" data-name="交换生" style="--i:0;--top:0rem">
+      <div class="facet-body">
+        <figure class="snap"><i class="tape"></i><img src="img/berkeley.jpg" width="675" height="900" alt="徐显策在伯克利，身后是钟楼"></figure>
+        <div class="seal-col">
+          <button class="seal" type="button" data-anim aria-label="重新盖章">
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+              <defs>
+                <path id="sealTop" d="M 34 120 A 86 86 0 0 1 206 120"/>
+                <path id="sealBot" d="M 28 120 A 92 92 0 0 0 212 120"/>
+                <filter id="sealInk" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="7" result="warp"/>
+                  <feDisplacementMap in="SourceGraphic" in2="warp" scale="3.2" result="rough"/>
+                  <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3" result="grain"/>
+                  <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.6 1.72" result="specks"/>
+                  <feComposite in="rough" in2="specks" operator="in"/>
+                </filter>
+              </defs>
+              <g filter="url(#sealInk)" fill="none" stroke="#003262">
+                <circle cx="120" cy="120" r="112" stroke-width="5"/>
+                <circle cx="120" cy="120" r="104" stroke-width="1.6"/>
+                <circle cx="120" cy="120" r="70" stroke-width="2.2"/>
+                <g fill="#003262" stroke="none" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" text-anchor="middle">
+                  <text font-size="14.5" letter-spacing="2.6"><textPath href="#sealTop" startOffset="50%">UNIVERSITY OF CALIFORNIA</textPath></text>
+                  <text font-size="14.5" letter-spacing="3.4"><textPath href="#sealBot" startOffset="50%">BERKELEY · GLOBE EXCHANGE</textPath></text>
+                  <!-- 钟楼 -->
+                  <path d="M120 60 L126 84 L114 84 Z"/>
+                  <rect x="112.5" y="84" width="15" height="9"/>
+                  <path d="M111 93 H129 V138 H111 Z M115 98 V108 H118 V98 Z M122 98 V108 H125 V98 Z" fill-rule="evenodd"/>
+                  <rect x="107" y="138" width="26" height="5"/>
+                  <text x="120" y="162" font-size="15" letter-spacing="1.5">2025.01 – 05</text>
+                  <text x="120" y="179" font-size="11" letter-spacing="2.4">EXCHANGE STUDENT</text>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <div class="mhz"><b>95 MHz</b><span>五级流水线 RISC-V CPU</span><small>项目负责人</small></div>
+        </div>
+      </div>
+      <h3 class="facet-meta">UC Berkeley 交换生<small>2025.01 – 05</small></h3>
+    </article>
+    <article class="facet obj" data-name="创作者" style="--i:1;--top:2rem">
+      <div class="facet-body">
+        <div class="xhs-stack">
+          <img class="xhs-bg l" src="img/xhs-6yr.jpg" width="640" height="849" alt="小红书里程碑卡：加入小红书 6 周年">
+          <img class="xhs-bg r" src="img/xhs-1m.jpg" width="640" height="849" alt="小红书里程碑卡：总的阅读量破 100 万，超过 99% 的同龄创作者">
+        <div class="xhs">
+          <div class="xhs-cover"><small>小红书主账号</small><b>1万+<em>粉丝</em></b></div>
+          <div class="xhs-body">
+            <p>60+ 次品牌合作，单篇最高浏览 50万+</p>
+            <div class="xhs-foot"><span>2022 至今</span><button class="like" type="button" aria-pressed="false" aria-label="点赞"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2C7.3 16.6 3.3 13.4 3.3 9.3 3.3 6.5 5.5 4.5 8 4.5c1.6 0 3.1.9 4 2.3.9-1.4 2.400-2.300 4-2.300 2.500 0 4.700 2 4.700 4.800 0 4.100-4 7.300-8.700 10.900Z"/></svg>7.7万+</button></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <h3 class="facet-meta">小红书创作者<small>2022 至今</small></h3>
+    </article>
+    <article class="facet obj" data-name="芯片" style="--i:2;--top:1.2rem">
+      <div class="facet-body">
+        <img class="chipphoto" src="img/chip-dies.png" width="345" height="560" alt="芯片裸片">
+        <div class="signoff" data-anim role="button" tabindex="0" aria-label="重新走一遍签核">
+          <b>流片前签核</b>
+          <ul>
+            <li style="--i:0">DRC 设计规则检查</li>
+            <li style="--i:1">LVS 版图电路一致</li>
+            <li style="--i:2">PEX 寄生参数提取</li>
+            <li style="--i:3">后仿 PVT 角验证</li>
+          </ul>
+          <span class="ok-stamp">已流片</span>
+        </div>
+      </div>
+      <h3 class="facet-meta">混合信号 IoT 传感器芯片流片<small>2025.05，项目负责人</small></h3>
+    </article>
+  </div>
+</section>
+
+<!-- ========== 为什么是腾讯 ========== -->
+<section class="sec" id="tencent">
+  <div class="letter">
+    <p class="tag"><span>写在最后</span></p>
+    <h2>为什么是小红书？</h2>
+    <div class="letter-body">
+      <p class="obj" style="--i:0">从 2022 年开始，我就以内容创作者的身份参与小红书的内容生态，累计积累了上万名粉丝。从内容创作、用户互动到品牌商业合作，我逐渐理解了用户从内容种草到消费决策的过程。</p>
+      <p class="obj" style="--i:1">在 CloudSublet 的创业过程中，我开始从<b>产品视角思考用户增长</b>，独立完成了产品从 0 到 1 的设计与开发，并围绕用户激活、登录体验、双边转化漏斗等方向制定产品优化方案。</p>
+      <p class="obj" style="--i:2">在 HackUTD 的 SAVIU 项目中，我进一步探索了 AI 能力在具体业务场景中的应用，并通过模拟实验和数据分析评估方案的有效性。</p>
+      <p class="obj" style="--i:3">过去的经历让我积累了用户洞察、产品设计和技术落地的经验，但在规模化用户增长、数据分析和实验验证方面，我仍有进一步成长的空间。因此，我希望加入<b style="white-space:nowrap">小红书 C 端用户增长团队</b>，围绕新用户激活、登录和首次购买等核心转化链路，从用户行为与数据中定位流失节点，提出可验证的产品假设，并通过 A/B 实验和持续迭代推动业务增长。</p>
+    </div>
+  </div>
+  <p class="finale" aria-live="polite">从小红书的内容创作者，<br>到小红书的产品建设者。</p>
+</section>
+
+</main>
+
+<div class="hud">
+  <div class="hud-keys" aria-hidden="true">
+    <kbd class="key" data-key="ArrowUp">↑</kbd><span>上一步</span><kbd class="key" data-key="ArrowDown">↓</kbd><span>下一步</span>
+    <kbd class="key wide" data-key=" ">空格</kbd><span>下一页</span>
+  </div>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="pegWood" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#B08146"/><stop offset=".16" stop-color="#DDB980"/><stop offset=".5" stop-color="#EDD3A4"/><stop offset=".84" stop-color="#D0A568"/><stop offset="1" stop-color="#9F733C"/>
+    </linearGradient>
+    <linearGradient id="pegSteel" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#FDFDFE"/><stop offset=".42" stop-color="#B6BCC5"/><stop offset="1" stop-color="#5B626C"/>
+    </linearGradient>
+    <filter id="pegGrain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.2 0.04" numOctaves="2" seed="11"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.36  0 0 0 0 0.22  0 0 0 0 0.08  0 0 0 1.5 -0.6"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <symbol id="peg" viewBox="0 0 30 64">
+      <path d="M6 2h18a2.5 2.5 0 0 1 2.5 2.5V40l-2.2 21.2a1.5 1.5 0 0 1-1.5 1.3H7.2a1.5 1.5 0 0 1-1.5-1.3L3.5 40V4.5A2.5 2.5 0 0 1 6 2Z" fill="url(#pegWood)"/>
+      <path d="M6 2h18a2.5 2.5 0 0 1 2.5 2.5V40l-2.2 21.2a1.5 1.5 0 0 1-1.5 1.3H7.2a1.5 1.5 0 0 1-1.5-1.3L3.5 40V4.5A2.5 2.5 0 0 1 6 2Z" filter="url(#pegGrain)" opacity=".55"/>
+      <path d="M15 34v26" stroke="rgba(80,48,16,.4)" stroke-width=".9" stroke-linecap="round"/>
+      <ellipse cx="15" cy="46" rx="5" ry="3" fill="rgba(60,34,8,.5)"/>
+      <path d="M6.3 2.6h17.4a2 2 0 0 1 2 2V39" fill="none" stroke="rgba(255,255,255,.45)" stroke-width=".7"/>
+      <rect x="1.2" y="20.5" width="27.6" height="3.6" rx="1.8" fill="url(#pegSteel)"/>
+      <rect x="1.2" y="26" width="27.6" height="3.6" rx="1.8" fill="url(#pegSteel)"/>
+      <path d="M2.4 21.5h25.2M2.4 27h25.2" stroke="rgba(255,255,255,.85)" stroke-width=".6" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="放大查看界面">
+  <button class="lb-close" type="button">关闭</button>
+  <figure><img src="" alt=""><figcaption></figcaption></figure>
+</div>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+  // scalloped edge for the medal
+  root.style.setProperty('--scallop', 'polygon(' + Array.from({length: 44}, (_, k) => {
+    const r = k % 2 ? 46.5 : 50, a = Math.PI * k / 22 - Math.PI / 2;
+    return `${(50 + r * Math.cos(a)).toFixed(2)}% ${(50 + r * Math.sin(a)).toFixed(2)}%`;
+  }).join(',') + ')');
+
+  /* ---------- 本科：涨粉计数 ---------- */
+  function playCount(el) {
+    const b = $('[data-count]', el), to = +b.dataset.count, fmt = v => '+' + Math.round(v).toLocaleString('en-US');
+    cancelAnimationFrame(el._raf);
+    if (reduce) { b.textContent = fmt(to); return; }
+    const t0 = performance.now();
+    const f = now => { const p = Math.min(1, Math.max(0, (now - t0) / 1400)); b.textContent = fmt(to * (1 - Math.pow(1 - p, 3))); if (p < 1) el._raf = requestAnimationFrame(f); };
+    b.textContent = '+0'; el._raf = requestAnimationFrame(f);
+  }
+
+  /* ---------- 研究生：终端逐行打字 ---------- */
+  const TERM = [
+    ['dim', '# 每天自动跑一次'],
+    ['', '追踪 34 位 AI 构建者的 X、播客、博客', 1],
+    ['', '18 组关键词搜索，扫描 550+ 仓库', 1],
+    ['', '调用一次 Claude，生成当日要点', 1],
+    ['', '按相关度排出前 120 个 AI 工具', 1],
+    ['', '发布到免费公开的网站', 1],
+    ['hl', '已自动更新 160+ 次'],
+  ];
+  function playTerm(el) {
+    const body = $('.term-body', el);
+    clearTimeout(el._t); body.textContent = '';
+    const tick = line => { const b = document.createElement('b'); b.textContent = ' ✓'; line.appendChild(b); };
+    const mk = (cls, text) => { const s = document.createElement('span'); if (cls) s.className = cls; s.textContent = text; body.appendChild(s); return s; };
+    if (reduce) { TERM.forEach(([c, t, ok]) => { const s = mk(c, t); if (ok) tick(s); }); return; }
+    let li = 0, ci = 0, line = null;
+    const next = () => {
+      if (li >= TERM.length) { const c = document.createElement('i'); c.className = 'cur'; body.appendChild(c); return; }
+      const [cls, text, ok] = TERM[li];
+      if (!line) line = mk(cls, '');
+      if (ci < text.length) { line.textContent = text.slice(0, ++ci); el._t = setTimeout(next, 16); }
+      else { if (ok) tick(line); li++; ci = 0; line = null; el._t = setTimeout(next, 200); }
+    };
+    el._t = setTimeout(next, 350);
+  }
+
+  /* ---------- 通用：进入模块时播放，点击重播 ---------- */
+  const players = { count: playCount, term: playTerm };
+  const go = el => { el.classList.remove('go'); void el.offsetWidth; el.classList.add('go'); const p = players[el.dataset.anim]; if (p) p(el); };
+  $$('[data-anim]').forEach(el => {
+    el.addEventListener('click', () => go(el));
+    if (el.getAttribute('role') === 'button') el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); go(el); }
+    });
+  });
+
+  /* ---------- 本科：点赞 ---------- */
+  $$('.like').forEach(b => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true';
+    b.setAttribute('aria-pressed', on);
+  }));
+
+  /* ---------- 三面：逐面点亮 ---------- */
+  const facetsEl = $('.facets'), facetEls = $$('.facet');
+  let facetI = -1;
+  const setFacet = i => {
+    facetI = i;
+    facetsEl.classList.toggle('focus', i >= 0);
+    facetEls.forEach((f, k) => f.classList.toggle('on', k === i));
+    if (i >= 0) $$('[data-anim]', facetEls[i]).forEach(go);
+  };
+  const nextFacet = () => setFacet(facetI + 1 >= facetEls.length ? -1 : facetI + 1);
+  facetEls.forEach((f, i) => f.addEventListener('click', e => { if (!e.target.closest('button,[role=button]')) setFacet(facetI === i ? -1 : i); }));
+
+  /* ---------- 为什么是腾讯：按 E 一段一段读 ---------- */
+  const letter = $('.letter'), letterPs = $$('.letter-body p', letter);
+  let letterI = -1;
+  const setPara = i => { letterI = i; letter.classList.toggle('focus', i >= 0 && i < letterPs.length); letterPs.forEach((el, k) => el.classList.toggle('on', k === i)); $('#tencent').classList.toggle('fin', i === letterPs.length); };   // i = 段数时是结尾那一句
+
+  /* ---------- 复盘页：右下角翻页（正面复盘，背面网页端） ---------- */
+  const book = $('#reflect'), leafFront = $('.leaf.front', book), leafBack = $('.leaf.back', book);
+  const flapEl = $('.curl .flap', book), flapGrad = $('#flapGrad');
+  const remPx = () => parseFloat(getComputedStyle(root).fontSize);
+  let curlS = 0, curlRaf = 0, flipped = false;
+  // s = how far the fold has travelled from the bottom-right corner (0 = flat page, W + H = page gone)
+  function drawCurl(s) {
+    curlS = s;
+    const W = leafFront.clientWidth, H = leafFront.clientHeight, c = W + H - s;
+    const keep = [[0, 0]];
+    if (c >= W) keep.push([W, 0], [W, c - W]); else keep.push([c, 0]);
+    if (c >= H) keep.push([c - H, H], [0, H]); else keep.push([0, c]);
+    leafFront.style.clipPath = 'polygon(' + keep.map(pt => pt[0].toFixed(1) + 'px ' + pt[1].toFixed(1) + 'px').join(',') + ')';
+    const cut = [];
+    if (c >= W) cut.push([W, c - W]); else cut.push([c, 0], [W, 0]);
+    cut.push([W, H]);
+    if (c >= H) cut.push([c - H, H]); else cut.push([0, H], [0, c]);
+    // the folded-over corner is the cut-off piece mirrored across the fold line x + y = c
+    flapEl.setAttribute('points', cut.map(pt => (c - pt[1]).toFixed(1) + ',' + (c - pt[0]).toFixed(1)).join(' '));
+    flapGrad.setAttribute('x1', (W + c - H) / 2); flapGrad.setAttribute('y1', (H + c - W) / 2);
+    flapGrad.setAttribute('x2', c - H); flapGrad.setAttribute('y2', c - W);
+  }
+  function animateCurl(to, ms) {
+    cancelAnimationFrame(curlRaf);
+    if (reduce) return drawCurl(to);
+    const from = curlS, t0 = performance.now();
+    const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    const tick = now => { const t = Math.min(1, (now - t0) / ms); drawCurl(from + (to - from) * ease(t)); if (t < 1) curlRaf = requestAnimationFrame(tick); };
+    curlRaf = requestAnimationFrame(tick);
+  }
+  const curlRest = () => 7 * remPx();
+  const curlFull = () => leafFront.clientWidth + leafFront.clientHeight + 4;
+  function setFlipped(on, instant) {
+    flipped = on;
+    book.classList.toggle('flipped', on);
+    // 翻到背面：从第一张开始自动播放（这时背面还被正面盖着，换图看不到）；翻回正面就停
+    if (on) { showWeb(0); autoStart(webStep); } else autoStop(webStep);
+    leafBack.setAttribute('aria-hidden', !on); leafFront.setAttribute('aria-hidden', on);
+    const to = on ? curlFull() : curlRest();
+    if (instant) { cancelAnimationFrame(curlRaf); drawCurl(to); } else animateCurl(to, on ? 950 : 800);
+  }
+  const curlHit = $('.curl-hit', book);
+  curlHit.addEventListener('mouseenter', () => { if (!flipped) animateCurl(10 * remPx(), 220); });
+  curlHit.addEventListener('mouseleave', () => { if (!flipped) animateCurl(curlRest(), 220); });
+  curlHit.addEventListener('click', () => setFlipped(!flipped));
+  drawCurl(curlRest());
+  addEventListener('resize', () => drawCurl(flipped ? curlFull() : curlRest()));
+  addEventListener('load', () => drawCurl(flipped ? curlFull() : curlRest()));
+
+  /* ---------- 作品墙背面：一次放大一张 Web 端截图，右边讲用户痛点和解决方案 ---------- */
+  const wItems = $$('.witem'), wShots = $$('.wshot');
+  let webI = 0, rcptT;
+  const showWeb = i => {
+    webI = (i + wItems.length) % wItems.length;
+    wItems.forEach((it, k) => { it.classList.toggle('on', k === webI); $('.wbtn', it).setAttribute('aria-pressed', k === webI); });
+    wShots.forEach((f, k) => f.classList.toggle('show', k === webI));
+    clearTimeout(rcptT);
+    wShots.forEach(f => f.classList.remove('print'));
+    const sh = wShots[webI];
+    if (sh.querySelector('.rcpt')) rcptT = setTimeout(() => sh.classList.add('print'), 500);   // 详情图浮出来后，出纸口展开、小票吐出来
+  };
+  const webStep = () => showWeb(webI + 1);
+  wItems.forEach((it, k) => $('.wbtn', it).addEventListener('click', () => { showWeb(k); if (autoFn === webStep) autoRun(); }));
+
+  /* ---------- 创业第 1 屏：微信群 / 小红书两张叠着，点后面那张换到前面，前面那张慢慢往下滚；
+     按 E 把群里第一条转租消息的字段飞到右边真实房源详情页的对应位置并圈出来，再按 E 复原 ---------- */
+  const opp = $('.opp'), feed = $('.wx-feed', opp), xhsView = $('.xhs-view', opp);
+  const srcCards = { wx: $('.srcard[data-src="wx"]', opp), xhs: $('.srcard[data-src="xhs"]', opp) };
+  const RINGS = ['type', 'period', 'rent', 'map', 'shuttle', 'furn', 'verify'];
+  let frontSrc = 'wx', scrollRaf = 0, scrollT = 0, oppDone = false, oppStep = 0, oppTimers = [];
+  const scrollStop = () => { cancelAnimationFrame(scrollRaf); clearTimeout(scrollT); };
+  function scrollStart(el, wait) {
+    scrollStop(); feed.scrollTop = 0; xhsView.scrollTop = 0;
+    if (reduce) return;
+    scrollT = setTimeout(() => {
+      let pos = 0, last = performance.now();
+      const speed = 4 * parseFloat(getComputedStyle(root).fontSize) / 1000;     // 4rem per second
+      const step = now => {
+        const max = el.scrollHeight - el.clientHeight;
+        pos = Math.min(pos + (now - last) * speed, max); last = now;
+        el.scrollTop = pos;
+        if (pos < max) scrollRaf = requestAnimationFrame(step);
+      };
+      scrollRaf = requestAnimationFrame(step);
+    }, wait);
+  }
+  const feedStart = () => scrollStart(frontSrc === 'wx' ? feed : xhsView, 1600);
+  function setFront(src, instant) {
+    if (src === frontSrc && !instant) return;
+    frontSrc = src;
+    Object.entries(srcCards).forEach(([k, el]) => {
+      const front = k === src;
+      el.classList.remove('to-front', 'to-back');
+      el.classList.toggle('is-front', front); el.classList.toggle('is-back', !front);
+      $$('button:not(.src-more)', el).forEach(b => { b.tabIndex = front ? 0 : -1; });
+      if (!instant && !reduce) { void el.offsetWidth; el.classList.add(front ? 'to-front' : 'to-back'); }
+    });
+  }
+  Object.entries(srcCards).forEach(([k, el]) => {
+    el.addEventListener('animationend', e => { if (e.target === el) el.classList.remove('to-front', 'to-back'); });
+    el.addEventListener('click', e => {
+      if (!el.classList.contains('is-back')) return;          // the front card opens the real screenshot as before
+      e.preventDefault(); e.stopPropagation();
+      if (oppDone) oppReset();
+      setFront(k); scrollStart(k === 'wx' ? feed : xhsView, 1000);
+    }, true);
+  });
+  setFront('xhs', true);   // 小红书版：开场把小红书截图放在最前面，↓ 拆解时自动换回微信群
+  function oppReset() {
+    oppTimers.forEach(clearTimeout); oppTimers = []; oppDone = false; oppStep = 0;
+    $$('.fly').forEach(x => x.remove());
+    opp.classList.remove('hit', 'done', 'meet');
+    $$('.ring', opp).forEach(r => r.classList.remove('on'));
+  }
+  function oppRun() {
+    oppReset(); scrollStop(); oppDone = true;
+    const later = (ms, fn) => oppTimers.push(setTimeout(fn, reduce ? 0 : ms));
+    const wait = frontSrc === 'wx' ? 0 : 950;                   // bring the group chat back to the front first
+    setFront('wx');
+    feed.scrollTo({ top: 0, behavior: reduce ? 'instant' : 'smooth' });
+    later(wait + 700, () => opp.classList.add('hit'));
+    RINGS.forEach((f, k) => later(wait + 1300 + k * 420, () => {
+      const ring = $(`.ring[data-ring="${f}"]`, opp), from = $$(`mark[data-to="${f}"]`, opp);
+      ring.classList.add('on');   // 不再让字段飞过去：右边是界面示例，不是这条帖子转出来的房源
+    }));
+    later(wait + 1300 + RINGS.length * 420 + 700, () => opp.classList.add('done'));
+  }
+  // E：第一次拆解（结束时出现机会洞察）→ 第二次两边箭头指向 CloudSublet → 第三次复原
+  function oppFinish() {                                       // land every flight at once and show the insight
+    oppTimers.forEach(clearTimeout); oppTimers = [];
+    $$('.fly').forEach(x => x.remove());
+    $$('.ring', opp).forEach(r => r.classList.add('on'));
+    opp.classList.add('hit', 'done');
+  }
+  const oppToggle = () => {
+    if (oppStep === 0) { oppRun(); oppStep = 1; }
+    else if (oppStep === 1) {
+      // 拆解还没播完就按 E：先直接播完、亮出 OPPORTUNITY；播完了再按 E 回到开头（logo 那一步用户让删了）
+      if (!opp.classList.contains('done')) oppFinish();
+      else { oppReset(); setFront('xhs'); feedStart(); }
+    }
+    else { oppReset(); setFront('xhs'); feedStart(); }
+  };
+
+  /* ---------- 创业 · 差异化：先只看成熟平台（顾问驱动），按 E 直接换成寓见云居（用户需求驱动），再按 E 换回 ---------- */
+  const diffEl = $('#feat .diff'), csRows = $$('.dcol.cs li', diffEl);
+  // 0 = 竞品；1–5 = 寓见云居的五点，切过来时五条一起出现，E 往下移高亮，右边换成那一点的画面
+  csRows.forEach((li, i) => li.style.setProperty('--k', i));
+  // 第 3 屏：0–2 = 拉新、激活、留存一张张出来；3 = 汇到核心目标；4 = 北极星指标和核心效率指标
+  const gwEl = $('.gw'), gwCards = $$('.gw-cards li', gwEl), gwGoal = $('.gw-goal', gwEl), gwKpi = $('.gw-kpi', gwEl), GW_LAST = gwCards.length + 1;
+  const setGrow = k => {
+    gwEl.dataset.s = k;
+    gwCards.forEach((li, i) => li.classList.toggle('shown', k >= i));
+    gwGoal.classList.toggle('shown', k >= gwCards.length);
+    gwKpi.classList.toggle('shown', k > gwCards.length);
+  };
+  setGrow(GW_LAST);   // 用户 11-17：这一屏先不一个一个显示，进屏就全部出来（要恢复逐步显示：改回 setGrow(0)，并加回 steps.growth 和离屏重置）
+  // 拉新展开：01 卡片从原位置铺满整屏，白底渐变成灰底，再浮出六张获客渠道卡；收回时反过来
+  const gzEl = $('.gw-zoom'), gzPages = $$('.gz-page', gzEl), gzPg = $('.gz-pg', gzEl), GZ_WALK = 2400;
+  // 展开层两页：0 = 拉新，1 = 激活。换页时整条横移，企鹅走过接缝（和「两类用户 → 作品墙」那只同一套）
+  let gzK = 0, gzWalkT;
+  // 激活页：进来时两条漏斗一节一节落下；离开后复位，下次进来再播一遍
+  const gaEl = $('.ga');
+  const grEl = $('.gr');
+  const grSync = (on, delay = 0) => {                       // 留存页：曲线从左往右画
+    grEl.classList.remove('play');
+    if (!on) return;
+    grEl.style.setProperty('--d0', delay + 'ms');
+    void grEl.offsetWidth;
+    grEl.classList.add('play');
+  };
+  const gaSync = (on, delay = 0) => {
+    gaEl.classList.remove('play');
+    if (!on) return;
+    gaEl.style.setProperty('--d0', delay + 'ms');
+    void gaEl.offsetWidth;                                   // restart the animation
+    gaEl.classList.add('play');
+  };
+  // 需求期留存页：↓ 一张张点亮卡片（-1 = 都不点亮）
+  const gsLanes = $('.gs-lanes'), gsCards = gsLanes ? $$('.gs-card', gsLanes) : [], GS_PAGE = gzPages.findIndex(pg => pg.querySelector('.gs'));   // 小红书版这一页合并掉了，GS_PAGE = -1
+  let gsI = -1;
+  const setGs = i => { gsI = i; if (!gsLanes) return; gsLanes.classList.toggle('focus', i >= 0); gsCards.forEach((c, k) => c.classList.toggle('on', k === i)); };
+  gsCards.forEach((c, k) => c.addEventListener('click', () => setGs(gsI === k ? -1 : k)));
+  let gzFallT;
+  function setGzPage(k, instant) {
+    if (k === gzK && !instant) return;
+    const prevK = gzK;
+    clearTimeout(gzFallT); gzEl.classList.remove('fall');   // 小红薯从洞里回来
+    setGs(-1);
+    gzK = k;
+    gzPages.forEach((pg, i) => { pg.inert = i !== k; });
+    clearTimeout(gzWalkT);
+    gzEl.classList.remove('walking', 'back');
+    if (instant || reduce) {
+      gzEl.classList.add('jump'); gzEl.dataset.k = k;
+      void gzEl.offsetWidth; gzEl.classList.remove('jump');
+      gaSync(k === 1); grSync(k === 3, 500);
+      return;
+    }
+    void gzEl.offsetWidth;                                   // restart the walk cycle
+    gzEl.classList.toggle('back', k < prevK);                // walking back: face the other way
+    gzEl.classList.add('walking');
+    gzEl.dataset.k = k;
+    if (k === 1) gaSync(true, 1100);
+    grSync(k === 3, 1100);                         // 激活页滑进来一半时开始落
+    gzWalkT = setTimeout(() => { gzEl.classList.remove('walking', 'back'); if (gzK !== 1) gaSync(false); }, GZ_WALK + 60);
+    if (k === gzPages.length - 1) gzFallT = setTimeout(() => gzEl.classList.add('fall'), GZ_WALK - 300);   // 最后一页：快走到时脚下就冒出黑洞，一停下就掉下去   // 走回拉新后再复位，免得滑出去时就空了
+  }
+  // 展开页里每张卡的三条：点哪条，整张卡翻过来显示哪条的证据；同一时间只翻一张
+  const gzCardEls = $$('.gz-card', gzEl).filter(c => $('.gz-back', c));   // 下一阶段计划那排没有背面
+  const flipCard = (card, k) => {          // k = 第几条；不传 = 翻回正面
+    const on = k != null;
+    if (on) $$('.gz-ev', card).forEach(ev => ev.classList.toggle('on', +ev.dataset.k === k));
+    card.classList.toggle('flip', on);
+    $('.gz-front', card).inert = on;
+    $('.gz-back', card).inert = !on;
+  };
+  const unflipAll = () => { const had = gzCardEls.filter(c => c.classList.contains('flip')); had.forEach(c => flipCard(c)); return had.length > 0; };
+  gzCardEls.forEach(card => {
+    $$('.gz-it', card).forEach(btn => btn.addEventListener('click', () => { unflipAll(); flipCard(card, +btn.dataset.k); }));
+    $('.gz-back', card).addEventListener('click', e => { if (!e.target.closest('.phone-btn')) flipCard(card); });   // 点截图是放大，点别处翻回
+  });
+  let gzOpen = false, gzAnims = [];
+  const gzStop = () => { gzAnims.forEach(a => a.cancel()); gzAnims = []; };
+  function setZoom(open, instant, page) {
+    if (open === gzOpen && !instant) return;
+    gzOpen = open;
+    if (!open) unflipAll();
+    if (open && page != null) setGzPage(page, true);   // 点哪张卡就从哪一页展开
+    if (open && gzK === 1 && !instant) gaSync(true, 650);   // 从 02 卡直接展开：等铺满再落
+    if (!open && instant) setGzPage(0, true);
+    gzStop();
+    gzEl.classList.toggle('open', open);
+    gzEl.setAttribute('aria-hidden', !open);
+    if (instant || reduce) return;
+    gzEl.classList.add('open');                                      // stays visible while it shrinks back
+    const from = gwCards[[0, 1, 1, 2, 2][gzK]], gzIn = gzPages[gzK].firstElementChild;   // 激活的第二部分也从「激活」卡缩回；留存页对应留存卡   // 从当前这一页对应的卡片铺开 / 缩回
+    const S = gzEl.getBoundingClientRect(), C = from.getBoundingClientRect();
+    const r = parseFloat(getComputedStyle(from).borderTopLeftRadius) || 0;
+    const card = `inset(${C.top - S.top}px ${S.right - C.right}px ${S.bottom - C.bottom}px ${C.left - S.left}px round ${r}px)`;
+    const full = 'inset(0px 0px 0px 0px round 0px)';
+    const mist = getComputedStyle(document.documentElement).getPropertyValue('--mist').trim();
+    const ease = 'cubic-bezier(.7,0,.2,1)';
+    if (open) {
+      gzPages.forEach(pg => pg.firstElementChild.getAnimations().forEach(x => x.cancel())); gzPg.getAnimations().forEach(x => x.cancel());   // 保险：上次收起留下的淡出动画先清掉，免得展开后内容停在透明
+      gzAnims = [
+        gzEl.animate([{ clipPath: card, backgroundColor: '#fff', opacity: 0 }, { opacity: 1, offset: .12 }, { clipPath: full, backgroundColor: mist, opacity: 1 }], { duration: 700, easing: ease }),
+        gzIn.animate([{ opacity: 0, translate: '0 2rem' }, { opacity: 1, translate: '0 0' }], { duration: 450, delay: 420, easing: 'cubic-bezier(.2,.8,.3,1)', fill: 'backwards' }),
+        gzPg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 450, delay: 420, fill: 'backwards' }),   // 企鹅不在 .gz 里，单独跟着淡入
+      ];
+    } else {
+      const shrink = gzEl.animate([{ clipPath: full, backgroundColor: mist, opacity: 1 }, { opacity: 1, offset: .85 }, { clipPath: card, backgroundColor: '#fff', opacity: 0 }], { duration: 600, delay: 160, easing: ease, fill: 'both' });
+      gzAnims = [gzIn.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' }), gzPg.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, fill: 'forwards' }), shrink];
+      shrink.finished.then(() => { if (!gzOpen) { gzEl.classList.remove('open'); gzStop(); setGzPage(0, true); } }, () => {});
+    }
+  }
+  [0, 1, 3].forEach((page, k) => gwCards[k].addEventListener('click', () => setZoom(true, false, page)));   // 点 01 拉新 / 02 激活
+  const setDiff = k => { diffEl.dataset.s = k; csRows.forEach((li, i) => { li.classList.toggle('shown', k > 0); li.classList.toggle('cur', k === i + 1); }); };
+
+  /* ---------- 自动播放：Saviu 换角色、作品墙背面换截图，都是 5 秒一次；放大看截图时不换，底栏可以暂停 ---------- */
+  const AUTO_MS = 5000;
+  let autoT, autoFn = null, autoPaused = false;
+  const autoRun = () => { clearTimeout(autoT); if (!autoFn || autoPaused) return; autoT = setTimeout(() => { if (!$('#lightbox.open')) autoFn(); autoRun(); }, AUTO_MS); };
+  const autoStart = fn => { autoFn = fn; autoRun(); };
+  const autoStop = fn => { if (!fn || autoFn === fn) { autoFn = null; clearTimeout(autoT); } };
+
+  /* ---------- Saviu：选角色，看对应的端 ---------- */
+  const roleBtns = $$('.role');
+  const showRole = k => {
+    roleBtns.forEach(b => { const on = b.dataset.role === k; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+    $$('.pane').forEach(pane => pane.classList.toggle('show', pane.dataset.pane === k));
+  };
+  const nextRole = () => roleBtns[(roleBtns.findIndex(b => b.classList.contains('on')) + 1) % roleBtns.length].dataset.role;
+  const roleStep = () => showRole(nextRole());
+  // 手动按 E 或点角色：立刻换，并从这一刻重新计 5 秒
+  const setRole = k => { showRole(k); if (autoFn === roleStep) autoRun(); };
+  // 暂停 / 继续自动播放：底栏的按钮用户让删了，键盘 P 仍然可以用
+  const togglePlay = () => { autoPaused = !autoPaused; autoRun(); };
+  roleBtns.forEach(b => b.addEventListener('click', () => setRole(b.dataset.role)));
+
+  /* ---------- 作品墙：放大 ---------- */
+  const lb = $('#lightbox'), lbImg = $('img', lb), lbCap = $('figcaption', lb);
+  let lbList = [], lbI = -1;
+  const lastShot = {};
+  const shots = id => $$('.phone-btn', document.getElementById(id));
+  const openShot = (list, i) => {
+    lbList = list; lbI = (i + list.length) % list.length;
+    lastShot[list[0].closest('.sec').id] = lbI;
+    const img = $('img', list[lbI]);
+    lbImg.src = img.src; lbImg.alt = img.alt; lbCap.textContent = img.alt;
+    lb.classList.add('open');
+  };
+  $$('.sec').forEach(sec => {
+    const groups = $$('.leaf', sec);
+    (groups.length ? groups : [sec]).forEach(g => { const list = $$('.phone-btn', g); list.forEach((btn, i) => btn.addEventListener('click', () => openShot(list, i))); });
+  });
+  const nextShot = id => openShot(shots(id), (id in lastShot ? lastShot[id] : -1) + 1);
+  const closeLb = () => lb.classList.remove('open');
+  lb.addEventListener('click', closeLb);
+
+  /* ---------- 模块切换 ---------- */
+  const secs = $$('.sec'), links = $$('.nav [data-to]');
+  secs.forEach(s => $$('.phone', s).forEach((el, i) => el.style.setProperty('--i', i)));
+  // 第 2、3 屏横向拼成一条：画面钉住，轨道横着平移，小人跟着走过接缝
+  const duoSecs = [], WALK = 2400;   // 用户 11-18 删掉了「两类用户」「作品墙」两屏，不再有横向拼页      // ms for one trip across the seam
+  // 创业一关有三屏：「为什么做」、两类用户、作品墙；翻页时三个停靠点，数关卡时只算一关
+  const startupGroup = [$('#why'), $('#diff'), $('#position'), $('#feat'), $('#growth'), $('#reflect'), ...duoSecs];
+  const level = s => startupGroup.includes(s) ? startupGroup[0] : s;
+  const levels = secs.filter(s => level(s) === s);
+  const setDuo = () => {};
+  // where each module sits on the vertical scroll (the two joined screens share one pinned block)
+  const stopY = s => s.offsetTop;
+  const nearest = () => { let i = 0, d = Infinity; secs.forEach((s, k) => { const t = Math.abs(stopY(s) - scrollY); if (t < d) { d = t; i = k; } }); return { i, d }; };
+
+  // exactly one module is "in": the one sitting at the top of the screen
+  let cur = -1, target = -1, targetT, leaveT, pending = null;
+  function leave(old) {
+    old.classList.remove('in');
+    $$('[data-anim]', old).forEach(el => el.classList.remove('go'));
+    $$('.hung', old).forEach(el => el.classList.remove('hung'));
+    if (old.id === 'reflect' && flipped) setFlipped(false, true);
+    if (old.id === 'tencent') setPara(-1);
+    if (old.id === 'why') { oppReset(); scrollStop(); setFront('xhs', true); feed.scrollTop = 0; xhsView.scrollTop = 0; }
+    if (old.id === 'feat') setDiff(0);
+    if (old.id === 'growth') setZoom(false, true);
+  }
+  function enter(i) {
+    const old = cur >= 0 ? secs[cur] : null, s = secs[i], k = duoSecs.indexOf(s);
+    const slide = k >= 0 && duoSecs.includes(old);            // moving sideways between the two joined screens
+    clearTimeout(leaveT);
+    if (pending && pending !== s) leave(pending);
+    pending = null;
+    if (old) {
+      // the screen being left stays visible while it slides away, so it keeps its contents until the walk is over
+      if (slide && !reduce) { pending = old; leaveT = setTimeout(() => { leave(old); pending = null; }, WALK + 100); }
+      else leave(old);
+    }
+    cur = i;
+    setDuo(k >= 0 ? k : +(i > secs.indexOf(duoSecs[1])), !slide);
+    s.classList.add('in');
+    if (s.id === 'feat') setDiff(old && secs.indexOf(old) > i ? csRows.length : 1);   // 从后面退回来就停在第 5 点
+    autoStop();
+    if (s.id === 'saviu') autoStart(roleStep);
+    if (s.id === 'why') feedStart();
+    links.forEach(a => a.classList.toggle('cur', a.dataset.to === level(s).id));
+    $('.hud').classList.toggle('on-dark', s.classList.contains('night'));
+    $('.nav').classList.toggle('on-dark', s.classList.contains('night'));   // 深色屏上导航文字也换浅色
+    $$('[data-anim]', s).forEach(go);
+  }
+  function sync() {
+    const { i, d } = nearest();
+    if (target >= 0) { if (i !== target) return; if (d < 2) { target = -1; clearTimeout(targetT); } }   // a jump is on its way: skip what it passes
+    if (d > innerHeight * 0.45 || i === cur) return;          // still between two modules, or nothing changed
+    enter(i);
+  }
+  let syncT;
+  const syncSoon = () => { clearTimeout(syncT); syncT = setTimeout(sync, 60); };
+  new IntersectionObserver(syncSoon, { threshold: [0.2, 0.55, 0.9] }).observe(document.body);
+  secs.forEach(s => new IntersectionObserver(syncSoon, { threshold: [0.55, 0.95] }).observe(s));
+  addEventListener('scroll', () => {
+    // inside the joined pair nothing moves vertically, so start the sideways walk as soon as the scroll is past halfway
+    syncSoon();
+  }, { passive: true });
+  addEventListener('resize', syncSoon);
+  addEventListener('load', syncSoon);
+
+  /* ---------- 游戏层：关卡 / E 互动 / 成就 ---------- */
+  levels.forEach((sec, i) => {
+    const tag = $('.tag', sec);
+    if (tag) { const cap = document.createElement('kbd'); cap.className = 'key'; cap.textContent = (i + 1) % 10; tag.prepend(cap); }
+  });
+  let blkI = 0;
+  const BLK = ['adc', 'pga', 'ldo', 'mux', 'bgr'];
+  const interact = {
+    hero() {},                                 // 开场只有文字和照片，E 不做事
+    sides() { nextFacet(); },
+    why() { oppToggle(); },
+    diff() {},                                 // 竞品分析、产品定位都是一屏讲完，E 不做事
+    position() {},                             // 产品定位一屏讲完
+    reflect() { setFlipped(!flipped); },       // E：翻到背面看网页端 / 翻回复盘
+    feat() { setDiff(+diffEl.dataset.s % csRows.length + 1); },   // 1 → 5 循环
+    growth() { if (!unflipAll()) setZoom(!gzOpen); },   // E：有卡翻着先翻回，否则展开 / 收回拉新
+    saviu() { setRole(nextRole()); },
+    tencent() { setPara(letterI + 1 > letterPs.length ? -1 : letterI + 1); },
+  };
+  // ↓ / →：和 E 一样走下一步，这一屏走完了才进下一屏；↑ / ←：退回上一步，退到这一屏开头才回上一屏
+  const roleIdx = () => roleBtns.findIndex(b => b.classList.contains('on'));
+  const steps = {
+    why: {
+      next() { if (oppStep === 1 && opp.classList.contains('done')) return false; oppToggle(); return true; },
+      prev() {
+        if (oppStep === 0) return false;
+        oppReset(); setFront('xhs'); feedStart(); return true;
+      },
+    },
+    feat: {                                    // 进屏就讲第 1 点；↓ 往下讲，第 5 点讲完进下一屏；↑ 退到第 1 点再回产品定位
+      next() { const k = +diffEl.dataset.s; if (k >= csRows.length) return false; setDiff(k + 1); return true; },
+      prev() { const k = +diffEl.dataset.s; if (k <= 1) return false; setDiff(k - 1); return true; },
+    },
+    growth: {                                  // ↓ 展开拉新，再 ↓ 走到激活，再 ↓ 进下一屏；↑ 一步步退回
+      next() {
+        if (!gzOpen) { setZoom(true, false, 0); return true; }
+        if (gzK === GS_PAGE && gsI < gsCards.length - 1) { setGs(gsI + 1); return true; }   // 留存策略页先一张张讲
+        if (gzK < gzPages.length - 1) { unflipAll(); setGzPage(gzK + 1); return true; }   // 拉新 → 激活，企鹅往右走
+        return false;
+      },
+      prev() {
+        if (unflipAll()) return true;                // 先翻回卡片
+        if (!gzOpen) return false;
+        if (gzK === GS_PAGE && gsI >= 0) { setGs(gsI - 1); return true; }
+        if (gzK > 0) { setGzPage(gzK - 1); return true; }   // 激活 → 拉新，企鹅转身走回来
+        setZoom(false); return true;
+      },
+    },
+    saviu: {
+      next() { const i = roleIdx(); if (i >= roleBtns.length - 1) return false; setRole(roleBtns[i + 1].dataset.role); return true; },
+      prev() { const i = roleIdx(); if (i <= 0) return false; setRole(roleBtns[i - 1].dataset.role); return true; },
+    },
+    sides: {
+      next() { if (facetI >= facetEls.length - 1) return false; setFacet(facetI + 1); return true; },
+      prev() { if (facetI < 0) return false; setFacet(facetI - 1); return true; },
+    },
+    reflect: {                                 // ↓ 先翻到网页端，再 ↓ 进下一屏；↑ 翻回复盘
+      next() { if (flipped) return false; setFlipped(true); return true; },
+      prev() { if (!flipped) return false; setFlipped(false); return true; },
+    },
+    tencent: {
+      next() { if (letterI >= letterPs.length) return false; setPara(letterI + 1); return true; },
+      prev() { if (letterI < 0) return false; setPara(letterI - 1); return true; },
+    },
+  };
+  const stepBy = dir => {
+    // 还在滚向下一屏时又按了 ↓ / ↑：当作已经到了，这一步算在要去的那一屏上（以前会直接再跳一屏，比如从增长概览跳过「拉新」到下一屏）
+    if (target >= 0 && cur !== target) enter(target);
+    const st = cur >= 0 ? steps[secs[cur].id] : null;
+    if (!(st && (dir > 0 ? st.next() : st.prev()))) goto(base() + dir);
+  };
+
+  // keycaps press down with the real keyboard
+  const keyEl = k => $$('[data-key]').filter(el => el.dataset.key === k);
+  const norm = e => e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  document.addEventListener('keydown', e => keyEl(norm(e)).forEach(el => el.classList.add('down')));
+  document.addEventListener('keyup', e => keyEl(norm(e)).forEach(el => el.classList.remove('down')));
+  window.addEventListener('blur', () => $$('.key.down').forEach(el => el.classList.remove('down')));
+  sync();
+
+  const base = () => target >= 0 ? target : cur;
+  function goto(n) {
+    const i = Math.max(0, Math.min(secs.length - 1, n)), s = secs[i], k = duoSecs.indexOf(s);
+    const slide = k >= 0 && duoSecs.includes(secs[cur]);     // between the two joined screens: no vertical travel to show
+    if (k >= 0 && !slide) setDuo(k, true);                    // arriving from elsewhere: that half is already in place
+    target = i; clearTimeout(targetT); targetT = setTimeout(() => { target = -1; sync(); }, 1600);
+    scrollTo({ top: stopY(s), behavior: slide || reduce ? 'instant' : 'smooth' });
+    if (slide) sync();
+  }
+  links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); goto(secs.findIndex(s => s.id === a.dataset.to)); }));
+
+  // after a mouse click, hand the keyboard back to page navigation
+  document.addEventListener('click', e => {
+    if (e.detail > 0 && !lb.classList.contains('open')) { const b = e.target.closest('button,[role=button]'); if (b) b.blur(); }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (lb.classList.contains('open')) {
+      e.preventDefault();
+      if (k === 'e' || k === 'E' || k === 'ArrowRight' || k === 'ArrowDown') openShot(lbList, lbI + 1);
+      else if (k === 'ArrowLeft' || k === 'ArrowUp') openShot(lbList, lbI - 1);
+      else if (k === 'Escape' || k === 'Enter' || k === ' ') closeLb();
+      return;
+    }
+    if (k === 'e' || k === 'E') { e.preventDefault(); interact[secs[cur].id](); return; }
+    if (k === 'p' || k === 'P') { e.preventDefault(); togglePlay(); return; }
+    if (/^[1-9]$/.test(k)) { e.preventDefault(); const s = levels[+k - 1]; if (s) goto(secs.indexOf(s)); return; }
+    if ((k === ' ' || k === 'Enter') && e.target.closest('button,[role=button],a')) return;
+    if (k === ' ') { e.preventDefault(); goto(base() + (e.shiftKey ? -1 : 1)); }                 // 空格：直接下一关
+    else if (['ArrowDown', 'ArrowRight', 'PageDown'].includes(k)) { e.preventDefault(); stepBy(1); }
+    else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(k)) { e.preventDefault(); stepBy(-1); }
+    else if (k === 'Home') { e.preventDefault(); goto(0); }
+    else if (k === 'End') { e.preventDefault(); goto(secs.length - 1); }
+  });
+})();
+</script>
+</body>
+</html>
