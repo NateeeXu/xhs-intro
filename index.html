@@ -12,6 +12,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
+<!-- 用户 11-21：手机上「为什么是小红书」那封信用手写感的霞鹜文楷，只在手机宽度加载 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" media="(max-width: 640px)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-bold.css" media="(max-width: 640px)">
 <style>
 :root{--wx:#07C160;--wx-d:#06A853;--wx-bg:#E3F6EA;
   --white:#ffffff;
@@ -1338,7 +1341,9 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .wshots.deck{--dh:27rem}
   .wshots.deck .wshot{width:31rem;display:block}
   .wlist{display:none}   /* 文字跟着截图走，原来分开的列表不要了 */
-  .deck-name.web{margin-top:1.6rem;text-align:left;font-size:1.5rem;font-weight:400;color:#3A3A3C}
+  .deck-name.web{margin-top:1.6rem;text-align:center;font-size:1.5rem;font-weight:400;color:#3A3A3C}   /* 用户 11-21：居中，和截图对齐 */
+  .deck-name.web .why li{padding-left:0}
+  .deck-name.web .why li::before{position:static;display:inline-block;vertical-align:middle;margin:0 .7rem .25rem 0}
   .deck-name.web b{font-size:2.4rem;margin-bottom:1rem}
   .deck-name.web .why{display:grid;gap:.3rem;padding:0;animation:none}
   .deck-name.web .why dd{font-size:1.55rem}
@@ -1511,6 +1516,10 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .facet::before{font-size:6.4rem}
   .facet-meta{white-space:normal}
   .facet-body{zoom:.72}
+  /* 用户 11-21：手机上创作者三张卡太散，两边的卡往中间收，压在红卡后面 */
+  .xhs-bg.l{translate:calc(-50% - 9.5rem) -46%;rotate:-6deg}
+  .xhs-bg.r{translate:calc(-50% + 9.5rem) -44%;rotate:5deg}
+  .facets.focus .facet.on{translate:none}
   /* 为什么是小红书：信全部展开，结尾那句跟在信后面 */
   #tencent{display:block}
   .letter{width:auto}
@@ -1537,6 +1546,11 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .rf-core b{font-size:3rem;letter-spacing:-.03em}
   .finale{font-size:3rem;line-height:1.3;letter-spacing:-.02em}
   .letter-body p{line-height:1.8;letter-spacing:.01em}
+  /* 用户 11-21：信居中，正文换手写感字体（霞鹜文楷），像一封手写信 */
+  .letter{text-align:center}
+  .letter .tag{justify-content:center}
+  .letter-body p,.letter.focus .letter-body p{font-family:"LXGW WenKai",var(--text);font-size:1.75rem;line-height:1.85;letter-spacing:.02em;color:#2C2C2E}
+  .letter-body b{font-weight:700;white-space:normal!important}   /* 手机上窄，团队名可以跟着前文一起折行，不空出半行 */
 }
 </style>
 </head>
@@ -1547,7 +1561,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     <li><a href="#hero" data-to="hero"><kbd class="key sm" data-key="1">1</kbd>首页</a></li>
     <li><a href="#why" data-to="why"><kbd class="key sm" data-key="2">2</kbd>创业</a></li>
     <li><a href="#saviu" data-to="saviu"><kbd class="key sm" data-key="3">3</kbd>Saviu</a></li>
-    <li><a href="#sides" data-to="sides"><kbd class="key sm" data-key="4">4</kbd>三面</a></li>
+    <li><a href="#sides" data-to="sides"><kbd class="key sm" data-key="4">4</kbd>Nate</a></li>
     <li><a href="#tencent" data-to="tencent"><kbd class="key sm" data-key="5">5</kbd>为什么是小红书</a></li>
   </ol>
 </nav>
