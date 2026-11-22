@@ -1316,8 +1316,20 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .dcol.comp .gaps li i{font-size:2.6rem}
   .dcol.comp .gaps li b{font-size:1.8rem}
   .dcol.comp .gaps li span em{white-space:normal}
-  #diff .dstage{display:grid;grid-template-columns:1fr 1fr;gap:2rem 1.4rem;height:auto;width:auto;zoom:1;margin-top:2.4rem}
-  .cshot{position:static;width:auto;opacity:1!important;translate:none!important}
+  /* 用户 11-21：手机上四张竞品截图叠成一摞，左右滑翻到下一张 */
+  #diff .dstage{position:relative;display:block;width:auto;height:52rem;zoom:1;margin-top:2.6rem;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+  .cshot{--d:0;--dx:0;position:absolute;left:50%;top:0;width:22.5rem;opacity:1!important;translate:none!important;z-index:calc(10 - var(--d));
+    transform:translateX(calc(-50% + var(--d) * 1.3rem + var(--dx) * 1px)) translateY(calc(var(--d) * .9rem)) rotate(calc(var(--d) * 2.6deg + var(--dx) * .05deg)) scale(calc(1 - var(--d) * .045));
+    transform-origin:50% 100%;transition:transform .35s cubic-bezier(.2,.8,.3,1)}
+  .cshot.drag{transition:none}
+  .cshot .phone-btn{rotate:0deg}
+  .cshot img{-webkit-user-drag:none;pointer-events:none}
+  .cshot figcaption{display:none}   /* 名字挪到下面圆点那一行，不压在后面几张卡上 */
+  .deck-name{margin-top:1.4rem;text-align:center;font-size:1.7rem;font-weight:600;color:var(--ink)}
+  .deck-dots{display:flex;justify-content:center;align-items:center;gap:.8rem;margin-top:.9rem}
+  .deck-dots i{width:.7rem;height:.7rem;border-radius:50%;background:#D1D1D6;transition:background .2s,width .2s}
+  .deck-dots i.on{width:2rem;border-radius:99rem;background:var(--brand)}
+  .deck-dots span{margin-left:.6rem;font-size:1.25rem;color:#AEAEB2}
   /* 产品定位 */
   .pos{width:auto;padding-top:0}
   .pz{margin:2rem 0 0}
@@ -2610,7 +2622,67 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   // 小红书版（用户 11-21）：点屏幕空白处 = ↓ 下一步。点在按钮、截图、卡片这些本来就能点的东西上，照旧做它自己的事
   const OWN_CLICK = 'a,button,[role=button],input,textarea,select,label,[data-anim],.facet,.curl-hit,.gs-card,.gw-cards li,.gz-back,.srcard,.role,#lightbox,.nav';
   if (MOB.matches) $$('#feat .dv').forEach(v => { const li = csRows[+v.dataset.v - 1]; if (li) li.append(v); });   // 手机：每一点的截图跟在这一点下面
-  if (MOB.matches) { gzPages.forEach(pg => { pg.inert = false; }); $('.ga').classList.add('play'); $$('[data-anim]').forEach(go); }   // 手机：增长展开页都能点，漏斗直接显示
+  if (MOB.matches) { gzPages.forEach(pg => { pg.inert = false; }); $('.ga').classList.add('play'); $$('[data-anim]').forEach(go); }
+  /* 手机：竞品截图叠成一摞，左右滑把最上面那张甩出去、塞到最下面（用户 11-21） */
+  if (MOB.matches) {
+    const deck = $('#diff .dstage'), cards = $$('.cshot', deck);
+    let order = cards.map((_, i) => i);
+    const dots = document.createElement('div');
+    dots.className = 'deck-dots';
+    dots.innerHTML = cards.map(() => '<i></i>').join('') + '<span>左右滑动切换</span>';
+    const name = document.createElement('p');
+    name.className = 'deck-name';
+    deck.after(name, dots);
+    const lay = () => {
+      order.forEach((ci, d) => { cards[ci].style.setProperty('--d', d); cards[ci].classList.toggle('top', d === 0); });
+      $$('i', dots).forEach((dot, i) => dot.classList.toggle('on', i === order[0]));
+      name.textContent = $('figcaption', cards[order[0]]).textContent;
+    };
+    lay();
+    let x0 = null, y0 = 0, dx = 0, moved = false, top = null;
+    deck.addEventListener('pointerdown', e => {
+      top = cards[order[0]];
+      if (!top.contains(e.target)) { top = null; return; }
+      x0 = e.clientX; y0 = e.clientY; dx = 0; moved = false;
+      top.classList.add('drag');
+    });
+    deck.addEventListener('pointermove', e => {
+      if (x0 === null || !top) return;
+      dx = e.clientX - x0;
+      if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - y0)) { moved = true; deck.setPointerCapture(e.pointerId); }
+      if (moved) top.style.setProperty('--dx', dx);
+    });
+    const end = () => {
+      if (x0 === null || !top) return;
+      const card = top;
+      card.classList.remove('drag');
+      x0 = null;
+      if (moved && Math.abs(dx) > 50) {
+        card.style.setProperty('--dx', dx > 0 ? 520 : -520);          // 甩出去
+        setTimeout(() => {
+          card.classList.add('drag');
+          order = order.slice(1).concat(order[0]);
+          card.style.setProperty('--dx', 0);
+          lay();
+          requestAnimationFrame(() => requestAnimationFrame(() => card.classList.remove('drag')));
+        }, 260);
+      } else card.style.setProperty('--dx', 0);                         // 没滑够，弹回来
+    };
+    deck.addEventListener('pointerup', end);
+    deck.addEventListener('pointercancel', end);
+    deck.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);   // 滑动不算点开放大
+    $$('i', dots).forEach((dot, i) => dot.addEventListener('click', () => { while (order[0] !== i) order = order.slice(1).concat(order[0]); lay(); }));
+  }
+  if (MOB.matches) {   // 手机长页：顶部导航跟着滚到哪一块高亮（长页里每块很高，原来按「最近一屏」判断会一直停在首页）
+    const navSync = () => {
+      let s = secs[0];
+      secs.forEach(x => { if (x.offsetTop <= scrollY + innerHeight * .35) s = x; });
+      links.forEach(a => a.classList.toggle('cur', a.dataset.to === level(s).id));
+      $('.nav').classList.toggle('on-dark', s.classList.contains('night'));
+    };
+    addEventListener('scroll', navSync, { passive: true });
+    navSync();
+  }   // 手机：增长展开页都能点，漏斗直接显示
   document.addEventListener('click', e => {
     if (MOB.matches || e.button !== 0 || e.defaultPrevented || lb.classList.contains('open')) return;
     if (e.target.closest(OWN_CLICK)) return;
