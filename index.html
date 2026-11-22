@@ -382,6 +382,76 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
 .pz-from b::after{content:"中的问题";font-weight:500}
 .pz-keys svg{display:block;width:3.2rem;height:3.2rem;fill:none;stroke:var(--wx);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .pz-keys h3{margin:1.2rem 0 0;font-family:var(--display);font-size:2.8rem;font-weight:800;line-height:1.2;color:var(--ink)}
+/* 小红书版（用户 11-21）：产品定位页右边放小程序首页；点「查看房源」房子起飞、点「发布房源」铅笔写字（照小程序 pages/home 的动效原样搬过来）。
+   截图按 1500px 宽导出时 1rpx = 1px，截图裁掉白边后宽 824px，所以 --r = 1rpx。 */
+.pz-split{display:grid;grid-template-columns:1fr auto;align-items:center;gap:6rem}
+.pz-split .pz-is span{display:block}
+.pz-split .pz-keys{grid-template-columns:1fr 1fr}
+.pz-home{position:relative;width:27rem;margin:0;container-type:inline-size}
+.pz-shot{display:block;width:100%;height:auto;filter:drop-shadow(0 1.4rem 2rem rgba(0,0,0,.16))}
+.hx{position:absolute;inset:0;--r:calc(100cqw / 824)}
+.hx-card{position:absolute;top:calc(527 * var(--r));width:calc(335 * var(--r));height:calc(392 * var(--r));border-radius:calc(24 * var(--r));overflow:hidden}
+.hx-rent{left:calc(68.5 * var(--r))}
+.hx-pub{left:calc(419.5 * var(--r))}
+.hx-patch{position:absolute;inset:0;visibility:hidden;clip-path:inset(calc(78 * var(--r)) calc(10 * var(--r)) calc(190 * var(--r)) calc(194 * var(--r)))}
+.hx-pub .hx-patch{clip-path:inset(calc(78 * var(--r)) calc(10 * var(--r)) calc(190 * var(--r)) calc(202 * var(--r)))}   /* 「转租房源，」的逗号伸到插画左边，别盖住 */
+.hx-rent .hx-patch{background:radial-gradient(circle at 88% 34%,rgba(213,205,250,.5),rgba(255,255,255,0) 44%),#fff}
+.hx-pub .hx-patch{background:radial-gradient(circle at 88% 34%,rgba(255,220,228,.6),rgba(255,255,255,0) 44%),#fff}
+.hx-card.on .hx-patch{visibility:visible}
+.hx-cta{position:absolute;left:calc(20 * var(--r));right:calc(20 * var(--r));bottom:calc(20 * var(--r));height:calc(66 * var(--r));border:0;border-radius:99rem;background:none;cursor:pointer;transition:background .15s}
+.hx-cta:active{background:rgba(46,28,78,.06)}
+.hx-cta:focus-visible{outline:.2rem solid var(--brand);outline-offset:.2rem}
+.house-fx,.pen-fx{position:absolute;z-index:3;top:calc(80 * var(--r));right:calc(22 * var(--r));width:calc(122 * var(--r));height:calc(122 * var(--r));visibility:hidden;pointer-events:none}
+.hx-card.on .house-fx,.hx-card.on .pen-fx{visibility:visible}
+.house-fx img,.pen-fx img{display:block}
+.house-fx-ground,.house-fx-y,.house-fx-tilt,.house-fx-sq,.house-fx-view{position:absolute;top:0;left:0;width:100%;height:100%}
+.house-fx-ground{z-index:0;transform-origin:60.5% 81.4%}
+.house-fx-ground--soft{opacity:0}
+.house-fx-y{z-index:2;--peak:calc(-37.2 * var(--r))}
+.house-fx-y,.house-fx-tilt,.house-fx-sq{transform-origin:50% 88%}
+.house-fx-view,.pen-fx-view{overflow:hidden}
+.house-fx-rows,.pen-fx-rows{position:absolute;top:0;left:0;width:100%;height:600%}
+.house-fx-cols,.pen-fx-cols{position:absolute;top:0;left:0;width:600%;height:100%}
+.house-fx-sprite,.pen-fx-sprite{width:100%;height:100%}
+.house-fx-ring{position:absolute;z-index:1;top:calc(95.9 * var(--r));left:calc(30.5 * var(--r));width:calc(61 * var(--r));height:calc(18.3 * var(--r));border-radius:50%;opacity:0;background:radial-gradient(closest-side,rgba(200,190,220,0) 48%,rgba(205,196,224,.75) 74%,rgba(200,190,220,0) 100%)}
+.house-fx-puffs{position:absolute;inset:0}
+.house-fx-puff{position:absolute;border-radius:50%;opacity:0;background:radial-gradient(circle at 38% 32%,#fff 0,#fff 42%,#efeaf8 66%,#e2daf3 100%);box-shadow:0 1px 4px rgba(120,100,170,.18)}
+.hx-card.on .house-fx-y{animation:house-fx-y 1.2s linear forwards}
+.hx-card.on .house-fx-tilt{animation:house-fx-tilt 1.2s linear forwards}
+.hx-card.on .house-fx-sq{animation:house-fx-sq 1.2s linear forwards}
+.hx-card.on .house-fx-ground{animation:house-fx-ground 1.2s linear forwards}
+.hx-card.on .house-fx-ground--soft{animation-name:house-fx-ground-soft}
+.hx-card.on .house-fx-rows{animation:house-fx-rows 676ms steps(6) 210ms 1}
+.hx-card.on .house-fx-cols{animation:house-fx-cols 112.667ms steps(6) 210ms 6}
+.hx-card.on .house-fx-ring--up{animation:house-fx-ring 379ms cubic-bezier(.15,.7,.3,1) 87ms forwards}
+.hx-card.on .house-fx-ring--down{animation:house-fx-ring 379ms cubic-bezier(.15,.7,.3,1) 979ms forwards}
+.hx-card.on .house-fx-puff{animation:house-fx-puff 373ms cubic-bezier(.2,.9,.35,1) forwards}
+@keyframes house-fx-y{0%{transform:translateY(0);animation-timing-function:linear}7.28%{transform:translateY(0);animation-timing-function:cubic-bezier(.34,1.32,.64,1)}29.13%{transform:translateY(var(--peak));animation-timing-function:cubic-bezier(.45,0,.55,1)}41.26%{transform:translateY(calc(var(--peak) * .94));animation-timing-function:cubic-bezier(.45,0,.55,1)}53.40%{transform:translateY(var(--peak));animation-timing-function:cubic-bezier(.45,0,.55,1)}63.11%{transform:translateY(calc(var(--peak) * .97));animation-timing-function:cubic-bezier(.55,0,.8,.45)}81.55%{transform:translateY(0);animation-timing-function:cubic-bezier(.33,1,.68,1)}86.89%{transform:translateY(calc(var(--peak) * .13));animation-timing-function:cubic-bezier(.55,0,.8,.45)}92.23%{transform:translateY(0);animation-timing-function:cubic-bezier(.45,0,.55,1)}100%{transform:translateY(0)}}
+@keyframes house-fx-tilt{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}25.24%{transform:rotate(0deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}36.41%{transform:rotate(-5deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}49.51%{transform:rotate(5deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}68.93%{transform:rotate(0deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}100%{transform:rotate(0deg)}}
+@keyframes house-fx-sq{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(.45,0,.55,1)}7.28%{transform:scale(1.13,.85);animation-timing-function:cubic-bezier(.33,1,.68,1)}12.62%{transform:scale(.91,1.11);animation-timing-function:cubic-bezier(.45,0,.55,1)}21.84%{transform:scale(1,1);animation-timing-function:cubic-bezier(.45,0,.55,1)}79.61%{transform:scale(.97,1.04);animation-timing-function:cubic-bezier(.33,1,.68,1)}83.98%{transform:scale(1.15,.84);animation-timing-function:cubic-bezier(.45,0,.55,1)}88.35%{transform:scale(.96,1.05);animation-timing-function:cubic-bezier(.45,0,.55,1)}92.72%{transform:scale(1.05,.95);animation-timing-function:cubic-bezier(.45,0,.55,1)}100%{transform:scale(1,1)}}
+@keyframes house-fx-ground{0%,7.28%{transform:scale(1);opacity:1}29.13%,63.11%{transform:scale(.72,.82);opacity:0}81.55%,100%{transform:scale(1);opacity:1}}
+@keyframes house-fx-ground-soft{0%,7.28%{transform:scale(1);opacity:0}29.13%,63.11%{transform:scale(.68,.78);opacity:.5}81.55%,100%{transform:scale(1);opacity:0}}
+@keyframes house-fx-rows{to{transform:translateY(-100%)}}
+@keyframes house-fx-cols{to{transform:translateX(-100%)}}
+@keyframes house-fx-ring{0%{transform:scale(.4);opacity:.8}100%{transform:scale(3.4);opacity:0}}
+@keyframes house-fx-puff{0%{transform:translate(0,0) scale(.2);opacity:1}30%{transform:translate(calc(var(--dx) * .55),calc(var(--dy) * .55)) scale(1.15);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(.15);opacity:0}}
+.pen-fx-sq,.pen-fx-view,.pen-fx-done{position:absolute;top:0;left:0;width:100%;height:100%}
+.pen-fx-sq{transform-origin:50% 88%}
+.pen-fx-done{opacity:0}
+.pen-fx-spark{position:absolute;z-index:2;width:9%;height:9%;opacity:0}
+.pen-fx-stamp{position:absolute;z-index:3;top:56%;left:60%;width:34%;height:34%;opacity:0}
+.hx-card.on .pen-fx-sq{animation:pen-fx-sq 1.2s linear forwards}
+.hx-card.on .pen-fx-rows{animation:pen-fx-rows 750ms steps(6) 100ms 1}
+.hx-card.on .pen-fx-cols{animation:pen-fx-cols 125ms steps(6) 100ms 6}
+.hx-card.on .pen-fx-done{animation:pen-fx-done 1.2s linear forwards}
+.hx-card.on .pen-fx-spark{animation:pen-fx-spark 340ms ease-out forwards}
+.hx-card.on .pen-fx-stamp{animation:pen-fx-stamp 320ms cubic-bezier(.3,1.7,.5,1) 820ms forwards}
+@keyframes pen-fx-rows{to{transform:translateY(-100%)}}
+@keyframes pen-fx-cols{to{transform:translateX(-100%)}}
+@keyframes pen-fx-done{0%,70.8%{opacity:0}70.9%,100%{opacity:1}}
+@keyframes pen-fx-sq{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(.45,0,.55,1)}4.17%{transform:scale(1.04,.96);animation-timing-function:cubic-bezier(.45,0,.55,1)}8.33%{transform:scale(1,1)}70.8%{transform:scale(1,1);animation-timing-function:cubic-bezier(.33,1,.68,1)}76%{transform:scale(1.07,.93);animation-timing-function:cubic-bezier(.45,0,.55,1)}83%{transform:scale(.97,1.04) rotate(-2deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}90%{transform:scale(1.02,.98) rotate(1.5deg);animation-timing-function:cubic-bezier(.45,0,.55,1)}100%{transform:scale(1,1) rotate(0deg)}}
+@keyframes pen-fx-spark{0%{transform:scale(0) rotate(0deg);opacity:1}40%{transform:scale(1.2) rotate(30deg);opacity:1}100%{transform:translateY(-60%) scale(0) rotate(80deg);opacity:0}}
+@keyframes pen-fx-stamp{0%{transform:scale(0) rotate(-30deg);opacity:1}100%{transform:scale(1) rotate(-8deg);opacity:1}}
 .pz-keys li > span{display:block;margin-top:.5rem;font-size:1.6rem;color:var(--wx-d);font-weight:600}
 .diff{width:122rem;margin-bottom:1.6rem}
 .diff-body{margin-top:2.4rem;height:52rem;display:grid;grid-template-columns:47rem 72rem;gap:3rem;align-items:center}
@@ -854,6 +924,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
 .gz-row{grid-column:1 / -1;margin:0 0 -.6rem;display:flex;align-items:center;gap:.8rem;font-size:1.5rem;font-weight:600;line-height:1.2;color:var(--brand)}
 .gz-row::before{content:"";width:.9rem;height:.9rem;border-radius:50%;background:currentColor}
 .gz-row.plan{color:#8E8E93}
+.gz-row.tap{margin:0 0 -.6rem}   /* 小红书版（用户 11-21）：提示第一排每一项都能点开看截图，和下面的「下一步」同一种写法 */
 /* 每张卡里的三条都能点：整张卡翻过来，背面放这一条的证据截图；点背面空白处、「返回」或按 ↑ 翻回 */
 .gz-card{position:relative;display:flex;transform-style:preserve-3d;transition:rotate .7s cubic-bezier(.3,.7,.25,1)}
 .gz-cards .gz-card{min-height:24.6rem}   /* 上排删了结果句后正面变矮，背面的证据截图会漏出卡片；和下排一样高 */
@@ -1292,7 +1363,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
 <section class="sec mist pos-sec" id="position">
   <div class="pos">
     <h2 class="opp-title obj" style="--i:0">产品定位</h2>
-    <div class="pz">
+    <div class="pz pz-split"><div class="pz-l">
       <p class="pz-we obj" style="--i:1">We are</p>
       <p class="pz-is obj" style="--i:1">专注于北美的中国留学生<span>校园转租平台</span></p>
       <ul class="pz-keys">
@@ -1301,6 +1372,27 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
         <li class="obj" style="--i:3"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg><h3>自主决策</h3><span>以用户需求为导向</span></li>
         <li class="obj" style="--i:3.5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 19.5 6v5.6c0 4.6-3.2 8.3-7.5 9.6-4.3-1.3-7.5-5-7.5-9.6V6z"/><path d="m8.6 12 2.4 2.4 4.6-4.8"/></svg><h3>安全可信</h3><span>降低用户信任成本</span></li>
       </ul>
+    </div>
+    <figure class="pz-home obj" style="--i:2">
+      <img class="pz-shot" src="img/home/home.webp" width="824" height="1695" alt="寓见云居首页：「我要租房」「我要转租」两个入口，下面是区域房源、为你推荐、全部求租">
+      <div class="hx">
+        <div class="hx-card hx-rent"><i class="hx-patch"></i>
+          <div class="house-fx" aria-hidden="true">
+            <img class="house-fx-ground" src="img/home/house-shadow.png" alt=""><img class="house-fx-ground house-fx-ground--soft" src="img/home/house-shadow-soft.png" alt="">
+            <i class="house-fx-ring house-fx-ring--up"></i><i class="house-fx-ring house-fx-ring--down"></i><span class="house-fx-puffs"></span>
+            <div class="house-fx-y"><div class="house-fx-tilt"><div class="house-fx-sq"><div class="house-fx-view"><div class="house-fx-rows"><div class="house-fx-cols"><img class="house-fx-sprite" src="img/home/house-spin.png" alt=""></div></div></div></div></div></div>
+          </div>
+          <button class="hx-cta" type="button" data-fx="rent" aria-label="查看房源"></button>
+        </div>
+        <div class="hx-card hx-pub"><i class="hx-patch"></i>
+          <div class="pen-fx" aria-hidden="true"><div class="pen-fx-sq">
+            <div class="pen-fx-view"><div class="pen-fx-rows"><div class="pen-fx-cols"><img class="pen-fx-sprite" src="img/home/publish-write.png" alt=""></div></div></div>
+            <img class="pen-fx-done" src="img/home/publish-board-done.png" alt=""><img class="pen-fx-spark" src="img/home/sparkle-lavender.svg" alt="" style="left:20.9%;top:54.4%;animation-delay:100ms"><img class="pen-fx-spark" src="img/home/sparkle-pink.svg" alt="" style="left:26.3%;top:53.4%;animation-delay:221ms"><img class="pen-fx-spark" src="img/home/sparkle-lavender.svg" alt="" style="left:31.8%;top:53.9%;animation-delay:343ms"><img class="pen-fx-spark" src="img/home/sparkle-pink.svg" alt="" style="left:37.2%;top:54.6%;animation-delay:465ms"><img class="pen-fx-spark" src="img/home/sparkle-lavender.svg" alt="" style="left:42.6%;top:57.8%;animation-delay:586ms"><img class="pen-fx-spark" src="img/home/sparkle-pink.svg" alt="" style="left:48.0%;top:53.8%;animation-delay:708ms"><img class="pen-fx-spark" src="img/home/sparkle-lavender.svg" alt="" style="left:53.4%;top:53.6%;animation-delay:830ms"><img class="pen-fx-stamp" src="img/home/publish-stamp.svg" alt="">
+          </div></div>
+          <button class="hx-cta" type="button" data-fx="pub" aria-label="发布房源"></button>
+        </div>
+      </div>
+    </figure>
     </div>
   </div>
 </section>
@@ -1339,7 +1431,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     <div class="gz-page">
       <div class="gz">
         <h2 class="opp-title">如何低成本获取<span>高意向用户？</span></h2>
-        <div class="gz-cards"><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">01</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><h3>主动获客</h3><small>Direct Outreach</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">跨平台 Reach Out</button><button class="gz-it" type="button" data-k="2">校园社群运营</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>01 · 主动获客</small><h4>跨平台 Reach Out</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/outreach.webp" width="776" height="1600" alt="小红书私信：看到对方刚发布的芝加哥 South Loop 转租帖，邀请把房源发布到 CloudSublet"></button></div></div><div class="gz-ev" data-k="2"><div class="gz-ev-t"><small>01 · 主动获客</small><h4>校园社群运营</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/group.webp" width="776" height="1600" alt="微信 NU26 群（110 人）的群公告：找房、转租、二手、约饭、活动都可以在群里发"></button></div></div></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">02</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 9h7M8.5 13h5"/></svg><h3>内容营销</h3><small>Content Marketing</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">官方小红书账号运营</button><button class="gz-it" type="button" data-k="1">UGC 真实体验笔记激励</button><button class="gz-it" type="button" data-k="2">Campus Guide 内容引流</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>官方小红书账号运营</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/xhs-account.webp" width="776" height="1600" alt="CloudSublet 官方小红书账号主页：Northwestern、UChicago、Yale、Berkeley 的留学生活笔记"></button></div></div><div class="gz-ev" data-k="1"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>UGC 真实体验笔记激励</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/phones/nu28.png" width="435" height="900" alt="寓见云居福利中心：体验笔记投稿奖励档位"></button></div></div><div class="gz-ev" data-k="2"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>Campus Guide<br>内容引流</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/phones/nu30.png" width="435" height="900" alt="寓见云居本地生活：Campus Guide 内容"></button></div></div></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">03</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg><h3>产品自传播</h3><small>Product-led Growth</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">一键种草文案生成</button><button class="gz-it" type="button" data-k="1">微信房源卡片分享</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>03 · 产品自传播</small><h4>一键种草文案生成</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/diff/app-4-v2.webp" width="778" height="1600" alt="寓见云居分享房源：一键生成结构清晰的微信群文案，一键分享至微信"></button><button class="phone-btn" type="button"><img src="img/diff/app-5-v2.webp" width="776" height="1600" alt="寓见云居分享房源：一键生成小红书标题和文案，可选寒假短租、寒假回国、出去旅行等写法"></button></div></div><div class="gz-ev" data-k="1"><div class="gz-ev-t"><small>03 · 产品自传播</small><h4>微信房源卡片分享</h4></div><div class="gz-shots"><button class="phone-btn flat" type="button"><img src="img/diff/share-card.jpg" width="753" height="925" alt="寓见云居房源小程序卡片：标题、价格和实拍图"></button></div></div></div></article><p class="gz-row plan">下一步</p><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">04</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><h3>校园地推</h3><small>Field Marketing</small><p class="gz-items plan"><span>校园 Poster 宣传</span><span>自主策划与主办活动</span><span>新生季定向推广</span></p><b>建立校园品牌认知</b></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">05</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg><h3>校园生态合作</h3><small>Campus Partnership</small><p class="gz-items plan"><span>华人学生会合作</span><span>各校区校园大使计划</span></p><b>建立本地化增长网络</b></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">06</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><h3>自然流量</h3><small>Organic Acquisition</small><p class="gz-items plan"><span>微信小程序搜索</span><span>品牌关键词搜索</span><span>Web SEO 优化</span></p><b>积累长期自然流量</b></div></article></div>
+        <div class="gz-cards"><p class="gz-row tap">点击每一项，查看实际截图</p><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">01</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><h3>主动获客</h3><small>Direct Outreach</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">跨平台 Reach Out</button><button class="gz-it" type="button" data-k="2">校园社群运营</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>01 · 主动获客</small><h4>跨平台 Reach Out</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/outreach.webp" width="776" height="1600" alt="小红书私信：看到对方刚发布的芝加哥 South Loop 转租帖，邀请把房源发布到 CloudSublet"></button></div></div><div class="gz-ev" data-k="2"><div class="gz-ev-t"><small>01 · 主动获客</small><h4>校园社群运营</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/group.webp" width="776" height="1600" alt="微信 NU26 群（110 人）的群公告：找房、转租、二手、约饭、活动都可以在群里发"></button></div></div></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">02</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8.5 9h7M8.5 13h5"/></svg><h3>内容营销</h3><small>Content Marketing</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">官方小红书账号运营</button><button class="gz-it" type="button" data-k="1">UGC 真实体验笔记激励</button><button class="gz-it" type="button" data-k="2">Campus Guide 内容引流</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>官方小红书账号运营</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/acq/xhs-account.webp" width="776" height="1600" alt="CloudSublet 官方小红书账号主页：Northwestern、UChicago、Yale、Berkeley 的留学生活笔记"></button></div></div><div class="gz-ev" data-k="1"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>UGC 真实体验笔记激励</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/phones/nu28.png" width="435" height="900" alt="寓见云居福利中心：体验笔记投稿奖励档位"></button></div></div><div class="gz-ev" data-k="2"><div class="gz-ev-t"><small>02 · 内容营销</small><h4>Campus Guide<br>内容引流</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/phones/nu30.png" width="435" height="900" alt="寓见云居本地生活：Campus Guide 内容"></button></div></div></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">03</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg><h3>产品自传播</h3><small>Product-led Growth</small><p class="gz-items"><button class="gz-it" type="button" data-k="0">一键种草文案生成</button><button class="gz-it" type="button" data-k="1">微信房源卡片分享</button></p></div><div class="gz-face gz-back" inert><div class="gz-ev" data-k="0"><div class="gz-ev-t"><small>03 · 产品自传播</small><h4>一键种草文案生成</h4></div><div class="gz-shots"><button class="phone-btn" type="button"><img src="img/diff/app-4-v2.webp" width="778" height="1600" alt="寓见云居分享房源：一键生成结构清晰的微信群文案，一键分享至微信"></button><button class="phone-btn" type="button"><img src="img/diff/app-5-v2.webp" width="776" height="1600" alt="寓见云居分享房源：一键生成小红书标题和文案，可选寒假短租、寒假回国、出去旅行等写法"></button></div></div><div class="gz-ev" data-k="1"><div class="gz-ev-t"><small>03 · 产品自传播</small><h4>微信房源卡片分享</h4></div><div class="gz-shots"><button class="phone-btn flat" type="button"><img src="img/diff/share-card.jpg" width="753" height="925" alt="寓见云居房源小程序卡片：标题、价格和实拍图"></button></div></div></div></article><p class="gz-row plan">下一步</p><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">04</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><h3>校园地推</h3><small>Field Marketing</small><p class="gz-items plan"><span>校园 Poster 宣传</span><span>自主策划与主办活动</span><span>新生季定向推广</span></p><b>建立校园品牌认知</b></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">05</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg><h3>校园生态合作</h3><small>Campus Partnership</small><p class="gz-items plan"><span>华人学生会合作</span><span>各校区校园大使计划</span></p><b>建立本地化增长网络</b></div></article><article class="gz-card"><div class="gz-face gz-front"><i class="gz-n">06</i><svg class="gz-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><h3>自然流量</h3><small>Organic Acquisition</small><p class="gz-items plan"><span>微信小程序搜索</span><span>品牌关键词搜索</span><span>Web SEO 优化</span></p><b>积累长期自然流量</b></div></article></div>
       </div>
     </div>
     <!-- 激活：拉新页再按 ↓，整页左移，企鹅从拉新页右下角走过接缝 -->
@@ -1846,6 +1938,36 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   const webStep = () => showWeb(webI + 1);
   wItems.forEach((it, k) => $('.wbtn', it).addEventListener('click', () => { showWeb(k); if (autoFn === webStep) autoRun(); }));
 
+  /* ---------- 产品定位：小程序首页的两个按钮动效（照小程序 utils/house-flight.js） ---------- */
+  const hxCards = { rent: $('.hx-rent'), pub: $('.hx-pub') };
+  const hxPuffs = $('.house-fx-puffs');
+  const HX_BURSTS = [[12, 99, 1], [8, 175, .75], [10, 961, .9], [6, 1095, .5]];
+  const hxSeeded = seed => { let st = seed >>> 0; return () => { st = (st + 0x6d2b79f5) >>> 0; let t = st; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; };
+  function hxBuildPuffs() {                    // 和小程序一样的固定种子，烟团每次都一样
+    const scale = hxCards.rent.getBoundingClientRect().width / 335, size = 122 * scale, gx = size * .5, gy = size * .86, random = hxSeeded(20261120);
+    let html = '';
+    HX_BURSTS.forEach(([count, delay, strength]) => {
+      for (let i = 0; i < count; i++) {
+        const angle = i / count * Math.PI * 2 + random() * .4, reach = size * (.42 + random() * .36) * strength, puff = size * (.14 + random() * .12);
+        const dx = Math.cos(angle) * reach, dy = Math.sin(angle) * reach * .28 - (8 + random() * 16) * scale;
+        html += `<i class="house-fx-puff" style="left:${(gx - puff / 2).toFixed(1)}px;top:${(gy - puff / 2).toFixed(1)}px;width:${puff.toFixed(1)}px;height:${puff.toFixed(1)}px;z-index:${Math.sin(angle) > 0 ? 3 : 1};animation-delay:${Math.round(delay + random() * 52)}ms;--dx:${dx.toFixed(1)}px;--dy:${dy.toFixed(1)}px"></i>`;
+      }
+    });
+    hxPuffs.innerHTML = html;
+  }
+  const hxT = {};
+  function hxPlay(k) {
+    const card = hxCards[k];
+    if (card.classList.contains('on')) return;
+    if (k === 'rent') hxBuildPuffs();
+    card.classList.add('on');
+    hxT[k] = setTimeout(() => card.classList.remove('on'), k === 'rent' ? 1500 : 1900);   // 落地 / 盖完章停一下再收
+  }
+  let hxAutoT = [];
+  const hxStop = () => { hxAutoT.forEach(clearTimeout); hxAutoT = []; Object.keys(hxCards).forEach(k => { clearTimeout(hxT[k]); hxCards[k].classList.remove('on'); }); };
+  const hxAuto = () => { hxStop(); hxAutoT = [setTimeout(() => hxPlay('rent'), 1000), setTimeout(() => hxPlay('pub'), 2700)]; };   // 进屏先演一遍：先起飞、再写字
+  $$('.hx-cta').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); hxPlay(b.dataset.fx); }));
+
   /* ---------- 创业第 1 屏：微信群 / 小红书两张叠着，点后面那张换到前面，前面那张慢慢往下滚；
      按 E 把群里第一条转租消息的字段飞到右边真实房源详情页的对应位置并圈出来，再按 E 复原 ---------- */
   const opp = $('.opp'), feed = $('.wx-feed', opp), xhsView = $('.xhs-view', opp);
@@ -2106,6 +2228,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     if (old.id === 'tencent') setPara(-1);
     if (old.id === 'why') { oppReset(); scrollStop(); setFront('xhs', true); feed.scrollTop = 0; xhsView.scrollTop = 0; }
     if (old.id === 'feat') setDiff(0);
+    if (old.id === 'position') hxStop();
     if (old.id === 'growth') setZoom(false, true);
   }
   function enter(i) {
@@ -2122,7 +2245,8 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     cur = i;
     setDuo(k >= 0 ? k : +(i > secs.indexOf(duoSecs[1])), !slide);
     s.classList.add('in');
-    if (s.id === 'feat') setDiff(old && secs.indexOf(old) > i ? csRows.length : 1);   // 从后面退回来就停在第 5 点
+    if (s.id === 'feat') setDiff(old && secs.indexOf(old) > i ? csRows.length : 1);
+    if (s.id === 'position') hxAuto();   // 从后面退回来就停在第 5 点
     autoStop();
     if (s.id === 'saviu') autoStart(roleStep);
     if (s.id === 'why') feedStart();
@@ -2160,7 +2284,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
     sides() { nextFacet(); },
     why() { oppToggle(); },
     diff() {},                                 // 竞品分析、产品定位都是一屏讲完，E 不做事
-    position() {},                             // 产品定位一屏讲完
+    position() { hxPlay('rent'); setTimeout(() => hxPlay('pub'), 700); },   // E：首页两个按钮的动效再演一遍
     reflect() { setFlipped(!flipped); },       // E：翻到背面看网页端 / 翻回复盘
     feat() { setDiff(+diffEl.dataset.s % csRows.length + 1); },   // 1 → 5 循环
     growth() { if (!unflipAll()) setZoom(!gzOpen); },   // E：有卡翻着先翻回，否则展开 / 收回拉新
