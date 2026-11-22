@@ -1335,6 +1335,13 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .cshot{width:22.5rem}
   .cshot .phone-btn{rotate:0deg}
   .dcol.cs li > .dv.deck{--dh:41rem}
+  .wshots.deck{--dh:27rem}
+  .wshots.deck .wshot{width:31rem;display:block}
+  .wlist{display:none}   /* 文字跟着截图走，原来分开的列表不要了 */
+  .deck-name.web{margin-top:1.6rem;text-align:left;font-size:1.5rem;font-weight:400;color:#3A3A3C}
+  .deck-name.web b{font-size:2.4rem;margin-bottom:1rem}
+  .deck-name.web .why{display:grid;gap:.3rem;padding:0;animation:none}
+  .deck-name.web .why dd{font-size:1.55rem}
   .dcol.cs li > .dv.deck .ph img{height:36rem}
   .dcol.cs li > .dv.deck .wxcard img{width:27rem}
   .dcol.cs li > .dv.deck .reccard img{width:29rem}
@@ -2656,7 +2663,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   if (MOB.matches) $$('#feat .dv').forEach(v => { const li = csRows[+v.dataset.v - 1]; if (li) li.append(v); });   // 手机：每一点的截图跟在这一点下面
   if (MOB.matches) { gzPages.forEach(pg => { pg.inert = false; }); $('.ga').classList.add('play'); $$('[data-anim]').forEach(go); }
   /* 手机：截图叠成一摞，左右滑把最上面那张甩出去、塞到最下面（用户 11-21：竞品分析、产品设计 01 / 04） */
-  function deckify(deck, cards) {
+  function deckify(deck, cards, caption) {
     let order = cards.map((_, i) => i);
     deck.classList.add('deck');
     cards.forEach(c => c.classList.add('deck-card'));
@@ -2669,7 +2676,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
       order.forEach((ci, d) => { cards[ci].style.setProperty('--d', d); cards[ci].classList.toggle('top', d === 0); });
       $$('i', dots).forEach((dot, i) => dot.classList.toggle('on', i === order[0]));
       const cap = $('figcaption', cards[order[0]]);
-      name.innerHTML = cap ? cap.innerHTML : '';
+      name.innerHTML = caption ? caption(order[0]) : cap ? cap.innerHTML : '';
     };
     lay();
     let x0 = null, y0 = 0, dx = 0, moved = false, top = null;
@@ -2709,6 +2716,10 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   if (MOB.matches) {
     deckify($('#diff .dstage'), $$('#diff .cshot'));
     ['1', '4'].forEach(v => { const dv = $(`#feat .dv[data-v="${v}"]`); if (dv) deckify(dv, $$(':scope > figure', dv)); });
+    // 网页端：四张截图叠成一摞，下面跟着这张截图对应的「用户痛点 / 解决方案」，滑到哪张文字就换成哪张（用户 11-21）
+    const wItemsM = $$('.witem');
+    deckify($('.wshots'), $$('.wshot'), i => `<b>${$('.wbtn', wItemsM[i]).textContent}</b>${$('.why', wItemsM[i]).outerHTML}`);
+    $('.wshots + .deck-name').classList.add('web');
   }
   if (MOB.matches) {   // 手机长页：顶部导航跟着滚到哪一块高亮（长页里每块很高，原来按「最近一屏」判断会一直停在首页）
     const navSync = () => {
