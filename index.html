@@ -1330,14 +1330,17 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .deck{position:relative!important;display:block!important;width:auto!important;height:var(--dh,52rem)!important;zoom:1!important;margin:2.6rem 0 0!important;padding:0!important;touch-action:pan-y;user-select:none;-webkit-user-select:none}
   .deck > .deck-card{--d:0;--dx:0;position:absolute!important;left:50%;top:50%;margin:0;opacity:1!important;translate:none!important;z-index:calc(10 - var(--d));
     transform:translate(calc(-50% + var(--d) * 1.3rem + var(--dx) * 1px), calc(-50% + var(--d) * .9rem)) rotate(calc(var(--d) * 2.6deg + var(--dx) * .05deg)) scale(calc(1 - var(--d) * .045));
-    transform-origin:50% 100%;transition:transform .35s cubic-bezier(.2,.8,.3,1)}
+    transform-origin:50% 100%;transition:transform .35s cubic-bezier(.2,.8,.3,1),opacity .3s}
+  /* 用户 11-21「有点乱」：产品设计 01 / 04 里手机和横卡大小不一，叠着露边很乱——一次只显示一张，滑走后下一张从后面浮上来 */
+  .deck.solo > .deck-card:not(.top){opacity:0!important;pointer-events:none}
+  .deck.solo > .deck-card{transform:translate(calc(-50% + var(--dx) * 1px), -50%) rotate(calc(var(--dx) * .05deg)) scale(calc(1 - var(--d) * .06))}
   .deck > .deck-card.drag{transition:none}
   .deck > .deck-card > figcaption{display:none}   /* 名字挪到下面圆点那一行，不压在后面几张卡上 */
   .deck img{-webkit-user-drag:none;pointer-events:none}
   #diff .dstage.deck{--dh:52rem}
   .cshot{width:22.5rem}
   .cshot .phone-btn{rotate:0deg}
-  .dcol.cs li > .dv.deck{--dh:41rem}
+  .dcol.cs li > .dv.deck{--dh:37rem}
   .wshots.deck{--dh:27rem}
   .wshots.deck .wshot{width:31rem;display:block}
   .wlist{display:none}   /* 文字跟着截图走，原来分开的列表不要了 */
@@ -2677,9 +2680,10 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   if (MOB.matches) $$('#feat .dv').forEach(v => { const li = csRows[+v.dataset.v - 1]; if (li) li.append(v); });   // 手机：每一点的截图跟在这一点下面
   if (MOB.matches) { gzPages.forEach(pg => { pg.inert = false; }); $('.ga').classList.add('play'); $$('[data-anim]').forEach(go); }
   /* 手机：截图叠成一摞，左右滑把最上面那张甩出去、塞到最下面（用户 11-21：竞品分析、产品设计 01 / 04） */
-  function deckify(deck, cards, caption) {
+  function deckify(deck, cards, caption, solo) {
     let order = cards.map((_, i) => i);
     deck.classList.add('deck');
+    if (solo) deck.classList.add('solo');
     cards.forEach(c => c.classList.add('deck-card'));
     const name = document.createElement('p'), dots = document.createElement('div');
     name.className = 'deck-name';
@@ -2729,7 +2733,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   }
   if (MOB.matches) {
     deckify($('#diff .dstage'), $$('#diff .cshot'));
-    ['1', '4'].forEach(v => { const dv = $(`#feat .dv[data-v="${v}"]`); if (dv) deckify(dv, $$(':scope > figure', dv)); });
+    ['1', '4'].forEach(v => { const dv = $(`#feat .dv[data-v="${v}"]`); if (dv) deckify(dv, $$(':scope > figure', dv), null, true); });
     // 网页端：四张截图叠成一摞，下面跟着这张截图对应的「用户痛点 / 解决方案」，滑到哪张文字就换成哪张（用户 11-21）
     const wItemsM = $$('.witem');
     deckify($('.wshots'), $$('.wshot'), i => `<b>${$('.wbtn', wItemsM[i]).textContent}</b>${$('.why', wItemsM[i]).outerHTML}`);
