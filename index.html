@@ -1278,6 +1278,11 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .nav ol{gap:1.6rem;margin:0 auto}
   .nav a[data-to]{font-size:1.35rem}
   .nav .key,.hud{display:none!important}
+  /* 用户 11-21：手机上点开大图会出屏（桌面按 62rem 固定高度）。手机上按屏幕等比缩放，横图竖图都整张放进来 */
+  .lightbox figure{margin:0;padding:0 1.2rem;gap:1.2rem;max-width:100vw}
+  .lightbox img{width:auto;height:auto;max-width:calc(100vw - 2.4rem);max-height:calc(100vh - 17rem);object-fit:contain}
+  .lightbox figcaption{max-width:32rem;font-family:var(--text);font-weight:500;font-size:1.4rem;line-height:1.5;text-align:center;color:#3A3A3C}
+  .lb-close{right:1.6rem;top:1.6rem;padding:.7rem 1.6rem;font-size:1.4rem}
   .sec{height:auto;min-height:0;display:block;padding:8.4rem 2rem 4.4rem;overflow:visible;scroll-snap-align:none}
   .sec .obj,.sec .phone{opacity:1!important;animation:none!important}
   .opp-title{font-size:3rem;white-space:normal}
