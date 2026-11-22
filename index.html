@@ -400,6 +400,13 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
 .hx-card.on .hx-patch{visibility:visible}
 .hx-cta{position:absolute;left:calc(20 * var(--r));right:calc(20 * var(--r));bottom:calc(20 * var(--r));height:calc(66 * var(--r));border:0;border-radius:99rem;background:none;cursor:pointer;transition:background .15s}
 .hx-cta:active{background:rgba(46,28,78,.06)}
+/* 用户 11-21：提示这两个按钮能点。截图下面一行红点提示；按钮外一圈淡淡的呼吸光圈，点过任意一个就停 */
+.pz-tap{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-top:1.8rem;font-size:1.5rem;font-weight:600;line-height:1.2;color:var(--brand);white-space:nowrap}
+.pz-tap::before{content:"";flex:none;width:.9rem;height:.9rem;border-radius:50%;background:currentColor}
+.hx-cta::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(255,36,66,.5);animation:hx-ping 1.8s ease-out infinite;pointer-events:none}
+.hx-pub .hx-cta::after{animation-delay:.9s}
+.pz-home.tried .hx-cta::after{animation:none}
+@keyframes hx-ping{0%{box-shadow:0 0 0 0 rgba(255,36,66,.5)}70%,100%{box-shadow:0 0 0 calc(12 * var(--r)) rgba(255,36,66,0)}}
 .hx-cta:focus-visible{outline:.2rem solid var(--brand);outline-offset:.2rem}
 .house-fx,.pen-fx{position:absolute;z-index:3;top:calc(80 * var(--r));right:calc(22 * var(--r));width:calc(122 * var(--r));height:calc(122 * var(--r));visibility:hidden;pointer-events:none}
 .hx-card.on .house-fx,.hx-card.on .pen-fx{visibility:visible}
@@ -1642,6 +1649,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
           <button class="hx-cta" type="button" data-fx="pub" aria-label="发布房源"></button>
         </div>
       </div>
+      <figcaption class="pz-tap">点击「查看房源」与「发布房源」</figcaption>
     </figure>
     </div>
   </div>
@@ -2217,7 +2225,7 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   let hxAutoT = [];
   const hxStop = () => { hxAutoT.forEach(clearTimeout); hxAutoT = []; Object.keys(hxCards).forEach(k => { clearTimeout(hxT[k]); hxCards[k].classList.remove('on'); }); };
   const hxAuto = () => { hxStop(); hxAutoT = [setTimeout(() => hxPlay('rent'), 1000), setTimeout(() => hxPlay('pub'), 2700)]; };   // 进屏先演一遍：先起飞、再写字
-  $$('.hx-cta').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); hxPlay(b.dataset.fx); }));
+  $$('.hx-cta').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); hxPlay(b.dataset.fx); $('.pz-home').classList.add('tried'); }));
 
   /* ---------- 创业第 1 屏：微信群 / 小红书两张叠着，点后面那张换到前面，前面那张慢慢往下滚；
      按 E 把群里第一条转租消息的字段飞到右边真实房源详情页的对应位置并圈出来，再按 E 复原 ---------- */
