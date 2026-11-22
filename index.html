@@ -1257,6 +1257,9 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .receipt{clip-path:none;animation:none!important}
   .bar,.lane u,.duo-track,.walker{transition:none!important}
 }
+/* 用户 11-21：字体不换（苹方），靠标点挤压、字距、行距和大小对比提升设计感 */
+:where(h1,h2,h3,h4,.pz-is,.gw-obj,.ga-obj,.finale,.opp-insight p,.rf-core b,.gm-met b,.gw-kpi b,.gr-card h3){font-feature-settings:"palt" 1;font-kerning:normal}
+:where(.opp-roles) :where(h3,p){font-feature-settings:normal}   /* 右栏靠悬挂标点对齐，别挤 */
 /* ========== 手机长页阅读版（用户 11-21）：不再一屏一屏翻，单列往下滑，分步出现的内容全部直接展开 ========== */
 @media (max-width: 640px){
   html{font-size:calc(100vw / 40);scroll-snap-type:none}
@@ -1466,6 +1469,24 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .letter-body p,.letter.focus .letter-body p{font-size:1.6rem;opacity:1}
   #tencent.fin .letter{opacity:1;translate:none;pointer-events:auto}
   .finale{margin-top:4rem;font-size:2.6rem;opacity:1;translate:none}
+  /* 手机字体层级（用户 11-21「很多字体没有设计感」）：大标题更大更紧，小标签更轻更小，拉开对比 */
+  .hero h1{font-size:4.4rem;line-height:1.14;letter-spacing:-.035em}
+  .hello-roles dt{letter-spacing:-.01em}
+  .hello-roles dd{font-weight:300}
+  .opp-title,.letter h2,.trio-sec .wall-head h2,.sides-sec .wall-head h2,.leaf.back .wall-head h2{font-size:3.6rem;line-height:1.15;letter-spacing:-.035em}
+  .opp-sub{font-size:1.6rem;font-weight:300;letter-spacing:.02em;color:#6E6E73}
+  .pz-is{font-size:3.4rem;line-height:1.2;letter-spacing:-.035em}
+  .pz-we{font-weight:300;letter-spacing:.04em}
+  .dcol.comp h4{font-size:2.8rem;letter-spacing:-.03em}
+  .dcol.comp .gaps li b,.gw-cards h3,.gz-front h3,.gb-card h3,.gr-card h3,.gm-card h3,.rf-card h3,.say h3{letter-spacing:-.02em}
+  .gw-cards small,.gz-front small{font-weight:300;letter-spacing:.03em}
+  .gw-obj,.ga-obj{font-size:3rem;letter-spacing:-.03em}
+  .gw-kpi b{font-size:2.5rem;letter-spacing:-.025em}
+  .gw-kpi small,.gw-label,.gm-met small{font-weight:300;letter-spacing:.06em}
+  .opp-insight p{font-size:2.6rem;line-height:1.25;letter-spacing:-.03em}
+  .rf-core b{font-size:3rem;letter-spacing:-.03em}
+  .finale{font-size:3rem;line-height:1.3;letter-spacing:-.02em}
+  .letter-body p{line-height:1.8;letter-spacing:.01em}
 }
 </style>
 </head>
