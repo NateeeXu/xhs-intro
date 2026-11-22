@@ -1350,13 +1350,18 @@ img.chipphoto{width:19rem;height:auto;filter:drop-shadow(0 1rem 1.6rem rgba(0,0,
   .dcol.cs li > .dv-safe figure{grid-row:auto}
   /* 增长策略：概览三张卡上下排，展开层（拉新 / 漏斗 / 承接 / 留存周期 / 留存方案）直接排在下面 */
   .gw{width:auto;margin-bottom:0}
-  .gw-cards{grid-template-columns:1fr;gap:1rem;margin-top:1.6rem}
-  .gw-cards li,.gw-cards li:not(.shown){opacity:1;translate:none;padding:1.8rem 2rem;cursor:default}
-  .gw-cards i{font-size:3.4rem}
-  .gw-cards h3{font-size:2.4rem;margin-top:.6rem}
-  .gw-cards p b{white-space:normal;font-size:1.6rem}
+  /* 用户 11-21：手机上三张卡太大太空，改成紧凑的横条：左边编号，右边标题 + 问题 */
+  .gw-cards{grid-template-columns:1fr;gap:.8rem;margin-top:1.6rem}
+  .gw-cards li,.gw-cards li:not(.shown){opacity:1;translate:none;cursor:default;display:grid;grid-template-columns:4.4rem auto 1fr;align-items:baseline;padding:1.6rem 1.8rem}
+  .gw-cards i{grid-column:1;grid-row:1 / 3;align-self:start;font-size:2.8rem}
+  .gw-cards h3{grid-column:2;grid-row:1;margin:0;font-size:2.2rem}
+  .gw-cards small{grid-column:3;grid-row:1;margin:0 0 0 .8rem;font-size:1.3rem}
+  .gw-cards p{grid-column:2 / 4;grid-row:2;margin:1rem 0 0;padding-top:1rem;font-size:1.35rem}
+  .gw-cards p b{white-space:normal;font-size:1.55rem;margin-bottom:.2rem}
   .gw-goal,.gw-goal:not(.shown),.gw-kpi,.gw-kpi:not(.shown){opacity:1;translate:none}
   .gw-goal .gw-link::before,.gw-goal .gw-link::after{scale:1}
+  .gw-link{height:3.2rem}
+  .gw-link::before{display:none}   /* 手机上三张卡上下排，横着的三叉连线对不上，只留中间一根竖线 */
   .gw-obj{font-size:2.6rem}
   .gw-kpi{grid-template-columns:1fr;gap:1.8rem}
   .gw-kpi b{font-size:2.3rem}
